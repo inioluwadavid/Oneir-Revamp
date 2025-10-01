@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "homepage": {
+    "title": "Bienvenue sur Oneir",
+    "subtitle": "Commencez par modifier",
+    "codeFile": "src/app/page.tsx",
+    "saveAndSee": "Sauvegardez et voyez vos changements instantanément.",
+    "deployNow": "Déployer maintenant",
+    "readDocs": "Lire nos docs",
+    "learn": "Apprendre",
+    "examples": "Exemples",
+    "goToNextjs": "Aller sur nextjs.org →"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer"
+  }
+}
