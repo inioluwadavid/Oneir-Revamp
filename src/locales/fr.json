@@ -9,15 +9,15 @@
   },
   "hero": {
     "headline": "Transformez la complexité en clarté",
-    "description": "Oneir fournit des logiciels d'entreprise et de comptabilité riches en fonctionnalités qui répondent aux défis les plus difficiles de votre industrie.",
+    "description": "La clarté commence par la découverte. Ensemble, nous découvrons ce qui compte le plus pour votre entreprise",
     "getStarted": "Commencer"
   },
   "promo": {
-    "message": "Avec plus de 25 ans d'expérience éprouvée, nous offrons clarté, efficacité et résultats.",
+    "message": "Avec plus de 25 ans d'expérience éprouvée, nous apportons efficacité, précision et résultats auxquels vous pouvez faire confiance.",
     "discover": "Découvrir"
   },
   "features": {
-    "title": "Fonctionnalités puissantes conçues pour les entreprises modernes",
+    "title": "Solutions façonnées pour les besoins des entreprises modernes",
     "items": [
       {
         "title": "Intégration E-Commerce (Shopify)",
@@ -63,12 +63,12 @@
   },
   "financial": {
     "title": "États Financiers",
-    "description": "Les états financiers ne sont pas seulement des rapports. Ils sont l'interprétation claire de votre parcours commercial, conçus pour satisfaire les comptables les plus exigeants tout en vous donnant précision, conformité et tranquillité d'esprit.",
+    "description": "Les états financiers sont plus que des rapports. Ils racontent l'histoire de votre entreprise, vous donnant précision, conformité et tranquillité d'esprit.",
     "discover": "Découvrir"
   },
   "erpSolutions": {
     "title": "Solutions ERP pour votre industrie",
-    "description": "Oneir ERP est conçu pour la vente en gros, la vente au détail, la fabrication, les services et la construction. Il vous aide à gérer les opérations, les finances et la croissance avec clarté.",
+    "description": "Oneir offre des modules ERP flexibles pour la vente en gros, la vente au détail, la fabrication, les services et la construction. Explorez des solutions conçues pour votre industrie.",
     "industries": {
       "wholesale": {
         "title": "Vente en Gros",
@@ -93,7 +93,7 @@
     }
   },
   "footer": {
-    "companyDescription": "Oneir Solutions fournit des solutions ERP et comptables, s'associant avec les clients pour le support.",
+    "companyDescription": "Chez Oneir, nous écoutons d'abord et façonnons des solutions ERP et comptables qui s'adaptent à la façon dont votre entreprise fonctionne.",
     "siteLinks": "Liens du Site",
     "contactUs": "Nous Contacter",
     "sales": "Ventes",

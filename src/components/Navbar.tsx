@@ -78,7 +78,7 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
                     style={{ fontFamily: 'var(--font-outfit)' }}
-                    className="text-gray-800 hover:text-gray-600 text-sm font-medium transition-colors"
+                    className="text-[#303033] hover:text-gray-600 text-[16px] font-normal transition-colors"
                   >
                     {getNestedTranslation(t, `navigation.${item.key}`)}
                   </motion.a>
@@ -94,7 +94,8 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                     value={currentLocale}
                     onChange={(e) => switchLanguage(e.target.value as Locale)}
                     className="text-sm border-none bg-transparent text-gray-800 focus:outline-none font-medium"
-                  >
+                    style={{ fontFamily: 'var(--font-outfit)' }}
+                 >
                     {locales.map((locale) => (
                       <option key={locale} value={locale}>
                         {locale.toUpperCase()}

@@ -9,15 +9,15 @@
   },
   "hero": {
     "headline": "Turn complexity into clarity",
-    "description": "Oneir delivers feature-rich business and accounting software that responds to your industry's toughest challenges.",
+    "description": "Clarity starts with discovery. Together we uncover what matters most to your business",
     "getStarted": "Get started"
   },
   "promo": {
-    "message": "With more than 25 years of proven experience, we provide clarity, efficiency, and results.",
+    "message": "With over 25 years of proven experience, we bring efficiency, precision and results you can trust.",
     "discover": "Discover"
   },
   "features": {
-    "title": "Powerful features built for modern business",
+    "title": "Solutions shaped for modern business needs",
     "items": [
       {
         "title": "E-Commerce Integration (Shopify)",
@@ -63,12 +63,12 @@
   },
   "financial": {
     "title": "Financials Statement",
-    "description": "Financials are not just reports. They are the clear interpretation of your business journey, designed to satisfy the most scrutinizing accountants while giving you precision, compliance, and peace of mind.",
+    "description": "Financials are more than reports. They tell the story of your business, giving you precision, compliance and peace of mind.",
     "discover": "Discover"
   },
   "erpSolutions": {
     "title": "ERP solutions for your industry",
-    "description": "Oneir ERP is built for wholesale, retail, manufacturing, service and construction. It helps you manage operations, financials and growth with clarity.",
+    "description": "Oneir offers flexible ERP modules for wholesale, retail, manufacturing, service and construction. Explore solutions designed for your industry.",
     "industries": {
       "wholesale": {
         "title": "Wholesale",
@@ -93,7 +93,7 @@
     }
   },
   "footer": {
-    "companyDescription": "Oneir Solutions provides ERP and accounting solutions, partnering with customers for support.",
+    "companyDescription": "At Oneir, we listen first and shape ERP and accounting solutions that fit the way your business works.",
     "siteLinks": "Site Links",
     "contactUs": "Contact Us",
     "sales": "Sales",

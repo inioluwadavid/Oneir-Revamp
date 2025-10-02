@@ -40,13 +40,13 @@ export default function PromoSection({ locale }: PromoSectionProps) {
             }}
           >
             {/* Content */}
-            <div className="relative w-[60%] mx-auto z-10 flex flex-col justify-center items-center h-full text-center px-4 sm:px-6 lg:px-8">
+            <div className="relative  mx-auto z-10 flex flex-col justify-center items-center h-full text-center px-4 sm:px-6 lg:px-8">
               {/* Main message */}
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-white text-[16px] font-normal mb-6 sm:mb-8 max-w-3xl sm:max-w-4xl"
+                className="text-white text-[16px] font-normal mb-6 sm:mb-8  sm:w-[40%]"
               >
                 {getNestedTranslation(t, 'promo.message')}
               </motion.p>

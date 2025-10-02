@@ -66,10 +66,10 @@ export default function ERPSolutions({ locale }: ERPSolutionsProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-outfit)' }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-2xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-outfit)' }}>
             {getNestedTranslation(t, 'erpSolutions.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[16px] text-white max-w-2xl mx-auto leading-relaxed">
             {getNestedTranslation(t, 'erpSolutions.description')}
           </p>
         </motion.div>

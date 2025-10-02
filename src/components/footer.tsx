@@ -58,7 +58,7 @@ export default function Footer({ locale }: FooterProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-gray-700 text-sm leading-relaxed max-w-sm"
+              className="text-[#303033] text-[16px] font-[400] leading-relaxed max-w-sm"
             >
               {getNestedTranslation(t, 'footer.companyDescription')}
             </motion.p>
@@ -71,10 +71,10 @@ export default function Footer({ locale }: FooterProps) {
               className="flex space-x-4"
             >
               {[
-                { src: "/images/social/youo.svg", alt: "YouTube" },
-                { src: "/images/social/twio.svg", alt: "Twitter" },
-                { src: "/images/social/igo.svg", alt: "Instagram" },
-                { src: "/images/social/faceo.svg", alt: "Facebook" }
+                { src: "/images/social/yoinactive.svg", alt: "YouTube" },
+                { src: "/images/social/twinactive.svg", alt: "Twitter" },
+                { src: "/images/social/iginactive.svg", alt: "Instagram" },
+                { src: "/images/social/fainactive.svg", alt: "Facebook" }
               ].map((social, index) => (
                 <motion.a
                   key={social.alt}
@@ -84,23 +84,14 @@ export default function Footer({ locale }: FooterProps) {
                   transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className=" rounded-full flex items-center bg-[#8F8FB8] justify-center transition-all duration-200"
-                  style={{
-                    background: '#8F8FB8'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#393965';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#8F8FB8';
-                  }}
+                  className=" rounded-full flex items-center  justify-center transition-all duration-200"
                 >
                   <Image 
                     src={social.src} 
                     alt={social.alt} 
                     width={24} 
                     height={24}
-                    className="filter brightness-0 invert"
+                    className=""
                   />
                 </motion.a>
               ))}
@@ -118,10 +109,10 @@ export default function Footer({ locale }: FooterProps) {
             <nav className="space-y-2">
               {[
                 { href: `/${locale}`, text: 'Home' },
-                { href: `/${locale}/about`, text: 'Who We Are' },
-                { href: `/${locale}/industries`, text: 'Industries' },
-                { href: `/${locale}/solutions`, text: 'Solutions' },
-                { href: `/${locale}/contact`, text: 'Contact' }
+                { href: `/${locale}/#`, text: 'Who We Are' },
+                { href: `/${locale}/#`, text: 'Industries' },
+                { href: `/${locale}/#`, text: 'Solutions' },
+                { href: `/${locale}/#`, text: 'Contact' }
               ].map((link, index) => (
                 <motion.a
                   key={link.text}
@@ -131,6 +122,7 @@ export default function Footer({ locale }: FooterProps) {
                   transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
                   whileHover={{ x: 5 }}
                   className="block text-gray-700 hover:text-[#65083A] transition-colors"
+                  style={{ fontFamily: 'var(--font-outfit)' }}
                 >
                   {link.text}
                 </motion.a>
@@ -152,14 +144,14 @@ export default function Footer({ locale }: FooterProps) {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                 transition={{ duration: 0.3, delay: 0.8 }}
               >
-                {getNestedTranslation(t, 'footer.sales')}: <a href="tel:18773223580" className="text-[#65083A] underline font-[600] text-[16px]">1.877.322.3580</a>
+                {getNestedTranslation(t, 'footer.sales')}: <a href="tel:18773223580" className="text-[#303033]  font-[500] text-[16px]" style={{ fontFamily: 'var(--font-outfit)' }}>1.877.322.3580</a>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                 transition={{ duration: 0.3, delay: 0.9 }}
               >
-                {getNestedTranslation(t, 'footer.customerSupport')}: <a href="tel:4163223580" className="text-[#65083A] underline font-[600] text-[16px]">416.322.3580</a>
+                {getNestedTranslation(t, 'footer.customerSupport')}: <a href="tel:4163223580" className="text-[#303033]  font-[500] text-[16px]" style={{ fontFamily: 'var(--font-outfit)' }}>416.322.3580</a>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -173,7 +165,7 @@ export default function Footer({ locale }: FooterProps) {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                 transition={{ duration: 0.3, delay: 1.1 }}
               >
-                <a href="mailto:info@oneirsolutions.com" className="text-[#65083A] underline font-[600] text-[16px]">info@oneirsolutions.com</a>
+                <a href="mailto:info@oneirsolutions.com" className="text-[#303033]  font-[500] underline text-[16px]" style={{ fontFamily: 'var(--font-outfit)' }}>info@oneirsolutions.com</a>
               </motion.div>
             </div>
           </motion.div>
