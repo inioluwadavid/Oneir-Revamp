@@ -145,7 +145,7 @@ export default function Footer({ locale }: FooterProps) {
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="block text-gray-700 hover:text-[#65083A] transition-colors"
+                  className="block text-gray-700 hover:text-[#070714] transition-colors"
                   style={{ fontFamily: 'var(--font-outfit)' }}
                 >
                   {link.text}
