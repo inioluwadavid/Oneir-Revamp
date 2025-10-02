@@ -18,6 +18,11 @@ export function getTranslations(locale: Locale) {
   return translations[locale];
 }
 
-export function getNestedTranslation(translations: any, key: string): string {
-  return key.split('.').reduce((obj, key) => obj?.[key], translations) || key;
+export function getNestedTranslation(translations: Record<string, unknown>, key: string): string {
+  return key.split('.').reduce((obj: unknown, key: string) => {
+    if (obj && typeof obj === 'object' && key in obj) {
+      return (obj as Record<string, unknown>)[key];
+    }
+    return undefined;
+  }, translations) as string || key;
 }

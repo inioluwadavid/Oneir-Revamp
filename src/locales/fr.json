@@ -1,19 +1,105 @@
 {
   "navigation": {
     "home": "Accueil",
-    "about": "À propos",
-    "contact": "Contact"
+    "whoWeAre": "Qui Nous Sommes",
+    "industries": "Industries",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "discover": "Découvrir"
   },
-  "homepage": {
-    "title": "Bienvenue sur Oneir",
-    "subtitle": "Commencez par modifier",
-    "codeFile": "src/app/page.tsx",
-    "saveAndSee": "Sauvegardez et voyez vos changements instantanément.",
-    "deployNow": "Déployer maintenant",
-    "readDocs": "Lire nos docs",
-    "learn": "Apprendre",
-    "examples": "Exemples",
-    "goToNextjs": "Aller sur nextjs.org →"
+  "hero": {
+    "headline": "Transformez la complexité en clarté",
+    "description": "Oneir fournit des logiciels d'entreprise et de comptabilité riches en fonctionnalités qui répondent aux défis les plus difficiles de votre industrie.",
+    "getStarted": "Commencer"
+  },
+  "promo": {
+    "message": "Avec plus de 25 ans d'expérience éprouvée, nous offrons clarté, efficacité et résultats.",
+    "discover": "Découvrir"
+  },
+  "features": {
+    "title": "Fonctionnalités puissantes conçues pour les entreprises modernes",
+    "items": [
+      {
+        "title": "Intégration E-Commerce (Shopify)",
+        "description": "Connectez votre boutique entière de manière transparente avec vos opérations commerciales."
+      },
+      {
+        "title": "Autorisation de carte de crédit",
+        "description": "Traitez les paiements de manière sécurisée et efficace."
+      },
+      {
+        "title": "États AR avancés",
+        "description": "Restez au top des créances avec des états clairs et détaillés."
+      },
+      {
+        "title": "Traitement EFT",
+        "description": "Simplifiez les transactions avec les virements électroniques."
+      },
+      {
+        "title": "Containerisation",
+        "description": "Évoluez et gérez les déploiements avec fiabilité."
+      },
+      {
+        "title": "Travail personnalisé",
+        "description": "Solutions sur mesure pour répondre aux besoins spécifiques de votre industrie."
+      },
+      {
+        "title": "Personnalisation des formulaires",
+        "description": "Créez des documents qui fonctionnent comme vous le faites."
+      },
+      {
+        "title": "Formation",
+        "description": "Mettez votre équipe à niveau rapidement et en toute confiance."
+      },
+      {
+        "title": "Préparation IA",
+        "description": "Préparez votre entreprise pour l'avenir avec des outils conçus pour l'automatisation intelligente."
+      },
+      {
+        "title": "Tableau de bord KPI",
+        "description": "Suivez les performances avec clarté et perspicacité."
+      }
+    ]
+  },
+  "financial": {
+    "title": "États Financiers",
+    "description": "Les états financiers ne sont pas seulement des rapports. Ils sont l'interprétation claire de votre parcours commercial, conçus pour satisfaire les comptables les plus exigeants tout en vous donnant précision, conformité et tranquillité d'esprit.",
+    "discover": "Découvrir"
+  },
+  "erpSolutions": {
+    "title": "Solutions ERP pour votre industrie",
+    "description": "Oneir ERP est conçu pour la vente en gros, la vente au détail, la fabrication, les services et la construction. Il vous aide à gérer les opérations, les finances et la croissance avec clarté.",
+    "industries": {
+      "wholesale": {
+        "title": "Vente en Gros",
+        "link": "Commencez votre découverte"
+      },
+      "retail": {
+        "title": "Vente au Détail",
+        "link": "Commencez votre découverte"
+      },
+      "manufacturing": {
+        "title": "Fabrication",
+        "link": "Commencez votre découverte"
+      },
+      "service": {
+        "title": "Service",
+        "link": "Commencez votre découverte"
+      },
+      "construction": {
+        "title": "Construction",
+        "link": "Commencez votre découverte"
+      }
+    }
+  },
+  "footer": {
+    "companyDescription": "Oneir Solutions fournit des solutions ERP et comptables, s'associant avec les clients pour le support.",
+    "siteLinks": "Liens du Site",
+    "contactUs": "Nous Contacter",
+    "sales": "Ventes",
+    "customerSupport": "Support Client",
+    "fax": "Télécopieur",
+    "copyright": "@2025 Oneir, Inc. Tous droits réservés."
   },
   "common": {
     "loading": "Chargement...",

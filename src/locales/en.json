@@ -1,19 +1,105 @@
 {
   "navigation": {
     "home": "Home",
-    "about": "About",
-    "contact": "Contact"
+    "whoWeAre": "Who We Are",
+    "industries": "Industries",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "discover": "Discover"
   },
-  "homepage": {
-    "title": "Welcome to Oneir",
-    "subtitle": "Get started by editing",
-    "codeFile": "src/app/page.tsx",
-    "saveAndSee": "Save and see your changes instantly.",
-    "deployNow": "Deploy now",
-    "readDocs": "Read our docs",
-    "learn": "Learn",
-    "examples": "Examples",
-    "goToNextjs": "Go to nextjs.org →"
+  "hero": {
+    "headline": "Turn complexity into clarity",
+    "description": "Oneir delivers feature-rich business and accounting software that responds to your industry's toughest challenges.",
+    "getStarted": "Get started"
+  },
+  "promo": {
+    "message": "With more than 25 years of proven experience, we provide clarity, efficiency, and results.",
+    "discover": "Discover"
+  },
+  "features": {
+    "title": "Powerful features built for modern business",
+    "items": [
+      {
+        "title": "E-Commerce Integration (Shopify)",
+        "description": "Connect your entire store seamlessly with your business operations."
+      },
+      {
+        "title": "Credit Card Authorization",
+        "description": "Process payments securely and efficiently."
+      },
+      {
+        "title": "Advanced AR Statements",
+        "description": "Stay on top of receivables with clear, detailed statements."
+      },
+      {
+        "title": "EFT processing",
+        "description": "Simplify transactions with electronic fund transfers."
+      },
+      {
+        "title": "Containerization",
+        "description": "Scale and manage deployments with reliability."
+      },
+      {
+        "title": "Custom Work",
+        "description": "Tailored solutions to fit your industry-specific needs."
+      },
+      {
+        "title": "Forms Personalization",
+        "description": "Create documents that work the way you do."
+      },
+      {
+        "title": "Training",
+        "description": "Get your team up to speed quickly and confidently."
+      },
+      {
+        "title": "AI Readiness",
+        "description": "Future-proof your business with tools built for intelligent automation."
+      },
+      {
+        "title": "KPI Dashboard",
+        "description": "Track performance with clarity and insight."
+      }
+    ]
+  },
+  "financial": {
+    "title": "Financials Statement",
+    "description": "Financials are not just reports. They are the clear interpretation of your business journey, designed to satisfy the most scrutinizing accountants while giving you precision, compliance, and peace of mind.",
+    "discover": "Discover"
+  },
+  "erpSolutions": {
+    "title": "ERP solutions for your industry",
+    "description": "Oneir ERP is built for wholesale, retail, manufacturing, service and construction. It helps you manage operations, financials and growth with clarity.",
+    "industries": {
+      "wholesale": {
+        "title": "Wholesale",
+        "link": "Start your discovery"
+      },
+      "retail": {
+        "title": "Retail",
+        "link": "Start your discovery"
+      },
+      "manufacturing": {
+        "title": "Manufacturing",
+        "link": "Start your discovery"
+      },
+      "service": {
+        "title": "Service",
+        "link": "Start your discovery"
+      },
+      "construction": {
+        "title": "Construction",
+        "link": "Start your discovery"
+      }
+    }
+  },
+  "footer": {
+    "companyDescription": "Oneir Solutions provides ERP and accounting solutions, partnering with customers for support.",
+    "siteLinks": "Site Links",
+    "contactUs": "Contact Us",
+    "sales": "Sales",
+    "customerSupport": "Customer Support",
+    "fax": "Fax",
+    "copyright": "@2025 Oneir, Inc. All rights reserved."
   },
   "common": {
     "loading": "Loading...",
