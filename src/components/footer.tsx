@@ -71,10 +71,26 @@ export default function Footer({ locale }: FooterProps) {
               className="flex space-x-4"
             >
               {[
-                { src: "/images/social/yoinactive.svg", alt: "YouTube" },
-                { src: "/images/social/twinactive.svg", alt: "Twitter" },
-                { src: "/images/social/iginactive.svg", alt: "Instagram" },
-                { src: "/images/social/fainactive.svg", alt: "Facebook" }
+                { 
+                  src: "/images/social/yoinactive.svg", 
+                  hoverSrc: "/images/social/youo.svg", 
+                  alt: "YouTube" 
+                },
+                { 
+                  src: "/images/social/twinactive.svg", 
+                  hoverSrc: "/images/social/twio.svg", 
+                  alt: "Twitter" 
+                },
+                { 
+                  src: "/images/social/iginactive.svg", 
+                  hoverSrc: "/images/social/igo.svg", 
+                  alt: "Instagram" 
+                },
+                { 
+                  src: "/images/social/fainactive.svg", 
+                  hoverSrc: "/images/social/faceo.svg", 
+                  alt: "Facebook" 
+                }
               ].map((social, index) => (
                 <motion.a
                   key={social.alt}
@@ -85,13 +101,21 @@ export default function Footer({ locale }: FooterProps) {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className=" rounded-full flex items-center  justify-center transition-all duration-200"
+                  onMouseEnter={(e) => {
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.src = social.hoverSrc;
+                  }}
+                  onMouseLeave={(e) => {
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.src = social.src;
+                  }}
                 >
                   <Image 
                     src={social.src} 
                     alt={social.alt} 
                     width={24} 
                     height={24}
-                    className=""
+                    className="transition-all duration-200"
                   />
                 </motion.a>
               ))}
