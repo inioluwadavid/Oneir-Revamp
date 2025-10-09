@@ -16,7 +16,7 @@ export default async function Home({ params }: HomePageProps) {
   const locale = localeParam as Locale;
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-[#EFEFF3]">
       <Navbar currentLocale={locale} />
       <div className="pt-16 sm:pt-20 lg:pt-24">
         <Hero locale={locale} />

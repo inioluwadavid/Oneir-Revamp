@@ -1,0 +1,55 @@
+{
+  "whoWeAre": {
+    "title": "Qui nous sommes",
+    "subtitle": "Oneir (du grec Oneirus, \"interprète des rêves\") est plus que notre nom."
+  },
+  "howWeWork": {
+    "intro": "Notre processus commence par l'écoute. Nous prenons le temps de comprendre vos objectifs, défis et opportunités.",
+    "mainTitle": "Voici, comment nous travaillons.",
+    "description": "De là, nous façonnons des solutions ERP qui font plus que résoudre des problèmes. Elles débloquent de la valeur à travers les opérations, la finance et la croissance."
+  },
+  "mission": {
+    "title": "Notre Mission",
+    "description": "Notre mission est de nous associer aux entreprises, comprendre leur vision et fournir des solutions ERP et comptables qui rendent cette vision réelle.\n\nDepuis plus de 25 ans, Oneir soutient les industries de la fourniture de construction à la fabrication alimentaire, de la distribution au commerce de détail. Une vérité a toujours prévalu : chaque vision client est unique."
+  },
+  "values": {
+    "title": "Nos Valeurs",
+    "items": [
+      {
+        "title": "Approche Axée sur la Découverte",
+        "description": "Nous commençons par comprendre ce qui compte le plus pour votre entreprise, en découvrant ensemble les défis et les opportunités."
+      },
+      {
+        "title": "Précision et Fiabilité",
+        "description": "Avec des décennies d'expérience, nous fournissons des solutions basées sur l'efficacité, la précision et des résultats auxquels vous pouvez faire confiance."
+      },
+      {
+        "title": "Expertise Industrielle",
+        "description": "De la vente en gros à la fabrication, de la vente au détail à la construction—nous comprenons les besoins uniques de votre industrie."
+      },
+      {
+        "title": "Innovation et Prêt pour l'Avenir",
+        "description": "Nous construisons des solutions avec une préparation à l'IA et une technologie moderne, garantissant que votre entreprise reste en avance."
+      },
+      {
+        "title": "Partenariat et Support",
+        "description": "Nous ne sommes pas seulement un fournisseur—nous sommes votre partenaire de croissance, offrant une formation et un support continus."
+      }
+    ]
+  },
+  "experience": {
+    "years": "25+",
+    "yearsLabel": "Années d'Expérience",
+    "industries": "5+",
+    "industriesLabel": "Industries Servies"
+  },
+  "why": {
+    "title": "Pourquoi Choisir Oneir",
+    "description": "Nous combinons une connaissance approfondie de l'industrie avec une technologie de pointe pour fournir des solutions ERP qui ne répondent pas seulement à vos besoins d'aujourd'hui—mais qui évoluent avec votre entreprise demain. Notre expérience éprouvée s'étend sur plus de deux décennies, servant diverses industries avec des solutions personnalisées qui génèrent de vrais résultats commerciaux."
+  },
+  "cta": {
+    "title": "Prêt à Transformer Votre Entreprise?",
+    "description": "Commençons par la découverte. Ensemble, nous découvrirons ce qui compte le plus pour votre entreprise et construirons une solution qui fonctionne.",
+    "button": "Commencer"
+  }
+}

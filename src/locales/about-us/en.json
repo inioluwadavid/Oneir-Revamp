@@ -1,0 +1,55 @@
+{
+  "whoWeAre": {
+    "title": "Who we are",
+    "subtitle": "Oneir (from the Greek Oneirus, \"interpreter of dreams\") is more than our name."
+  },
+  "howWeWork": {
+    "intro": "Our process begins with listening. We take time to understand your goals, challenges, and opportunities.",
+    "mainTitle": "This, is how we work.",
+    "description": "From there, we shape ERP solutions that do more than solve problems. They unlock value across operations, finance, and growth."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "Our mission is to partner with businesses, understand their vision, and provide ERP and accounting solutions that make that vision real.\n\nFor over 25 years, Oneir has supported industries from building supply to food manufacturing, from distribution to retail. One truth has always held: every client's vision is unique."
+  },
+  "values": {
+    "title": "Our Values",
+    "items": [
+      {
+        "title": "Discovery-First Approach",
+        "description": "We start by understanding what matters most to your business, uncovering challenges and opportunities together."
+      },
+      {
+        "title": "Precision & Reliability",
+        "description": "With decades of experience, we deliver solutions built on efficiency, accuracy, and results you can trust."
+      },
+      {
+        "title": "Industry Expertise",
+        "description": "From wholesale to manufacturing, retail to construction—we understand the unique needs of your industry."
+      },
+      {
+        "title": "Innovation & Future-Ready",
+        "description": "We build solutions with AI readiness and modern technology, ensuring your business stays ahead."
+      },
+      {
+        "title": "Partnership & Support",
+        "description": "We're not just a vendor—we're your partner in growth, providing ongoing training and support."
+      }
+    ]
+  },
+  "experience": {
+    "years": "25+",
+    "yearsLabel": "Years of Experience",
+    "industries": "5+",
+    "industriesLabel": "Industries Served"
+  },
+  "why": {
+    "title": "Why Choose Oneir",
+    "description": "We combine deep industry knowledge with cutting-edge technology to deliver ERP solutions that don't just meet your needs today—but grow with your business tomorrow. Our proven track record spans over two decades, serving diverse industries with customized solutions that drive real business results."
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "description": "Let's start with discovery. Together, we'll uncover what matters most to your business and build a solution that works.",
+    "button": "Get Started"
+  }
+}

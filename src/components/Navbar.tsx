@@ -25,6 +25,7 @@ export default function Navbar({ currentLocale }: NavbarProps) {
 
   const navigationItems = [
     { key: 'home', href: `/${currentLocale}` },
+    { key: 'aboutUs', href: `/${currentLocale}/about-us` },
     { key: 'whoWeAre', href: `/${currentLocale}/#` },
     { key: 'industries', href: `/${currentLocale}/#` },
     { key: 'solutions', href: `/${currentLocale}/#` },
