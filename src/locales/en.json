@@ -6,12 +6,18 @@
     "industries": "Industries",
     "solutions": "Solutions",
     "contact": "Contact",
-    "discover": "Discover"
+    "discover": "Discover",
+    "about": "About",
+    "support": "Support",
+    "requestDemo": "Request a Demo"
   },
   "hero": {
-    "headline": "Turn complexity into clarity",
-    "description": "Clarity starts with discovery. Together we uncover what matters most to your business",
-    "getStarted": "Get started"
+    "tagline": "Trusted by North American Distributors, Manufacturers & Retailers for over 25 years.",
+    "headline": "One Platform, All Your Operations.",
+    "subheading": "Enterprise Resource Planning, Simplified.",
+    "description": "Enterprise Resource Planning (ERP) software connects your core business operations—inventory, sales, accounting, and reporting—into a single unified system, now enhanced through AI-driven intelligence, so your data stays accurate, teams stay aligned, and your business runs more efficiently.",
+    "requestDemo": "Request a Demo",
+    "bookDiscovery": "Book a Discovery"
   },
   "promo": {
     "message": "With over 25 years of proven experience, we bring efficiency, precision and results you can trust.",
@@ -68,29 +74,415 @@
     "discover": "Discover"
   },
   "erpSolutions": {
-    "title": "ERP solutions for your industry",
-    "description": "Oneir offers flexible ERP modules for wholesale, retail, manufacturing, service and construction. Explore solutions designed for your industry.",
-    "industries": {
-      "wholesale": {
-        "title": "Wholesale",
-        "link": "Start your discovery"
+    "title": "Cloud ERP for Distributors, Manufacturers and Retailers",
+    "description": "Oneir Solutions delivers a comprehensive cloud ERP platform that connects your core business operations into a single, intelligent system.",
+    "bulletItems": [
+      "Retailers and wholesale distributors, including building supply and tile & flooring companies",
+      "eCommerce businesses on Shopify and Amazon",
+      "Manufacturers, including job costing, project management, and food & beverage",
+      "Service organizations, including recurring and contract billing"
+    ],
+    "closingSentence": "— seamlessly integrating traditional \"brick-and-mortar\" operations with modern eCommerce.",
+    "cards": [
+      {
+        "title": "Operations & Inventory",
+        "description": "Streamline purchasing, receiving, warehousing, and fulfillment with real-time inventory control across every location. Keep stock accurate, orders moving, and operations running smoothly without the manual chaos."
       },
-      "retail": {
-        "title": "Retail",
-        "link": "Start your discovery"
+      {
+        "title": "Financials & Accounting",
+        "description": "Get a complete, real-time picture of your financials with automated invoicing, payables, receivables, and multi-company accounting. Close the books faster and make confident decisions with accurate, connected data."
       },
-      "manufacturing": {
-        "title": "Manufacturing",
-        "link": "Start your discovery"
+      {
+        "title": "Sales & Distribution Channels",
+        "description": "Manage every sales channel—retail, wholesale, POS, eCommerce, and field orders—from one centralized system. Pricing, customers, and inventory stay perfectly in sync so you can sell anywhere without extra work."
       },
-      "service": {
-        "title": "Service",
-        "link": "Start your discovery"
-      },
-      "construction": {
-        "title": "Construction",
-        "link": "Start your discovery"
+      {
+        "title": "Analytics & Reporting",
+        "description": "Turn your operational data into clear insights with dashboards, KPIs, and customizable reports across every part of your business. Spot trends, track performance, and make smarter decisions backed by real-time information."
       }
+    ]
+  },
+  "industriesWeServe": {
+    "title": "Industries We Serve",
+    "cards": [
+      {
+        "title": "Retail",
+        "subheading": "POS, Inventory & Customer Operations",
+        "description": "Real-time inventory, unified POS, and connected customer data."
+      },
+      {
+        "title": "Wholesale Distribution",
+        "subheading": "Inventory, Orders & Warehouse Operations",
+        "description": "End-to-end control across purchasing, fulfillment, and logistics."
+      },
+      {
+        "title": "Building Supply",
+        "subheading": "Materials, Inventory & Job Fulfillment",
+        "description": "Manage bulk materials, complex SKUs, and project-based delivery."
+      },
+      {
+        "title": "Tile & Flooring",
+        "subheading": "Product Variants, Inventory & Job Tracking",
+        "description": "Track SKUs, availability, and jobs from warehouse to install."
+      },
+      {
+        "title": "E-Commerce (Shopify & Amazon)",
+        "subheading": "Orders, Inventory & Channel Integrations",
+        "description": "Sync sales channels, automate fulfillment, and scale operations."
+      },
+      {
+        "title": "Manufacturing",
+        "subheading": "Production, Materials & Inventory Control",
+        "description": "Connect production workflows with materials, costing, and inventory."
+      },
+      {
+        "title": "Food & Beverage",
+        "subheading": "Lot Traceability, Inventory & Compliance",
+        "description": "Support batch tracking, sourcing, and regulated operations."
+      },
+      {
+        "title": "Service & Maintenance",
+        "subheading": "Work Orders, Purchasing & MRO (Maintenance, Repair & Operations)",
+        "description": "Coordinate field work, parts, and procurement in one system."
+      }
+    ]
+  },
+  "sellAnywhere": {
+    "title": "Sell Anywhere, Manage Everything",
+    "description": "Every channel stays in sync—inventory, pricing, and customer data update automatically, eliminating rekeying and discrepancies.",
+    "learnMore": "Learn more",
+    "features": [
+      {
+        "title": "E-Commerce Solution",
+        "description": "Connect your online store directly to Oneir so orders, inventory, and customer data stay perfectly in sync in real time."
+      },
+      {
+        "title": "Credit Card Authorization",
+        "description": "Process and authorize credit card payments securely and automatically—from order entry to invoicing, without leaving the system."
+      },
+      {
+        "title": "EFT Processing",
+        "description": "Automate electronic funds transfers to accelerate payments, reduce errors, and streamline accounts receivable workflows."
+      },
+      {
+        "title": "Comprehensive Billing",
+        "description": "Handle complex billing scenarios with ease, including contract, recurring, and project-based invoicing—all fully integrated with your financials."
+      },
+      {
+        "title": "Material Requirements Planning (MRP)",
+        "description": "Translate demand into time-phased material plans and purchase orders to ensure components are available when needed—reducing shortages, excess inventory, and production delays."
+      },
+      {
+        "title": "Project Management",
+        "description": "Track jobs, labor, materials, budgets, and timelines in one place so every project stays profitable and on schedule."
+      },
+      {
+        "title": "Inventory Management",
+        "description": "Maintain accurate, real-time visibility over stock levels, locations, lots, and movements to prevent stockouts and eliminate manual tracking."
+      },
+      {
+        "title": "AI Readiness",
+        "description": "Built for AI-driven insights, automation, and intelligent decision support—an architecture that evolves with your business."
+      },
+      {
+        "title": "KPI Dashboard",
+        "description": "Monitor performance instantly with customizable dashboards that surface your most important metrics across operations, sales, and finance."
+      }
+    ]
+  },
+  "journey": {
+    "title": "Start Your Journey with a Discovery",
+    "description": "Get expert guidance, a customized product walkthrough, and a detailed implementation roadmap aligned to your operational needs.",
+    "videoOverlay": "Revamp Your Leadership Approach With Data-Driven Insights",
+    "videoOverlayBold": "Data-Driven",
+    "steps": [
+      {
+        "subheading": "1. Discovery Call",
+        "tagline": "Understand your workflows.",
+        "description": "We take time to learn how your business operates today, your processes, bottlenecks, and goals, so we can shape a solution that actually fits."
+      },
+      {
+        "subheading": "2. Tailored Demo",
+        "tagline": "See your processes in Oneir.",
+        "description": "Experience a walkthrough built around your workflows, showing exactly how Oneir can streamline operations, connect your teams, and eliminate manual work."
+      },
+      {
+        "subheading": "3. Implementation Plan",
+        "tagline": "Cost, timeline, rollout.",
+        "description": "Receive a clear implementation plan outlining your project scope, pricing, timeline, and rollout strategy—so you know exactly what to expect at every stage."
+      }
+    ],
+    "cta": "Book a Discovery"
+  },
+  "howBusinessesRun": {
+    "title": "How Businesses Like Yours Run Smarter With Oneir",
+    "successStoriesTitle": "Our Success Stories",
+    "learnMore": "Learn more",
+    "viewMoreStories": "View More Stories Here",
+    "stories": [
+      {
+        "companyName": "Amity Insulation",
+        "description": "Amity Insulation Group Inc., a leading distributor of industrial insulation, has used Oneir Solutions' Accounting-based business management software to improve its overall operation.",
+        "image": "/images/how_businesses/how1.svg",
+        "slug": "amity-insulation"
+      },
+      {
+        "companyName": "Dwight Lumber",
+        "description": "Dwight Lumber: \"Oneir truly is more than just financial software,\" explains Frank. \"It is also, for instance, an excellent customer relationship management tool and good CRM is vital to us.\"",
+        "image": "/images/how_businesses/how2.svg",
+        "slug": "dwight-lumber"
+      },
+      {
+        "companyName": "Decorators Choice",
+        "description": "Decorators Choice, with two store locations was ready for expansion and decided their legacy accounting software no longer suited their multi-site ambitions. Although they had been loyal to their previous provider for decades, they looked at alternatives for their industry.",
+        "image": "/images/how_businesses/how3.svg",
+        "slug": "decorators-choice"
+      },
+      {
+        "companyName": "Multi-Company",
+        "description": "A multi-company operation needed unified visibility across entities. Oneir Solutions enabled consolidated reporting, intercompany transactions, and centralized control while respecting each entity's autonomy.",
+        "slug": "multi-company"
+      },
+      {
+        "companyName": "Apparel Retailer",
+        "description": "An apparel retailer struggling with seasonal peaks and size/color matrix management implemented Oneir to streamline inventory, improve order fulfillment, and sync across retail and e-commerce channels.",
+        "slug": "apparel-retailer"
+      },
+      {
+        "companyName": "Fuel Distribution with Cardlock",
+        "description": "A fuel-distribution and rural-service supplier adopted an integrated business-management platform to take control of multi-channel operations, including automated card-based transactions.",
+        "slug": "fuel-distribution-cardlock"
+      },
+      {
+        "companyName": "Structural Lumber & Engineered Building Systems",
+        "description": "A structural lumber and engineered building systems supplier needed to manage complex BOMs, job costing, and project-based fulfillment. Oneir integrated their workflows end-to-end, reducing errors and accelerating delivery.",
+        "slug": "structural-lumber-building-systems"
+      },
+      {
+        "companyName": "Pet Supply Wholesaler",
+        "description": "A pet supply wholesaler scaled from regional to national with Oneir, automating order processing, managing vendor relationships, and keeping inventory aligned across warehouses and dropship partners.",
+        "slug": "pet-supply-wholesaler"
+      }
+    ]
+  },
+  "caseStudies": {
+    "amityInsulation": {
+      "paragraphs": [
+        { "type": "intro", "text": "A company in the industrial materials distribution space recently upgraded its accounting-based business-management software to improve its overall operations." },
+        { "type": "descriptive", "text": "A few years ago, the business began the transition to a new system under the guidance of a specialized software-provider." },
+        { "type": "quote", "text": "These days, we use the system every day. What's particularly useful is the ability to instantly convert our frequently-used documents into PDF, then email them right away. If we hadn't made this upgrade, most of our correspondence would still be via regular mail. The new system lets us perform day-to-day functions more quickly and efficiently.", "attribution": "" },
+        { "type": "descriptive", "text": "The organization had been a long-time user of the provider's older product for inventory control, dating back decades." },
+        { "type": "quote", "text": "With all the different materials, accessories and parts we distribute, there are several thousand inventory SKUs involved in the sales process, and we've always been impressed with how well the software tracks our inventory. We asked the provider to carry out custom work so that we could use SKU descriptions in greater detail. The programming team has been excellent to work with when helping with the design and wording of our quotations, purchase orders and invoices. They even added custom descriptors to facilitate handling our materials in a more efficient manner.", "attribution": "" },
+        { "type": "descriptive", "text": "Such tailoring to specific client needs is a high priority for the software-provider:" },
+        { "type": "quote", "text": "Every company has its own uniqueness so we designed our software to be very flexible. But the custom programming we can add before the system goes live makes it fit the client like a glove right from the get-go. And we keep the costs for customizing nominal because it can be good for us too. Quite often we are able to incorporate something we've developed for one client into the next version so that everyone can benefit.", "attribution": "" },
+        { "type": "descriptive", "text": "During its evolutionary process, the software-provider has built its bookkeeping software foundations over several decades into a full business-management tool. But though it's more powerful, transitioning usually goes smoothly." },
+        { "type": "quote", "text": "We had absolutely no issues when the system upgraded our software and the conversion was completed promptly. Our company became faster at getting materials in and out the door and the financial reporting was more accurate. To me, that reflects the deep understanding the provider's team has in terms of accounting standards, and what a modern system can do for a business beyond just keeping the books.", "attribution": "" },
+        { "type": "descriptive", "text": "The upgrade has enabled the distributor's leadership to focus on planning the company's future without the usual paper-trail tracking that slows operations at many firms. The management team now has more time to focus on other important areas of their operations." }
+      ]
+    },
+    "dwightLumber": {
+      "paragraphs": [
+        { "type": "intro", "text": "A family-owned building-supplies company in a small Ontario village believed the timing was right to expand. Initial roots dug deep with a legacy distributor, the business began as a modest operation under the leadership of a former retail executive. Soon it became clear that software would need to step up to support growth." },
+        { "type": "quote", "text": "We want to open another location,", "attribution": "said the owner, reflecting confidence built in part through his ERP system." },
+        { "type": "quote", "text": "Our customers come back years later and ask for the same stain. With our system we can tell them within minutes what it was and how much they bought." },
+        { "type": "descriptive", "text": "The business had been using an older accounting system before switching to Oneir's Linux-based ERP. The new solution proved to be much more than just financial software—it became central to operations, customer relationship management and supplier/customer integration." },
+        { "type": "descriptive", "text": "Some of the specific benefits the company identified:" },
+        {
+          "type": "bullets",
+          "items": [
+            "The system allows full integration of customer history, inventory and purchase data. For example, a contractor returning years after a project can have their previous purchase retrieved quickly.",
+            "A built-in price multiplier feature handles lumber or building material sales by foot or custom cut—no manual hassle or confusing invoices for customers.",
+            "Real-time visibility of inventory, including committed stock: \"We can instantly answer a customer question about how much we have on hand.\"",
+            "Automatic flow from purchase to general ledger to sales - contractors' discounts and margin analyses can be reviewed easily.",
+            "Trend-analysis capability lets management see what they sell, when and to whom — enabling smarter product and margin decisions.",
+            "Because the software is Internet-capable and designed for multi-location use, expansion plans (such as new outlets) are supported without sacrificing reporting quality or speed.",
+            "Above all, the owner praised the vendor's ongoing support: customizing the application to specific needs, guidance when setting things up, and being present when issues arose."
+          ]
+        },
+        { "type": "quote", "text": "That kind of customer-care... is the very essence of what we look for." }
+      ]
+    },
+    "fuelDistributionCardlock": {
+      "paragraphs": [
+        { "type": "intro", "text": "A fuel-distribution and rural-service supplier faced with high-volume transactions adopted an integrated business-management platform to take control of its multi-channel operations, including automated card-based transactions." },
+        { "type": "sectionHeader", "text": "Background / Challenge" },
+        { "type": "descriptive", "text": "The company handled hundreds of fuel and lubricant transactions per day—all from a remote region with challenging logistics. Their previous accounting/billing system was proprietary, nearing end-of-life, and unable to scale with the business. They needed a solution that could handle:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Automated fuel card (\"cardlock\") transactions at unmanned or self-service pumps, water/accommodations services, off-road fleet fueling, etc.",
+            "Over-the-counter sales of lubricants and parts from the warehouse.",
+            "Deliveries to remote sites (e.g., mining camps, heavy-equipment fleets) with proper invoicing and ledger integration.",
+            "Rapid data capture: date, pump location, purchaser, fuel type, quantity, price, cost, inventory adjustments — all integrated into the accounting system.",
+            "Robust support, remote access and minimal downtime despite operating far from headquarters."
+          ]
+        },
+        { "type": "sectionHeader", "text": "Solution / Implementation" },
+        { "type": "descriptive", "text": "The firm switched to a Linux-based server loaded with a full suite: accounts receivable, accounts payable, general ledger, sales order software, inventory management, POS, and a specialized module for \"cardlock\" fuel transactions. Implementation included a converter for data from the legacy system, training of staff (many with minimal prior computer experience), and rapid deployment (within a few weeks) despite geographic separation." },
+        { "type": "sectionHeader", "text": "Results / Benefits" },
+        {
+          "type": "bullets",
+          "items": [
+            "The company now instantly captures every card-based fueling and over-the-counter sale into the ERP system: ensuring full audit trail, real-time inventory, and cost of goods sold visibility for each transaction.",
+            "Manual paperwork, reconciliation delays and data-entry errors dropped significantly.",
+            "The business can handle far more transactions (several thousands per month) with the same or smaller administrative overhead.",
+            "Because the system supports multiple selling channels and locations, the company is better positioned for growth or diversification without needing a large dedicated IT department.",
+            "Staff found the system user-friendly and the vendor's support was highly praised: \"If I can learn this, anyone can,\" noted an office manager."
+          ]
+        },
+        { "type": "sectionHeader", "text": "Summary" },
+        { "type": "descriptive", "text": "For a fuel-distribution and cardlock customer service company with high transaction volume, geographic challenges and mixed sales channels, moving from a patchwork legacy system to a fully integrated ERP platform provided the foundation for efficiency, growth, control and scalability. The unified system enabled them to merge fuel-pump transactions, warehouse sales, deliveries and financials into one workflow — freeing leadership to focus less on firefighting and more on expansion." },
+        { "type": "sectionHeader", "text": "Short description" },
+        { "type": "descriptive", "text": "A high-volume fuel distributor and rural service supplier modernized its operations by adopting a fully integrated business-management platform to support automated cardlock fueling, warehouse sales, and remote-site deliveries. Replacing an ageing proprietary system, the new Linux-based solution captures every transaction—fuel, lubricants, parts, and services—directly into accounting and inventory in real time, even across geographically remote locations. The result is reduced manual paperwork, fewer reconciliation errors, improved visibility into inventory and margins, and the ability to process thousands of transactions each month without increasing administrative overhead. With a user-friendly interface and strong remote support, the company gained a scalable foundation that supports growth, diversification, and operational control in demanding environments." }
+      ]
+    },
+    "apparelRetailer": {
+      "paragraphs": [
+        { "type": "intro", "text": "A family-owned women's apparel retailer operating multiple stores in one region recently adopted a fully-integrated business software suite to streamline operations and support growth." },
+        { "type": "descriptive", "text": "Since the late 1960s, the business had operated several physical retail locations and chosen to partner with a software provider in order to stay competitive and modernise its back-office systems." },
+        { "type": "quote", "text": "We realised that in order to remain competitive we had to become computerised,", "attribution": "reflects one of the owners." },
+        { "type": "quote", "text": "The system lets you look at your bottom line anytime you want and reassure yourself that your normal routines are being followed." },
+        { "type": "descriptive", "text": "The software solution covers multiple functions including point-of-sale (POS), inventory management and full accounting — all running off a single integrated platform." },
+        { "type": "descriptive", "text": "Key benefits identified by the retailer include:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Real-time visibility across all store locations: sales, stock-levels, employee performance.",
+            "Remote access: owners and management can check key metrics from anywhere.",
+            "Affordability: the chosen solution offered full functionality without the high cost often associated with enterprise systems.",
+            "Ease-of-use: the system was straightforward enough that staff with little computer experience could adapt.",
+            "Inventory control: the ability to monitor multiple retail locations, view inventory levels on demand, and print reports with a single click.",
+            "Expansion-friendly: the setup supports adding new stores while maintaining central control of financials and operations."
+          ]
+        },
+        { "type": "descriptive", "text": "In short: by selecting a modern, cost-effective, integrated business platform, the retailer has achieved tighter control of its operations, improved visibility across its chain of stores, and positioned itself for future growth." },
+        { "type": "sectionHeader", "text": "Short Description" },
+        { "type": "descriptive", "text": "A family-owned women's apparel retailer operating multiple stores adopted a fully integrated business software platform to modernize its operations and support continued growth. The solution consolidates point-of-sale, inventory management, and full accounting on a single system, giving owners real-time visibility into sales, stock levels, employee performance, and overall profitability across all locations. With remote access, straightforward usability for staff, affordable pricing, and strong inventory control, the retailer gained tighter operational oversight while maintaining the flexibility to add new stores—positioning the business for long-term, scalable success." }
+      ]
+    },
+    "structuralLumberBuildingSystems": {
+      "paragraphs": [
+        { "type": "intro", "text": "A distributor of structural lumber and engineered building systems recently upgraded its accounting and inventory-control software to better handle strong growth and project complexity." },
+        { "type": "descriptive", "text": "The company, based in Alberta, had been using an older accounting system but switched to the new Linux-based platform in order to integrate more closely with their design software and manufacturing processes." },
+        { "type": "quote", "text": "We chose the new system partly because being Linux-based we could customize it in a way that we could integrate our accounting much more closely with just about every aspect of our particular business,", "attribution": "says the Controller." },
+        { "type": "descriptive", "text": "Key benefits and features of the upgrade include:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Sales orders placed through new regional outlets feed directly into manufacturing without manual re-entry.",
+            "The system interfaces with the builder-specification tool used by the design team so that bills of material are exported straight into inventory and accounting—eliminating duplicate entry and reducing errors.",
+            "Real-time visibility of inventory across locations, even during disruptions (e.g., generator fallback), ensures continuing operations with no data loss.",
+            "The user interface remains familiar for staff (Windows-style workstations) though the underlying system is Linux-based, leading to a smooth transition and uptake.",
+            "Sales quotes, orders, shipping notices, and invoicing are all managed within the same system, giving full control over the commercial process and reducing manual hand-off."
+          ]
+        },
+        { "type": "descriptive", "text": "Because of this integration, the business now handles thousands of SKU items, large floor packages, complex job specifications, and high growth — all with improved accuracy, fewer mistakes, and faster turnaround." },
+        { "type": "sectionHeader", "text": "Short description" },
+        { "type": "descriptive", "text": "An Alberta-based distributor of structural lumber and engineered building systems upgraded from a legacy accounting system to a Linux-based platform to support rapid growth and increasingly complex projects. The new system integrates tightly with design and manufacturing tools, allowing sales orders and bills of material to flow directly into inventory and accounting without manual re-entry. With real-time visibility of inventory across all locations, a familiar Windows-style user interface for staff, and full control of quoting, ordering, shipping, and invoicing in one system, the company now manages thousands of SKUs, large floor packages, and complex job specifications with greater accuracy, fewer errors, and faster turnaround." }
+      ]
+    },
+    "petSupplyWholesaler": {
+      "paragraphs": [
+        { "type": "intro", "text": "A wholesale company specializing in equine and pet supply hardware—from buckles to swivels—recently upgraded its payment-processing system." },
+        { "type": "descriptive", "text": "Since its founding in the 1980s, the business had relied on legacy systems for inventory and sales, but the shift to a fully integrated card-authorization module changed the game." },
+        { "type": "quote", "text": "That one piece of bank-card authorization software can handle every sort of sale we make. ... Then, I just press a button and almost right away I get a payment-approved message." },
+        { "type": "descriptive", "text": "Previously, the accounting team had to select card type (Visa, MasterCard, Amex, debit) for every transaction, manually enter amounts and reconcile errors at day-end. With the integrated system, card entries are automated—reducing both human mistakes and potential employee fraud." },
+        { "type": "descriptive", "text": "The new setup supports multiple sales channels:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Phone/email orders: take a deposit or full payment as soon as the order is placed.",
+            "Mobile sales: field reps enter sales on-site (laptop or tablet) and accept cards there.",
+            "Trade show / event sales: inventory and card payments handled on the spot or synchronized later.",
+            "eCommerce: online sales flow into the same system with card-tokenization for returning customers."
+          ]
+        },
+        { "type": "descriptive", "text": "Benefits the company observed:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Faster payment approvals and immediate visibility of funds.",
+            "Simplified reconciliation at day-end.",
+            "Improved cash-flow and profitability by reducing delays in invoicing and payment receipt.",
+            "Fewer manual steps, fewer mistakes, better customer experience.",
+            "The provider also helped select a payment-processing partner (at no extra cost) and tailored the integration to the client's business (which carried thousands of SKUs)."
+          ]
+        },
+        { "type": "descriptive", "text": "In short: by integrating card-authorization directly into business-management software (order → warehouse → shipping → invoicing) the company made payments smoother, reduced manual work, and freed up time and resources to focus on growth rather than bookkeeping." },
+        { "type": "sectionHeader", "text": "Short version" },
+        { "type": "descriptive", "text": "A wholesale distributor of equine and pet supply hardware modernized its operations by upgrading from legacy inventory and sales systems to a fully integrated card-authorization solution. The new system automates payment processing across all sales channels—including phone and email orders, mobile field sales, trade shows, and eCommerce—eliminating manual card entry, reducing errors, and minimizing reconciliation issues. With faster payment approvals, simplified day-end balancing, improved cash flow, and secure card tokenization for repeat customers, the business now processes thousands of SKUs more efficiently while freeing staff to focus on customer service and growth rather than manual bookkeeping." }
+      ]
+    },
+    "decoratorsChoice": {
+      "logo": "/images/how_businesses/how3.svg",
+      "paragraphs": [
+        { "type": "intro", "text": "A paint-and-decorating retail company with two store locations needed new accounting software to support its expansion." },
+        { "type": "descriptive", "text": "Although they had been loyal to their previous provider for decades, their key requirement was clear: multiple locations, real-time access, and remote management." },
+        { "type": "descriptive", "text": "They chose Oneir's Linux-based business-management platform for several reasons:" },
+        {
+          "type": "bullets",
+          "items": [
+            "It handled their everyday point-of-sale, inventory and accounting tasks well.",
+            "It provided true multi-location access — the owner could log in from home, view sales and customer data from both stores.",
+            "It reduced downtime risk: if the internet connection to one store was lost, the system could continue processing sales locally without interruption.",
+            "Because the user interface stayed familiar (for staff used to Windows workstations) the transition required little retraining—even the 15 people who use the system were up and running quickly."
+          ]
+        },
+        { "type": "descriptive", "text": "Key benefits identified by the retailer include:" },
+        {
+          "type": "bullets",
+          "items": [
+            "The ability for the owner to monitor customer purchases and store performance from home, making the second-store expansion far less stressful.",
+            "Seamless migration from the older software with minimal disruption (half-a-day cut-over, almost no retraining) thanks to the vendor's planning and support.",
+            "Elevated analytics: they gained access to a CRM/sales-analysis tool that showed what customers had purchased previously, enabling more informed decisions and stronger repeat business."
+          ]
+        },
+        { "type": "descriptive", "text": "In short: the integrated ERP solution solved their two-store challenge and empowered remote management." },
+        { "type": "sectionHeader", "text": "Paint & Decorating" },
+        { "type": "descriptive", "text": "Oneir Solutions Helps Paint & Decorating Retailer Make Child's Play of Expansion." },
+        { "type": "attribution", "text": "by Andy Shaw" },
+        { "type": "descriptive", "text": "Decorators Choice Paint Store president Silvana Pace and her co-owner husband were satisfied with Vigilant software for their original store. Silvana Pace has been a loyal Vigilant user since 1992, relying on Vigilant's rock solid point-of-sale, accounting, and inventory management package. Their dream—of a second store in Ottawa's expanding east end in Orleans—was driven by booming construction of new homes and consequent demand for their products in that area.", "links": [
+          { "phrase": "rock solid point-of-sale", "url": "https://www.oneirsolutions.com/industries/retailers/" },
+          { "phrase": "accounting", "url": "https://www.oneirsolutions.com/industries/retailers/" },
+          { "phrase": "and", "url": "https://www.oneirsolutions.com/industries/retailers/" },
+          { "phrase": "inventory management package", "url": "https://www.oneirsolutions.com/industries/retailers/" }
+        ] },
+        { "type": "quote", "text": "So as good as Vigilant had been for us, we were prepared to consider other software that could handle multiple locations. We looked seriously at one accounting package in particular that was designed by one of our major suppliers specifically for our industry.", "attribution": "says Pace." },
+        { "type": "descriptive", "text": "Despite the alternatives, they chose Oneir Solutions." },
+        { "type": "quote", "text": "There were some things that the supplier's package couldn't handle very well like layaways, which are very important to us and which our Vigilant software did. Also, Oneir is far more familiar to us because we've been with Vigilant for so long.", "attribution": "says Pace." },
+        { "type": "quote", "text": "With Oneir Solutions we can gain access and get the information we want right away.", "attribution": "" },
+        { "type": "descriptive", "text": "Pace says her only reservation about moving over to Oneir Solutions was that it depends on Linux as its operating system. \"I admit I was a little nervous about it, but Josh Hayter (head of marketing and sales) at Oneir Solutions and also our own computer hardware suppliers helped us understand that Linux is first of all very stable, which is especially important when you're running a business,\" says Pace. \"We also felt a lot more comfortable when we found out that we could still have access to all our Windows applications. And that works perfectly.\"" },
+        { "type": "quote", "text": "What Pace has found is that when you combine our Linux server with Windows workstations you get the best of both worlds. You get the speed and stability of Linux while keeping the Windows programs you know. This makes migration dead easy. We simply add the Oneir-Linux server to their existing network, set up the users, convert the data, connect the printers, and the system is ready to go.", "attribution": "says Hayter." },
+        { "type": "descriptive", "text": "That also closes a gap that even as a Vigilant user Decorators Choice couldn't bridge before." },
+        { "type": "quote", "text": "Especially with opening up our second store, we needed to have full and easy access at any time.", "attribution": "says Pace." },
+        { "type": "quote", "text": "With the one store we were using a remote access application to get us to Vigilant but it was very sluggish. And if I wanted to print up a report, for example, I had to go into the store.", "attribution": "says Pace." },
+        { "type": "descriptive", "text": "Also, with the other industry-specific package they were looking at, it could only poll for accounting information overnight. But with Oneir Solutions they can gain access and get the information they want right away—and even print it from their home office. Technically that's possible because of the nimbleness and speed of the Linux server, purpose-built for Oneir, which sits in Pace's home office and carries out real-time communications between sites over a regular telephone-line connection to the internet. Pace became even more mobile when Josh Hayter helped equip her with a wireless laptop that via the Linux server can also communicate with her two stores." },
+        { "type": "quote", "text": "If the internet connection goes down, the system transfers to a remote mode. Sales can resume with a touch of the space bar. Zero downtime.", "attribution": "says Hayter." },
+        { "type": "quote", "text": "I was able to go from Vigilant to Oneir with virtually no re-training of our 15 people who use the system.", "attribution": "says Pace." },
+        { "type": "descriptive", "text": "Remote access capability sealed the deal for migrating to Oneir Solutions, and the move was easy. \"Josh gave me a complete itinerary and that was another reason I wanted to go with Oneir Solutions. They took care of everything,\" says Pace. Minimal downtime—less than half a day—despite a few minor glitches, and no retraining needed for their 15 employees. Not even Pace's seven-year-old child had trouble with the new system." },
+        { "type": "quote", "text": "My daughter can track sales from both stores at home. And I can now easily track more complex statistics from home using Oneir.", "attribution": "says Pace." },
+        { "type": "quote", "text": "I was a little concerned about opening a second location because of the increased demands. But Oneir Solutions allows me to log in from home and take care of everything.", "attribution": "says Pace." },
+        { "type": "quote", "text": "I can access the Accounts Receivable data, for instance, and see what each of our customers has bought. That CRM (customer relationship management) Sales Analysis tool is something new that Oneir Solutions has added to what Vigilant could do—and that's proving very profitable too.", "attribution": "says Pace." },
+        { "type": "descriptive", "text": "Like Vigilant, Oneir Solutions provides General Ledger, Point of Sale, and Inventory Control systems. The company has received excellent support from Oneir Solutions, with no issues encountered in over 10 months." },
+        { "type": "quote", "text": "What Oneir provides is a very sophisticated business solution but one that keeps its complexities in the background.", "attribution": "says Jane Giggal, president of Oneir Solutions Inc." },
+        { "type": "quote", "text": "We have designed a high level analytical tool that's easy to use. With it, customers don't need to think about the technology and can focus on the business opportunities and growth that fulfill their dreams.", "attribution": "" },
+        { "type": "attribution", "text": "Andy Shaw is a freelance writer, broadcaster and international journalist with articles in many business and technical publications." },
+        { "type": "descriptive", "text": "For more information about The Decorators Choice, visit www.thedecoratorschoicepaintanddecor.ca", "links": [{ "phrase": "www.thedecoratorschoicepaintanddecor.ca", "url": "https://www.thedecoratorschoicepaintanddecor.ca" }] }
+      ]
+    },
+    "multiCompany": {
+      "paragraphs": [
+        { "type": "intro", "text": "Two expanding multi-industry companies credit much of their growth and diversification to a highly flexible, adaptable, and well-supported financial software system." },
+        { "type": "descriptive", "text": "As your company grows you soon recognise you need more than a cash-in-a-shoe-box to manage finances. Generating a single invoice can become tedious, and later on you'll feel the need for a system that delivers point-of-sale data up front and accounting records in the back—better than clerks in sneakers. And then, maybe as you open additional locations or branches, you'll really feel the need to know what's happening financially at all of your sites, all of the time." },
+        { "type": "descriptive", "text": "You will need financial-software that not only suits your industry but can also be customised to your business's specific peculiarities. And you'll need expert help—not just implementation but training and support for when someone makes a catastrophic data-entry error." },
+        { "type": "descriptive", "text": "One referenced company, after nearly 30 years with its previous software, made the switch and said:" },
+        { "type": "quote", "text": "We've been working a long time ... first with its predecessor ... and now with the new software ... and we are going to stay with it." },
+        { "type": "descriptive", "text": "They now operate multiple locations and their system allows them to consolidate all financial data—with the added rescue feature: if one location goes down, they can still operate locally and avoid data-loss. Another company praised the software developer's support: they had an issue when one of their own staff made a mistake, and the provider remotely fixed it while on vacation." },
+        { "type": "descriptive", "text": "According to the software vendor's executive team: their culture is built around servicing growth-oriented companies, providing consulting, custom programming, implementation, training, and ongoing support." },
+        { "type": "descriptive", "text": "In short: when companies expand across domains, diversify, or open new branches, running everything on separate systems becomes inefficient. A single integrated platform, tailored to the business and backed by strong support, can make the difference between fragmented growth and consolidated, scalable growth." },
+        { "type": "sectionHeader", "text": "Short description" },
+        { "type": "descriptive", "text": "Two rapidly expanding, multi-industry companies credit much of their growth and diversification to a flexible, customizable financial software platform backed by strong implementation and support. As their operations scaled across multiple locations and business lines, the system enabled centralized financial visibility, reliable consolidation of data, and continued local operation even during site disruptions. Long-term users highlighted the platform's adaptability, ease of use, and responsive vendor support—including remote issue resolution—while the provider emphasized a growth-focused culture built around consulting, customization, training, and ongoing service. Together, the technology and support helped these companies replace fragmented systems with a single, scalable platform that enables confident, consolidated growth." }
+      ]
     }
   },
   "footer": {
@@ -100,7 +492,7 @@
     "sales": "Sales",
     "customerSupport": "Customer Support",
     "fax": "Fax",
-    "copyright": "@2025 Oneir, Inc. All rights reserved."
+    "copyright": "©{year} Oneir, Inc. All rights reserved."
   },
   "common": {
     "loading": "Loading...",

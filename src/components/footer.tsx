@@ -50,7 +50,7 @@ export default function Footer({ locale }: FooterProps) {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex items-center space-x-3"
             >
-                <Image src="oneir.svg" alt="Logo" width={63} height={72} />
+                <Image src="/images/oneir_logo.svg" alt="Logo" width={158} height={44} />
             </motion.div>
             
             {/* Description */}
@@ -132,14 +132,12 @@ export default function Footer({ locale }: FooterProps) {
                 <h4 className="text-lg font-bold text-gray-900" style={{ fontFamily: 'var(--font-outfit)' }}>{getNestedTranslation(t, 'footer.siteLinks')}</h4>
             <nav className="space-y-2">
               {[
-                { href: `/${locale}`, text: 'Home' },
-                { href: `/${locale}/#`, text: 'Who We Are' },
-                { href: `/${locale}/#`, text: 'Industries' },
-                { href: `/${locale}/#`, text: 'Solutions' },
-                { href: `/${locale}/#`, text: 'Contact' }
+                { href: `/${locale}`, key: 'home' },
+                { href: `/${locale}/about-us`, key: 'about' },
+                { href: `/${locale}/support`, key: 'support' }
               ].map((link, index) => (
                 <motion.a
-                  key={link.text}
+                  key={link.key}
                   href={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -148,7 +146,7 @@ export default function Footer({ locale }: FooterProps) {
                   className="block text-gray-700 hover:text-[#070714] transition-colors"
                   style={{ fontFamily: 'var(--font-outfit)' }}
                 >
-                  {link.text}
+                  {getNestedTranslation(t, `navigation.${link.key}`)}
                 </motion.a>
               ))}
             </nav>
@@ -208,7 +206,7 @@ export default function Footer({ locale }: FooterProps) {
             transition={{ duration: 0.5, delay: 1.4 }}
             className="text-center text-sm text-gray-700"
           >
-            {getNestedTranslation(t, 'footer.copyright')}
+            {getNestedTranslation(t, 'footer.copyright').replace('{year}', new Date().getFullYear().toString())}
           </motion.p>
         </motion.div>
       </div>

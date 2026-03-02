@@ -6,12 +6,18 @@
     "industries": "Industries",
     "solutions": "Solutions",
     "contact": "Contact",
-    "discover": "Découvrir"
+    "discover": "Découvrir",
+    "about": "À Propos",
+    "support": "Support",
+    "requestDemo": "Demander une Démo"
   },
   "hero": {
-    "headline": "Transformez la complexité en clarté",
-    "description": "La clarté commence par la découverte. Ensemble, nous découvrons ce qui compte le plus pour votre entreprise",
-    "getStarted": "Commencer"
+    "tagline": "De confiance auprès des distributeurs, fabricants et détaillants nord-américains depuis plus de 25 ans.",
+    "headline": "Une plateforme, toutes vos opérations.",
+    "subheading": "Planification des ressources d'entreprise, simplifiée.",
+    "description": "Les logiciels de planification des ressources d'entreprise (ERP) relient vos opérations commerciales essentielles—inventaire, ventes, comptabilité et rapports—dans un système unifié, désormais amélioré par une intelligence alimentée par l'IA, pour que vos données restent exactes, vos équipes alignées et votre entreprise plus efficace.",
+    "requestDemo": "Demander une démo",
+    "bookDiscovery": "Réserver une découverte"
   },
   "promo": {
     "message": "Avec plus de 25 ans d'expérience éprouvée, nous apportons efficacité, précision et résultats auxquels vous pouvez faire confiance.",
@@ -68,29 +74,415 @@
     "discover": "Découvrir"
   },
   "erpSolutions": {
-    "title": "Solutions ERP pour votre industrie",
-    "description": "Oneir offre des modules ERP flexibles pour la vente en gros, la vente au détail, la fabrication, les services et la construction. Explorez des solutions conçues pour votre industrie.",
-    "industries": {
-      "wholesale": {
-        "title": "Vente en Gros",
-        "link": "Commencez votre découverte"
+    "title": "ERP Cloud pour distributeurs, fabricants et détaillants",
+    "description": "Oneir Solutions propose une plateforme ERP cloud complète qui connecte vos opérations commerciales essentielles dans un système unique et intelligent.",
+    "bulletItems": [
+      "Détaillants et distributeurs en gros, y compris les fournitures de construction et les carreaux et planchers",
+      "Entreprises eCommerce sur Shopify et Amazon",
+      "Fabricants, y compris la valorisation des travaux, la gestion de projets et l'alimentation et les boissons",
+      "Organisations de services, y compris la facturation récurrente et contractuelle"
+    ],
+    "closingSentence": "— intégrant de manière transparente les opérations traditionnelles «physiques» avec l'eCommerce moderne.",
+    "cards": [
+      {
+        "title": "Opérations et inventaire",
+        "description": "Rationalisez les achats, la réception, l'entreposage et l'exécution avec un contrôle d'inventaire en temps réel à chaque emplacement. Gardez les stocks exacts, les commandes en mouvement et les opérations fluides sans le chaos manuel."
       },
-      "retail": {
-        "title": "Vente au Détail",
-        "link": "Commencez votre découverte"
+      {
+        "title": "Finances et comptabilité",
+        "description": "Obtenez une vue complète et en temps réel de vos finances avec la facturation, les comptes créditeurs, les comptes débiteurs et la comptabilité multi-sociétés automatisés. Clôturez les livres plus rapidement et prenez des décisions en toute confiance avec des données précises et connectées."
       },
-      "manufacturing": {
-        "title": "Fabrication",
-        "link": "Commencez votre découverte"
+      {
+        "title": "Ventes et canaux de distribution",
+        "description": "Gérez chaque canal de vente—détail, gros, PDV, eCommerce et commandes terrain—depuis un système centralisé. Prix, clients et inventaire restent parfaitement synchronisés pour vendre partout sans effort supplémentaire."
       },
-      "service": {
-        "title": "Service",
-        "link": "Commencez votre découverte"
-      },
-      "construction": {
-        "title": "Construction",
-        "link": "Commencez votre découverte"
+      {
+        "title": "Analytiques et rapports",
+        "description": "Transformez vos données opérationnelles en informations claires avec des tableaux de bord, des KPI et des rapports personnalisables dans chaque partie de votre entreprise. Repérez les tendances, suivez les performances et prenez des décisions plus intelligentes avec des informations en temps réel."
       }
+    ]
+  },
+  "industriesWeServe": {
+    "title": "Industries que nous servons",
+    "cards": [
+      {
+        "title": "Commerce de détail",
+        "subheading": "PDV, inventaire et opérations clients",
+        "description": "Inventaire en temps réel, PDV unifié et données clients connectées."
+      },
+      {
+        "title": "Distribution en gros",
+        "subheading": "Inventaire, commandes et opérations d'entrepôt",
+        "description": "Contrôle de bout en bout des achats, de l'exécution et de la logistique."
+      },
+      {
+        "title": "Fournitures de construction",
+        "subheading": "Matériaux, inventaire et exécution des chantiers",
+        "description": "Gérez les matériaux en vrac, les SKU complexes et la livraison par projet."
+      },
+      {
+        "title": "Carreaux et planchers",
+        "subheading": "Variantes de produits, inventaire et suivi des chantiers",
+        "description": "Suivez les SKU, la disponibilité et les chantiers de l'entrepôt à l'installation."
+      },
+      {
+        "title": "E-Commerce (Shopify et Amazon)",
+        "subheading": "Commandes, inventaire et intégrations de canaux",
+        "description": "Synchronisez les canaux de vente, automatisez l'exécution et développez vos opérations."
+      },
+      {
+        "title": "Fabrication",
+        "subheading": "Production, matériaux et contrôle d'inventaire",
+        "description": "Connectez les flux de production aux matériaux, à la valorisation et à l'inventaire."
+      },
+      {
+        "title": "Alimentation et boissons",
+        "subheading": "Traçabilité des lots, inventaire et conformité",
+        "description": "Prise en charge du suivi des lots, de l'approvisionnement et des opérations réglementées."
+      },
+      {
+        "title": "Services et maintenance",
+        "subheading": "Bons de travail, achats et MRO (Maintenance, Réparation et Exploitation)",
+        "description": "Coordonnez le travail terrain, les pièces et les achats dans un seul système."
+      }
+    ]
+  },
+  "sellAnywhere": {
+    "title": "Vendez partout, gérez tout",
+    "description": "Chaque canal reste synchronisé—inventaire, prix et données clients se mettent à jour automatiquement, éliminant la ressaisie et les écarts.",
+    "learnMore": "En savoir plus",
+    "features": [
+      {
+        "title": "Solution E-Commerce",
+        "description": "Connectez votre boutique en ligne directement à Oneir pour que les commandes, l'inventaire et les données clients restent parfaitement synchronisés en temps réel."
+      },
+      {
+        "title": "Autorisation de carte de crédit",
+        "description": "Traitez et autorisez les paiements par carte de crédit de manière sécurisée et automatique—de la saisie des commandes à la facturation, sans quitter le système."
+      },
+      {
+        "title": "Traitement EFT",
+        "description": "Automatisez les virements électroniques pour accélérer les paiements, réduire les erreurs et rationaliser les flux de comptes débiteurs."
+      },
+      {
+        "title": "Facturation complète",
+        "description": "Gérez facilement les scénarios de facturation complexes, y compris la facturation contractuelle, récurrente et par projet—le tout entièrement intégré à vos finances."
+      },
+      {
+        "title": "Planification des besoins en matériaux (MRP)",
+        "description": "Transformez la demande en plans de matériaux et commandes d'achat par phases pour garantir la disponibilité des composants au bon moment—réduisant les pénuries, les excédents d'inventaire et les retards de production."
+      },
+      {
+        "title": "Gestion de projet",
+        "description": "Suivez les chantiers, la main-d'œuvre, les matériaux, les budgets et les échéanciers en un seul endroit pour que chaque projet reste rentable et respecte les délais."
+      },
+      {
+        "title": "Gestion des stocks",
+        "description": "Maintenez une visibilité précise en temps réel sur les niveaux de stock, les emplacements, les lots et les mouvements pour éviter les ruptures et éliminer le suivi manuel."
+      },
+      {
+        "title": "Préparation IA",
+        "description": "Conçu pour les insights alimentés par l'IA, l'automatisation et l'aide à la décision intelligente—une architecture qui évolue avec votre entreprise."
+      },
+      {
+        "title": "Tableau de bord KPI",
+        "description": "Surveillez les performances instantanément avec des tableaux de bord personnalisables qui mettent en évidence vos indicateurs les plus importants dans les opérations, les ventes et les finances."
+      }
+    ]
+  },
+  "journey": {
+    "title": "Commencez votre parcours avec une découverte",
+    "description": "Obtenez des conseils d'experts, une démonstration produit personnalisée et un plan de mise en œuvre détaillé adapté à vos besoins opérationnels.",
+    "videoOverlay": "Revitalisez votre approche leadership avec des insights Data-Driven",
+    "videoOverlayBold": "Data-Driven",
+    "steps": [
+      {
+        "subheading": "1. Appel découverte",
+        "tagline": "Comprenez vos flux de travail.",
+        "description": "Nous prenons le temps de comprendre comment votre entreprise fonctionne aujourd'hui, vos processus, goulots d'étranglement et objectifs, pour concevoir une solution qui vous convient vraiment."
+      },
+      {
+        "subheading": "2. Démo personnalisée",
+        "tagline": "Voyez vos processus dans Oneir.",
+        "description": "Découvrez une démonstration construite autour de vos flux de travail, montrant exactement comment Oneir peut rationaliser les opérations, connecter vos équipes et éliminer le travail manuel."
+      },
+      {
+        "subheading": "3. Plan de mise en œuvre",
+        "tagline": "Coûts, calendrier, déploiement.",
+        "description": "Recevez un plan de mise en œuvre clair décrivant la portée de votre projet, les tarifs, le calendrier et la stratégie de déploiement—pour savoir exactement à quoi s'attendre à chaque étape."
+      }
+    ],
+    "cta": "Réserver une découverte"
+  },
+  "howBusinessesRun": {
+    "title": "Comment des entreprises comme la vôtre fonctionnent plus intelligemment avec Oneir",
+    "successStoriesTitle": "Nos histoires de succès",
+    "learnMore": "En savoir plus",
+    "viewMoreStories": "Voir plus d'histoires ici",
+    "stories": [
+      {
+        "companyName": "Amity Insulation",
+        "description": "Amity Insulation Group Inc., un important distributeur d'isolants industriels, utilise le logiciel de gestion d'entreprise basé sur la comptabilité de Oneir Solutions pour améliorer l'ensemble de ses opérations.",
+        "image": "/images/how_businesses/how1.svg",
+        "slug": "amity-insulation"
+      },
+      {
+        "companyName": "Dwight Lumber",
+        "description": "Dwight Lumber: \"Oneir est bien plus qu'un simple logiciel financier\", explique Frank. \"C'est également, par exemple, un excellent outil de gestion de la relation client et une bonne CRM est essentielle pour nous.\"",
+        "image": "/images/how_businesses/how2.svg",
+        "slug": "dwight-lumber"
+      },
+      {
+        "companyName": "Decorators Choice",
+        "description": "Decorators Choice, avec deux points de vente, était prêt à s'étendre et a décidé que son ancien logiciel comptable ne correspondait plus à ses ambitions multi-sites. Bien qu'ils soient restés fidèles à leur fournisseur précédent pendant des décennies, ils ont envisagé des alternatives adaptées à leur secteur.",
+        "image": "/images/how_businesses/how3.svg",
+        "slug": "decorators-choice"
+      },
+      {
+        "companyName": "Multi-Company",
+        "description": "Une opération multi-sociétés avait besoin d'une visibilité unifiée entre les entités. Oneir Solutions a permis des rapports consolidés, des transactions inter-sociétés et un contrôle centralisé tout en respectant l'autonomie de chaque entité.",
+        "slug": "multi-company"
+      },
+      {
+        "companyName": "Détaillant de vêtements",
+        "description": "Un détaillant de vêtements aux prises avec les pics saisonniers et la gestion de matrices taille/couleur a mis en œuvre Oneir pour rationaliser l'inventaire, améliorer l'exécution des commandes et synchroniser les canaux détail et e-commerce.",
+        "slug": "apparel-retailer"
+      },
+      {
+        "companyName": "Distribution de carburant avec carte-carburant",
+        "description": "Un fournisseur de distribution de carburant et de services ruraux a adopté une plateforme de gestion intégrée pour contrôler ses opérations multi-canaux, y compris les transactions automatisées par carte.",
+        "slug": "fuel-distribution-cardlock"
+      },
+      {
+        "companyName": "Bois de charpente et systèmes de construction",
+        "description": "Un fournisseur de bois de charpente et de systèmes de construction a besoin de gérer des nomenclatures complexes, la valorisation des travaux et l'exécution par projet. Oneir a intégré leurs flux de bout en bout, réduisant les erreurs et accélérant la livraison.",
+        "slug": "structural-lumber-building-systems"
+      },
+      {
+        "companyName": "Grossiste en fournitures pour animaux",
+        "description": "Un grossiste en fournitures pour animaux est passé du régional au national avec Oneir, automatisant le traitement des commandes, gérant les relations fournisseurs et maintenant l'inventaire aligné entre entrepôts et partenaires dropship.",
+        "slug": "pet-supply-wholesaler"
+      }
+    ]
+  },
+  "caseStudies": {
+    "amityInsulation": {
+      "paragraphs": [
+        { "type": "intro", "text": "Une entreprise dans la distribution de matériaux industriels a récemment modernisé son logiciel de gestion d'entreprise basé sur la comptabilité pour améliorer l'ensemble de ses opérations." },
+        { "type": "descriptive", "text": "Il y a quelques années, l'entreprise a commencé la transition vers un nouveau système sous la direction d'un fournisseur de logiciels spécialisé." },
+        { "type": "quote", "text": "Ces jours-ci, nous utilisons le système quotidiennement. Ce qui est particulièrement utile est la possibilité de convertir instantanément nos documents fréquemment utilisés en PDF, puis de les envoyer par courriel immédiatement. Si nous n'avions pas fait cette mise à niveau, la plupart de notre correspondance se ferait encore par courrier ordinaire. Le nouveau système nous permet d'effectuer les fonctions quotidiennes plus rapidement et plus efficacement.", "attribution": "" },
+        { "type": "descriptive", "text": "L'organisation utilisait depuis longtemps l'ancien produit du fournisseur pour le contrôle des stocks, depuis des décennies." },
+        { "type": "quote", "text": "Avec tous les différents matériaux, accessoires et pièces que nous distribuons, plusieurs milliers de références d'inventaire sont impliquées dans le processus de vente, et nous avons toujours été impressionnés par la façon dont le logiciel suit notre inventaire. Nous avons demandé au fournisseur d'effectuer des travaux personnalisés pour pouvoir utiliser les descriptions de références de manière plus détaillée. L'équipe de programmation a été excellente pour nous aider avec la conception et la formulation de nos devis, bons de commande et factures. Ils ont même ajouté des descripteurs personnalisés pour faciliter la manipulation de nos matériaux de manière plus efficace.", "attribution": "" },
+        { "type": "descriptive", "text": "Une telle adaptation aux besoins spécifiques des clients est une priorité élevée pour le fournisseur de logiciels:" },
+        { "type": "quote", "text": "Chaque entreprise a sa propre singularité, nous avons donc conçu notre logiciel pour qu'il soit très flexible. Mais la programmation personnalisée que nous pouvons ajouter avant la mise en service du système le fait s'adapter au client comme un gant dès le départ. Et nous gardons les coûts de personnalisation nominaux car cela peut aussi être bon pour nous. Très souvent, nous sommes en mesure d'intégrer ce que nous avons développé pour un client dans la version suivante afin que tout le monde en bénéficie.", "attribution": "" },
+        { "type": "descriptive", "text": "Au cours de son processus d'évolution, le fournisseur de logiciels a transformé ses fondations de logiciel de comptabilité sur plusieurs décennies en un outil de gestion d'entreprise complet. Mais bien qu'il soit plus puissant, la transition se déroule généralement sans heurts." },
+        { "type": "quote", "text": "Nous n'avons eu aucun problème lorsque le système a mis à niveau notre logiciel et la conversion a été effectuée rapidement. Notre entreprise est devenue plus rapide pour faire entrer et sortir les matériaux et la comptabilité financière était plus précise. Pour moi, cela reflète la compréhension approfondie qu'a l'équipe du fournisseur en termes de normes comptables et de ce qu'un système moderne peut faire pour une entreprise au-delà de la simple tenue des livres.", "attribution": "" },
+        { "type": "descriptive", "text": "La mise à niveau a permis à la direction du distributeur de se concentrer sur la planification de l'avenir de l'entreprise sans le suivi papier habituel qui ralentit les opérations dans de nombreuses entreprises. L'équipe de direction a maintenant plus de temps pour se concentrer sur d'autres domaines importants de leurs opérations." }
+      ]
+    },
+    "dwightLumber": {
+      "paragraphs": [
+        { "type": "intro", "text": "Une entreprise familiale de fournitures de construction dans un petit village ontarien estimait que le moment était venu de s'étendre. Les racines initiales remontaient à un distributeur de longue date, l'entreprise avait commencé modestement sous la direction d'un ancien cadre de la vente au détail. Il est rapidement devenu clair que le logiciel devait suivre pour soutenir la croissance." },
+        { "type": "quote", "text": "Nous voulons ouvrir un autre emplacement,", "attribution": "a déclaré le propriétaire, reflétant une confiance bâtie en partie grâce à son système ERP." },
+        { "type": "quote", "text": "Nos clients reviennent des années plus tard et demandent la même teinture. Avec notre système, nous pouvons leur dire en quelques minutes ce que c'était et combien ils en ont acheté." },
+        { "type": "descriptive", "text": "L'entreprise utilisait un ancien système comptable avant de passer à l'ERP Linux de Oneir. La nouvelle solution s'est révélée bien plus qu'un simple logiciel financier—elle est devenue centrale pour les opérations, la gestion de la relation client et l'intégration fournisseur/client." },
+        { "type": "descriptive", "text": "Parmi les avantages spécifiques que l'entreprise a identifiés:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Le système permet l'intégration complète de l'historique client, des données d'inventaire et d'achat. Par exemple, un entrepreneur revenant des années après un projet peut voir rapidement son achat précédent.",
+            "Une fonction de multiplicateur de prix intégrée gère les ventes de bois ou de matériaux de construction au pied ou sur mesure—pas de travail manuel fastidieux ni de factures confuses pour les clients.",
+            "Visibilité en temps réel de l'inventaire, y compris le stock réservé: \"Nous pouvons répondre instantanément à une question du client sur ce que nous avons en main.\"",
+            "Flux automatique de l'achat au grand livre aux ventes - les remises des entrepreneurs et les analyses de marge peuvent être consultées facilement.",
+            "La capacité d'analyse des tendances permet à la direction de voir ce qu'elle vend, quand et à qui — pour des décisions produit et marge plus intelligentes.",
+            "Comme le logiciel est compatible Internet et conçu pour une utilisation multi-site, les plans d'expansion (comme de nouveaux points de vente) sont pris en charge sans sacrifier la qualité ou la rapidité des rapports.",
+            "Par-dessus tout, le propriétaire a loué le soutien continu du fournisseur: personnalisation de l'application selon les besoins, conseils lors de la mise en place, et présence en cas de problème."
+          ]
+        },
+        { "type": "quote", "text": "Ce genre de service à la clientèle... est l'essence même de ce que nous recherchons." }
+      ]
+    },
+    "fuelDistributionCardlock": {
+      "paragraphs": [
+        { "type": "intro", "text": "Un fournisseur de distribution de carburant et de services ruraux confronté à des volumes élevés de transactions a adopté une plateforme de gestion d'entreprise intégrée pour contrôler ses opérations multi-canaux, y compris les transactions automatisées par carte." },
+        { "type": "sectionHeader", "text": "Contexte / Défis" },
+        { "type": "descriptive", "text": "L'entreprise traitait des centaines de transactions de carburant et de lubrifiants par jour—toutes depuis une région éloignée avec des défis logistiques. Leur ancien système comptable et de facturation était propriétaire, en fin de vie et incapable d'évoluer avec l'entreprise. Ils avaient besoin d'une solution pouvant gérer:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Transactions automatisées par carte-carburant (\"cardlock\") aux pompes sans personnel ou en libre-service, services eau/hébergement, ravitaillement de flottes hors route, etc.",
+            "Ventes au comptoir de lubrifiants et pièces depuis l'entrepôt.",
+            "Livraisons vers des sites éloignés (p. ex. camps miniers, flottes d'équipement lourd) avec facturation et intégration comptable appropriées.",
+            "Capture rapide des données: date, emplacement de la pompe, acheteur, type de carburant, quantité, prix, coût, ajustements d'inventaire — le tout intégré au système comptable.",
+            "Support robuste, accès à distance et temps d'arrêt minimal malgré une exploitation loin du siège social."
+          ]
+        },
+        { "type": "sectionHeader", "text": "Solution / Mise en œuvre" },
+        { "type": "descriptive", "text": "L'entreprise a migré vers un serveur Linux avec une suite complète: comptes clients, comptes fournisseurs, grand livre, logiciel de commandes, gestion des stocks, PDV et un module spécialisé pour les transactions \"cardlock\". La mise en œuvre a inclus un convertisseur pour les données du système legacy, la formation du personnel (nombreux avec une expérience informatique préalable minimale) et un déploiement rapide (en quelques semaines) malgré l'éloignement géographique." },
+        { "type": "sectionHeader", "text": "Résultats / Avantages" },
+        {
+          "type": "bullets",
+          "items": [
+            "L'entreprise capture désormais instantanément chaque vente de carburant par carte et au comptoir dans le système ERP: piste d'audit complète, inventaire en temps réel et visibilité du coût des marchandises vendues pour chaque transaction.",
+            "Paperasse manuelle, délais de rapprochement et erreurs de saisie ont chuté de manière significative.",
+            "L'entreprise peut traiter beaucoup plus de transactions (plusieurs milliers par mois) avec la même charge administrative ou moindre.",
+            "Comme le système prend en charge plusieurs canaux et points de vente, l'entreprise est mieux positionnée pour la croissance ou la diversification sans besoin d'un grand service informatique dédié.",
+            "Le personnel a trouvé le système convivial et le support du fournisseur très apprécié: \"Si je peux apprendre ça, n'importe qui peut,\" a noté un responsable de bureau."
+          ]
+        },
+        { "type": "sectionHeader", "text": "Résumé" },
+        { "type": "descriptive", "text": "Pour une entreprise de distribution de carburant et de services carte-carburant à volume élevé de transactions, avec des défis géographiques et des canaux de vente mixtes, le passage d'un système legacy fragmenté à une plateforme ERP entièrement intégrée a fourni la base pour l'efficacité, la croissance, le contrôle et l'évolutivité. Le système unifié leur a permis de fusionner les transactions aux pompes, les ventes en entrepôt, les livraisons et la comptabilité en un flux unique — libérant la direction pour se concentrer moins sur les urgences et davantage sur l'expansion." },
+        { "type": "sectionHeader", "text": "Courte description" },
+        { "type": "descriptive", "text": "Un distributeur de carburant à volume élevé et fournisseur de services ruraux a modernisé ses opérations en adoptant une plateforme de gestion d'entreprise entièrement intégrée pour soutenir le ravitaillement automatisé par carte, les ventes en entrepôt et les livraisons sur sites éloignés. En remplaçant un système propriétaire vieillissant, la nouvelle solution Linux capture chaque transaction—carburant, lubrifiants, pièces et services—directement en comptabilité et en inventaire en temps réel, même dans des emplacements géographiquement éloignés. Le résultat: réduction de la paperasse manuelle, moins d'erreurs de rapprochement, meilleure visibilité sur l'inventaire et les marges, et capacité à traiter des milliers de transactions chaque mois sans augmenter la charge administrative. Avec une interface conviviale et un support à distance solide, l'entreprise a acquis une base évolutive qui soutient la croissance, la diversification et le contrôle opérationnel dans des environnements exigeants." }
+      ]
+    },
+    "apparelRetailer": {
+      "paragraphs": [
+        { "type": "intro", "text": "Un détaillant de vêtements pour femmes en propriété familiale exploitant plusieurs magasins dans une région a récemment adopté une suite logicielle d'entreprise entièrement intégrée pour rationaliser les opérations et soutenir la croissance." },
+        { "type": "descriptive", "text": "Depuis la fin des années 1960, l'entreprise exploitait plusieurs points de vente physiques et a choisi de s'associer à un fournisseur de logiciels pour rester compétitive et moderniser ses systèmes de back-office." },
+        { "type": "quote", "text": "Nous avons réalisé que pour rester compétitifs, nous devions nous informatiser,", "attribution": "réfléchit l'un des propriétaires." },
+        { "type": "quote", "text": "Le système vous permet de consulter votre résultat net à tout moment et de vous rassurer que vos routines normales sont respectées." },
+        { "type": "descriptive", "text": "La solution logicielle couvre plusieurs fonctions notamment le point de vente (PDV), la gestion des stocks et la comptabilité complète — le tout sur une plateforme intégrée unique." },
+        { "type": "descriptive", "text": "Les avantages clés identifiés par le détaillant comprennent:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Visibilité en temps réel dans tous les emplacements: ventes, niveaux de stock, performance des employés.",
+            "Accès à distance: les propriétaires et la direction peuvent consulter les indicateurs clés de n'importe où.",
+            "Abordabilité: la solution choisie offrait des fonctionnalités complètes sans le coût élevé souvent associé aux systèmes d'entreprise.",
+            "Facilité d'utilisation: le système était assez simple pour que le personnel avec peu d'expérience informatique puisse s'adapter.",
+            "Contrôle des stocks: la capacité de surveiller plusieurs points de vente, de consulter les niveaux d'inventaire à la demande et d'imprimer des rapports en un clic.",
+            "Prêt pour l'expansion: la configuration permet d'ajouter de nouveaux magasins tout en maintenant un contrôle central des finances et des opérations."
+          ]
+        },
+        { "type": "descriptive", "text": "En bref: en choisissant une plateforme d'entreprise moderne, rentable et intégrée, le détaillant a atteint un meilleur contrôle de ses opérations, une visibilité améliorée sur sa chaîne de magasins et s'est positionné pour une croissance future." },
+        { "type": "sectionHeader", "text": "Courte description" },
+        { "type": "descriptive", "text": "Un détaillant de vêtements pour femmes en propriété familiale exploitant plusieurs magasins a adopté une plateforme logicielle d'entreprise entièrement intégrée pour moderniser ses opérations et soutenir une croissance continue. La solution regroupe le point de vente, la gestion des stocks et la comptabilité complète sur un système unique, offrant aux propriétaires une visibilité en temps réel sur les ventes, les niveaux de stock, la performance des employés et la rentabilité globale dans tous les emplacements. Avec l'accès à distance, une utilisation simple pour le personnel, des prix abordables et un contrôle strict des stocks, le détaillant a acquis une surveillance opérationnelle plus serrée tout en conservant la flexibilité d'ajouter de nouveaux magasins—positionnant l'entreprise pour un succès durable et évolutif." }
+      ]
+    },
+    "structuralLumberBuildingSystems": {
+      "paragraphs": [
+        { "type": "intro", "text": "Un distributeur de bois de charpente et de systèmes de construction a récemment modernisé son logiciel de comptabilité et de contrôle des stocks pour mieux gérer une forte croissance et la complexité des projets." },
+        { "type": "descriptive", "text": "L'entreprise, basée en Alberta, utilisait un ancien système comptable mais a migré vers la nouvelle plateforme Linux pour s'intégrer plus étroitement à ses logiciels de conception et processus de fabrication." },
+        { "type": "quote", "text": "Nous avons choisi le nouveau système en partie parce que, étant sous Linux, nous pouvions le personnaliser afin d'intégrer notre comptabilité beaucoup plus étroitement avec à peu près chaque aspect de notre activité particulière,", "attribution": "déclare le contrôleur." },
+        { "type": "descriptive", "text": "Les avantages et fonctionnalités clés de la mise à niveau comprennent:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Les commandes de vente passées via les nouveaux points de vente régionaux alimentent directement la fabrication sans saisie manuelle.",
+            "Le système s'interface avec l'outil de spécification du bâtiment utilisé par l'équipe de conception pour que les nomenclatures soient exportées directement vers l'inventaire et la comptabilité—éliminant les doubles saisies et réduisant les erreurs.",
+            "Visibilité en temps réel de l'inventaire dans tous les emplacements, même en cas de perturbations (p. ex. repli sur générateur), assurant la poursuite des opérations sans perte de données.",
+            "L'interface utilisateur reste familière pour le personnel (postes de travail style Windows) bien que le système sous-jacent soit Linux, permettant une transition et une adoption en douceur.",
+            "Les devis, commandes, avis d'expédition et facturation sont tous gérés dans le même système, offrant un contrôle complet du processus commercial et réduisant les transferts manuels."
+          ]
+        },
+        { "type": "descriptive", "text": "Grâce à cette intégration, l'entreprise gère désormais des milliers d'articles, de grands lots de planchers, des spécifications de chantier complexes et une forte croissance — le tout avec une précision améliorée, moins d'erreurs et un délai d'exécution plus rapide." },
+        { "type": "sectionHeader", "text": "Courte description" },
+        { "type": "descriptive", "text": "Un distributeur albertain de bois de charpente et de systèmes de construction a migré d'un système comptable legacy vers une plateforme Linux pour soutenir une croissance rapide et des projets de plus en plus complexes. Le nouveau système s'intègre étroitement aux outils de conception et de fabrication, permettant aux commandes de vente et aux nomenclatures de circuler directement vers l'inventaire et la comptabilité sans saisie manuelle. Avec une visibilité en temps réel de l'inventaire dans tous les emplacements, une interface utilisateur familière style Windows pour le personnel et un contrôle complet des devis, commandes, expéditions et facturation dans un système unique, l'entreprise gère désormais des milliers de SKU, de grands lots de planchers et des spécifications de chantier complexes avec une plus grande précision, moins d'erreurs et un délai d'exécution plus rapide." }
+      ]
+    },
+    "petSupplyWholesaler": {
+      "paragraphs": [
+        { "type": "intro", "text": "Une entreprise de vente en gros spécialisée dans le matériel équestre et les fournitures pour animaux—des boucles aux émerillons—a récemment modernisé son système de traitement des paiements." },
+        { "type": "descriptive", "text": "Depuis sa fondation dans les années 1980, l'entreprise avait compté sur des systèmes legacy pour l'inventaire et les ventes, mais le passage à un module d'autorisation de cartes entièrement intégré a tout changé." },
+        { "type": "quote", "text": "Ce seul logiciel d'autorisation de cartes bancaires peut gérer tous les types de vente que nous réalisons. ... Ensuite, je n'ai qu'à appuyer sur un bouton et presque immédiatement j'obtiens un message de paiement approuvé." },
+        { "type": "descriptive", "text": "Auparavant, l'équipe comptable devait sélectionner le type de carte (Visa, MasterCard, Amex, débit) pour chaque transaction, saisir manuellement les montants et rapprocher les erreurs en fin de journée. Avec le système intégré, les saisies de cartes sont automatisées—réduisant à la fois les erreurs humaines et la fraude potentielle des employés." },
+        { "type": "descriptive", "text": "La nouvelle configuration prend en charge plusieurs canaux de vente:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Commandes par téléphone/courriel: accepter un acompte ou paiement complet dès que la commande est passée.",
+            "Ventes mobiles: les représentants sur le terrain saisissent les ventes sur site (ordinateur portable ou tablette) et acceptent les cartes sur place.",
+            "Ventes salon/événement: inventaire et paiements par carte gérés sur place ou synchronisés plus tard.",
+            "Commerce électronique: les ventes en ligne sont intégrées au même système avec tokenisation des cartes pour les clients récurrents."
+          ]
+        },
+        { "type": "descriptive", "text": "Avantages observés par l'entreprise:" },
+        {
+          "type": "bullets",
+          "items": [
+            "Approbations de paiement plus rapides et visibilité immédiate des fonds.",
+            "Rapprochement simplifié en fin de journée.",
+            "Amélioration de la trésorerie et de la rentabilité en réduisant les délais de facturation et de réception des paiements.",
+            "Moins d'étapes manuelles, moins d'erreurs, meilleure expérience client.",
+            "Le fournisseur a également aidé à choisir un partenaire de traitement des paiements (sans coût supplémentaire) et adapté l'intégration à l'activité du client (qui gérait des milliers de SKU)."
+          ]
+        },
+        { "type": "descriptive", "text": "En bref: en intégrant l'autorisation de cartes directement dans le logiciel de gestion (commande → entrepôt → expédition → facturation), l'entreprise a simplifié les paiements, réduit le travail manuel et libéré du temps et des ressources pour se concentrer sur la croissance plutôt que sur la comptabilité." },
+        { "type": "sectionHeader", "text": "Version courte" },
+        { "type": "descriptive", "text": "Un distributeur en gros de matériel équestre et de fournitures pour animaux a modernisé ses opérations en migrant de systèmes legacy d'inventaire et de ventes vers une solution d'autorisation de cartes entièrement intégrée. Le nouveau système automatise le traitement des paiements sur tous les canaux de vente—y compris les commandes par téléphone et courriel, les ventes mobiles sur le terrain, les salons et le commerce électronique—éliminant la saisie manuelle des cartes, réduisant les erreurs et minimisant les problèmes de rapprochement. Avec des approbations de paiement plus rapides, une comptabilisation de fin de journée simplifiée, une trésorerie améliorée et une tokenisation sécurisée des cartes pour les clients récurrents, l'entreprise traite désormais des milliers de SKU plus efficacement tout en permettant au personnel de se concentrer sur le service client et la croissance plutôt que sur la comptabilité manuelle." }
+      ]
+    },
+    "decoratorsChoice": {
+      "logo": "/images/how_businesses/how3.svg",
+      "paragraphs": [
+        { "type": "intro", "text": "Une entreprise de vente au détail de peinture et de décoration avec deux points de vente avait besoin d'un nouveau logiciel comptable pour soutenir son expansion." },
+        { "type": "descriptive", "text": "Bien qu'ils soient restés fidèles à leur fournisseur précédent pendant des décennies, leur exigence clé était claire : plusieurs emplacements, accès en temps réel et gestion à distance." },
+        { "type": "descriptive", "text": "Ils ont choisi la plateforme Linux de gestion d'entreprise d'Oneir pour plusieurs raisons :" },
+        {
+          "type": "bullets",
+          "items": [
+            "Elle gérait bien leurs tâches quotidiennes de point de vente, d'inventaire et de comptabilité.",
+            "Elle offrait un vrai accès multi-emplacements — le propriétaire pouvait se connecter de chez lui et consulter les ventes et les données clients des deux magasins.",
+            "Elle réduisait le risque d'interruption : si la connexion Internet d'un magasin était coupée, le système pouvait continuer à traiter les ventes localement sans interruption.",
+            "Comme l'interface utilisateur restait familière (pour le personnel habitué aux postes Windows), la transition a nécessité peu de recyclage—les 15 personnes qui utilisent le système étaient opérationnelles rapidement."
+          ]
+        },
+        { "type": "descriptive", "text": "Les avantages clés identifiés par le détaillant incluent :" },
+        {
+          "type": "bullets",
+          "items": [
+            "La possibilité pour le propriétaire de suivre les achats des clients et les performances des magasins depuis chez lui, rendant l'expansion du deuxième magasin beaucoup moins stressante.",
+            "Une migration transparente de l'ancien logiciel avec un minimum de perturbation (basculement en une demi-journée, presque pas de recyclage) grâce à la planification et au support du fournisseur.",
+            "Des analyses améliorées : ils ont obtenu un outil CRM/analyse des ventes montrant les achats antérieurs des clients, permettant des décisions plus éclairées et une clientèle fidèle renforcée."
+          ]
+        },
+        { "type": "descriptive", "text": "En bref : la solution ERP intégrée a résolu leur défi des deux magasins et a facilité la gestion à distance." },
+        { "type": "sectionHeader", "text": "Peinture & Décoration" },
+        { "type": "descriptive", "text": "Oneir Solutions aide un détaillant de peinture et décoration à faire de l'expansion un jeu d'enfant." },
+        { "type": "attribution", "text": "par Andy Shaw" },
+        { "type": "descriptive", "text": "La présidente de Decorators Choice Paint Store, Silvana Pace, et son mari copropriétaire étaient satisfaits du logiciel Vigilant pour leur magasin d'origine. Silvana Pace est une fidèle utilisatrice de Vigilant depuis 1992, s'appuyant sur le progiciel de point de vente, de comptabilité et de gestion des stocks solide de Vigilant. Leur rêve—d'un deuxième magasin dans l'est d'Ottawa en expansion, à Orléans—était motivé par une construction résidentielle en plein essor et une demande conséquente pour leurs produits dans cette région.", "links": [
+          { "phrase": "point de vente solide", "url": "https://www.oneirsolutions.com/industries/retailers/" },
+          { "phrase": "comptabilité", "url": "https://www.oneirsolutions.com/industries/retailers/" },
+          { "phrase": "et", "url": "https://www.oneirsolutions.com/industries/retailers/" },
+          { "phrase": "gestion des stocks", "url": "https://www.oneirsolutions.com/industries/retailers/" }
+        ] },
+        { "type": "quote", "text": "Aussi bon que Vigilant ait été pour nous, nous étions prêts à envisager d'autres logiciels pouvant gérer plusieurs emplacements. Nous avons sérieusement envisagé un progiciel comptable en particulier conçu par l'un de nos principaux fournisseurs spécifiquement pour notre industrie.", "attribution": "dit Pace." },
+        { "type": "descriptive", "text": "Malgré les alternatives, ils ont choisi Oneir Solutions." },
+        { "type": "quote", "text": "Il y avait des choses que le progiciel du fournisseur ne gérait pas très bien comme les achats à tempérament, qui sont très importants pour nous et que notre logiciel Vigilant faisait. De plus, Oneir nous est bien plus familier parce que nous sommes avec Vigilant depuis si longtemps.", "attribution": "dit Pace." },
+        { "type": "quote", "text": "Avec Oneir Solutions, nous pouvons obtenir l'accès et les informations que nous voulons tout de suite.", "attribution": "" },
+        { "type": "descriptive", "text": "Pace dit que sa seule réserve pour passer à Oneir Solutions était que le système dépend de Linux. « J'admets que j'étais un peu nerveuse, mais Josh Hayter (directeur du marketing et des ventes) chez Oneir Solutions ainsi que nos fournisseurs de matériel informatique nous ont aidés à comprendre que Linux est d'abord très stable, ce qui est particulièrement important quand vous dirigez une entreprise », dit Pace. « Nous nous sommes aussi sentis beaucoup plus à l'aise quand nous avons découvert que nous pouvions toujours avoir accès à toutes nos applications Windows. Et ça fonctionne parfaitement. »" },
+        { "type": "quote", "text": "Ce que Pace a découvert, c'est qu'en combinant notre serveur Linux avec des postes Windows, vous obtenez le meilleur des deux mondes. Vous obtenez la vitesse et la stabilité de Linux tout en gardant les programmes Windows que vous connaissez. Cela rend la migration très facile. Nous ajoutons simplement le serveur Oneir-Linux à leur réseau existant, configurons les utilisateurs, convertissons les données, connectons les imprimantes, et le système est prêt.", "attribution": "dit Hayter." },
+        { "type": "descriptive", "text": "Cela comble aussi une lacune que même en tant qu'utilisateur de Vigilant, Decorators Choice ne pouvait pas combler auparavant." },
+        { "type": "quote", "text": "Surtout avec l'ouverture de notre deuxième magasin, nous avions besoin d'un accès complet et facile à tout moment.", "attribution": "dit Pace." },
+        { "type": "quote", "text": "Avec le magasin unique, nous utilisions une application d'accès à distance pour accéder à Vigilant mais c'était très lent. Et si je voulais imprimer un rapport, par exemple, je devais me rendre au magasin.", "attribution": "dit Pace." },
+        { "type": "descriptive", "text": "De plus, avec l'autre progiciel spécifique à l'industrie qu'ils envisageaient, il ne pouvait interroger les informations comptables qu'à partir de la nuit. Mais avec Oneir Solutions, ils peuvent obtenir l'accès et les informations qu'ils veulent tout de suite—et même les imprimer depuis leur bureau à domicile. Techniquement, c'est possible grâce à l'agilité et à la rapidité du serveur Linux, conçu pour Oneir, qui se trouve dans le bureau à domicile de Pace et assure les communications en temps réel entre les sites via une connexion téléphonique régulière à Internet. Pace est devenue encore plus mobile quand Josh Hayter l'a aidée à s'équiper d'un ordinateur portable sans fil qui, via le serveur Linux, peut également communiquer avec ses deux magasins." },
+        { "type": "quote", "text": "Si la connexion Internet tombe, le système passe en mode distant. Les ventes peuvent reprendre en touchant la barre d'espace. Zéro temps d'arrêt.", "attribution": "dit Hayter." },
+        { "type": "quote", "text": "J'ai pu passer de Vigilant à Oneir avec pratiquement aucun recyclage de nos 15 personnes qui utilisent le système.", "attribution": "dit Pace." },
+        { "type": "descriptive", "text": "La capacité d'accès à distance a scellé l'accord pour migrer vers Oneir Solutions, et le déménagement a été facile. « Josh m'a donné un itinéraire complet et c'était une autre raison pour laquelle je voulais aller avec Oneir Solutions. Ils ont tout pris en charge », dit Pace. Temps d'arrêt minimal—moins d'une demi-journée—malgré quelques petits problèmes, et aucun recyclage nécessaire pour leurs 15 employés. Même l'enfant de sept ans de Pace n'a pas eu de difficulté avec le nouveau système." },
+        { "type": "quote", "text": "Ma fille peut suivre les ventes des deux magasins depuis la maison. Et je peux maintenant facilement suivre des statistiques plus complexes depuis la maison avec Oneir.", "attribution": "dit Pace." },
+        { "type": "quote", "text": "J'étais un peu inquiète d'ouvrir un deuxième emplacement à cause des exigences accrues. Mais Oneir Solutions me permet de me connecter depuis la maison et de tout gérer.", "attribution": "dit Pace." },
+        { "type": "quote", "text": "Je peux accéder aux données Comptes Clients, par exemple, et voir ce que chacun de nos clients a acheté. Cet outil CRM (gestion de la relation client) d'analyse des ventes est quelque chose de nouveau qu'Oneir Solutions a ajouté à ce que Vigilant pouvait faire—et ça s'avère aussi très rentable.", "attribution": "dit Pace." },
+        { "type": "descriptive", "text": "Comme Vigilant, Oneir Solutions fournit des systèmes de Grand Livre, Point de Vente et Contrôle des Stocks. L'entreprise a reçu un excellent support d'Oneir Solutions, sans aucun problème en plus de 10 mois." },
+        { "type": "quote", "text": "Ce qu'Oneir fournit est une solution d'entreprise très sophistiquée mais qui garde ses complexités en arrière-plan.", "attribution": "dit Jane Giggal, présidente d'Oneir Solutions Inc." },
+        { "type": "quote", "text": "Nous avons conçu un outil d'analyse de haut niveau facile à utiliser. Avec lui, les clients n'ont pas besoin de penser à la technologie et peuvent se concentrer sur les opportunités commerciales et la croissance qui réalisent leurs rêves.", "attribution": "" },
+        { "type": "attribution", "text": "Andy Shaw est un rédacteur indépendant, animateur et journaliste international avec des articles dans de nombreuses publications commerciales et techniques." },
+        { "type": "descriptive", "text": "Pour plus d'informations sur The Decorators Choice, visitez www.thedecoratorschoicepaintanddecor.ca", "links": [{ "phrase": "www.thedecoratorschoicepaintanddecor.ca", "url": "https://www.thedecoratorschoicepaintanddecor.ca" }] }
+      ]
+    },
+    "multiCompany": {
+      "paragraphs": [
+        { "type": "intro", "text": "Deux sociétés en expansion multi-industries attribuent une grande partie de leur croissance et de leur diversification à un système logiciel financier très flexible, adaptable et bien supporté." },
+        { "type": "descriptive", "text": "À mesure que votre entreprise grandit, vous réalisez vite qu'il faut plus qu'une caisse dans une boîte à chaussures pour gérer les finances. Émettre une seule facture peut devenir fastidieux, et plus tard vous sentirez le besoin d'un système qui fournit les données de vente au détail à l'avant et les registres comptables à l'arrière—mieux que des employés en baskets. Et puis, peut-être qu'en ouvrant des succursales supplémentaires, vous ressentirez vraiment le besoin de savoir ce qui se passe financièrement sur tous vos sites, tout le temps." },
+        { "type": "descriptive", "text": "Il vous faudra un logiciel financier qui convient non seulement à votre industrie mais peut aussi être personnalisé aux particularités spécifiques de votre entreprise. Et vous aurez besoin d'aide experte—pas seulement la mise en œuvre mais la formation et le soutien pour quand quelqu'un commet une erreur de saisie catastrophique." },
+        { "type": "descriptive", "text": "Une des sociétés mentionnées, après près de 30 ans avec son ancien logiciel, a fait le changement et a déclaré :" },
+        { "type": "quote", "text": "Nous travaillons ensemble depuis longtemps ... d'abord avec son prédécesseur ... et maintenant avec le nouveau logiciel ... et nous allons rester avec lui." },
+        { "type": "descriptive", "text": "Ils exploitent maintenant plusieurs emplacements et leur système leur permet de consolider toutes les données financières—avec en plus une fonction de secours : si un emplacement tombe en panne, ils peuvent continuer à opérer localement et éviter la perte de données. Une autre société a félicité le support du développeur du logiciel : ils ont eu un problème quand un de leurs propres employés a fait une erreur, et le fournisseur l'a corrigé à distance alors qu'il était en vacances." },
+        { "type": "descriptive", "text": "Selon l'équipe dirigeante du fournisseur de logiciels : leur culture est axée sur le service aux entreprises orientées vers la croissance, offrant conseil, programmation personnalisée, mise en œuvre, formation et soutien continu." },
+        { "type": "descriptive", "text": "En bref : quand les entreprises s'étendent à plusieurs domaines, se diversifient ou ouvrent de nouvelles succursales, tout faire tourner sur des systèmes séparés devient inefficace. Une plateforme intégrée unique, adaptée à l'entreprise et soutenue par un support solide, peut faire la différence entre une croissance fragmentée et une croissance consolidée et évolutive." },
+        { "type": "sectionHeader", "text": "Courte description" },
+        { "type": "descriptive", "text": "Deux sociétés multi-industries en forte expansion attribuent une grande partie de leur croissance et de leur diversification à une plateforme logicielle financière flexible et personnalisable, soutenue par une mise en œuvre et un support solides. Alors que leurs opérations se sont développées sur plusieurs emplacements et lignes d'activité, le système a permis une visibilité financière centralisée, une consolidation fiable des données et une exploitation locale continue même en cas de perturbations sur les sites. Les utilisateurs de longue date ont souligné l'adaptabilité du système, sa facilité d'utilisation et le support réactif du fournisseur—y compris la résolution à distance des problèmes—tandis que le fournisseur a mis l'accent sur une culture axée sur la croissance, centrée sur le conseil, la personnalisation, la formation et le service continu. Ensemble, la technologie et le support ont aidé ces sociétés à remplacer des systèmes fragmentés par une plateforme unique et évolutive qui permet une croissance consolidée et confiante." }
+      ]
     }
   },
   "footer": {
@@ -100,7 +492,7 @@
     "sales": "Ventes",
     "customerSupport": "Support Client",
     "fax": "Télécopieur",
-    "copyright": "@2025 Oneir, Inc. Tous droits réservés."
+    "copyright": "©{year} Oneir, Inc. Tous droits réservés."
   },
   "common": {
     "loading": "Chargement...",
