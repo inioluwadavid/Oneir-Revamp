@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "Common Questions",
+    "subtitle": "Quick answers to frequently asked questions about Oneir Solutions.",
+    "backToSupport": "Back to Support"
+  },
+  "backToTop": "Back to top",
+  "categories": {
+    "cloudHosting": "Cloud, Hosting & Remote Access",
+    "serverVmware": "Server & VMware Setup",
+    "printingForms": "Printing, Forms & PDFs",
+    "purchasingAccountsPayable": "Purchasing & Accounts Payable",
+    "purchaseOrdersReceiving": "Purchase Orders & Receiving",
+    "inventoryManufacturing": "Inventory, Manufacturing & Stocktaking",
+    "accountsReceivable": "Accounts Receivable (AR), Statements & Customer Data",
+    "refundsCreditsWriteoffs": "Refunds, Credits & Write-Offs",
+    "financeChargesInterest": "Finance Charges & Interest",
+    "generalLedgerProcedures": "General Ledger & Month-End / Year-End Procedures",
+    "pointOfSale": "Point of Sale (POS)",
+    "securityPermissions": "Security, Permissions & Compliance",
+    "itNetworkConfig": "IT & Network Configuration",
+    "customizationWorkflows": "Customization & Special Workflows"
+  },
+  "subcategories": {
+    "eft": "Electronic Funds Transfer (EFT)",
+    "multiCurrencyPurchasing": "Multi-Currency Purchasing",
+    "bom": "Bills of Materials",
+    "interdivisionalStockTransfer": "Interdivisional Stock Transfer",
+    "yearEndStockCount": "Year-End Stock Count Import",
+    "statements": "Statements",
+    "exportingCustomerEmails": "Exporting Customer Emails",
+    "monthEndYearEnd": "Month-End / Year-End Procedures",
+    "balancingArToGl": "Balancing AR to GL",
+    "userSecurityLevels": "User Security Levels",
+    "pciCompliance": "PCI Compliance & Payment Security"
+  },
+  "assistance": {
+    "title": "Need Additional Assistance?",
+    "ticketCard": {
+      "button": "Open a Support Ticket",
+      "description": "Can't find what you're looking for? Our support team is here to help."
+    },
+    "contactCard": {
+      "title": "Contact Support",
+      "phone": "416.322.3580 ext. 2",
+      "fax": "Fax",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Mon - Fri, 9am - 5pm EST"
+    }
+  }
+}

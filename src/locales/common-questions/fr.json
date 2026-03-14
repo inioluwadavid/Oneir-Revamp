@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "Questions courantes",
+    "subtitle": "Réponses rapides aux questions fréquemment posées sur Oneir Solutions.",
+    "backToSupport": "Retour au support"
+  },
+  "backToTop": "Retour en haut",
+  "categories": {
+    "cloudHosting": "Cloud, hébergement et accès à distance",
+    "serverVmware": "Serveur et configuration VMware",
+    "printingForms": "Impression, formulaires et PDF",
+    "purchasingAccountsPayable": "Achats et comptes fournisseurs",
+    "purchaseOrdersReceiving": "Bons de commande et réception",
+    "inventoryManufacturing": "Inventaire, fabrication et dénombrement",
+    "accountsReceivable": "Comptes débiteurs (AR), relevés et données clients",
+    "refundsCreditsWriteoffs": "Remboursements, crédits et radiations",
+    "financeChargesInterest": "Frais financiers et intérêts",
+    "generalLedgerProcedures": "Grand livre et procédures de fin de mois/année",
+    "pointOfSale": "Point de vente (POS)",
+    "securityPermissions": "Sécurité, autorisations et conformité",
+    "itNetworkConfig": "Configuration informatique et réseau",
+    "customizationWorkflows": "Personnalisation et flux de travail spéciaux"
+  },
+  "subcategories": {
+    "eft": "Virement électronique (EFT)",
+    "multiCurrencyPurchasing": "Achats multi-devises",
+    "bom": "Nomenclatures (BOM)",
+    "interdivisionalStockTransfer": "Transfert interdivisions",
+    "yearEndStockCount": "Import du dénombrement de fin d'année",
+    "statements": "Relevés",
+    "exportingCustomerEmails": "Export des courriels clients",
+    "monthEndYearEnd": "Procédures de fin de mois/année",
+    "balancingArToGl": "Équilibrage AR et grand livre",
+    "userSecurityLevels": "Niveaux de sécurité utilisateur",
+    "pciCompliance": "Conformité PCI et sécurité des paiements"
+  },
+  "assistance": {
+    "title": "Besoin d'une aide supplémentaire?",
+    "ticketCard": {
+      "button": "Ouvrir un billet de support",
+      "description": "Vous ne trouvez pas ce que vous cherchez? Notre équipe de support est là pour vous aider."
+    },
+    "contactCard": {
+      "title": "Contacter le support",
+      "phone": "416.322.3580 poste 2",
+      "fax": "Télécopieur",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Lun - Ven, 9h - 17h HNE"
+    }
+  }
+}

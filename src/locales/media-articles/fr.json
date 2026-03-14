@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Médias et articles",
+    "subtitle": "Découvrez les meilleures pratiques et comment Oneir peut aider votre entreprise.",
+    "backToSupport": "Retour à la page précédente"
+  },
+  "sections": {
+    "techAdvisor": {
+      "title": "Articles Tech Advisor",
+      "subtitle": "Conseils d'experts et orientation technique"
+    },
+    "oneirMinute": {
+      "title": "Oneir Minute",
+      "subtitle": "Conseils rapides et mises à jour du secteur"
+    }
+  },
+  "articles": {
+    "techAdvisor": [
+      {
+        "title": "Reprise après sinistre",
+        "description": "Préparez votre entreprise à l'imprévu avec des stratégies de reprise éprouvées.",
+        "linkText": "En savoir plus",
+        "href": "#"
+      },
+      {
+        "title": "Support technique à long terme",
+        "description": "Maintenez vos systèmes grâce à un support et une maintenance continus.",
+        "linkText": "En savoir plus",
+        "href": "#"
+      },
+      {
+        "title": "Accès non autorisé",
+        "description": "Protégez vos données et systèmes contre les accès non autorisés.",
+        "linkText": "En savoir plus",
+        "href": "#"
+      }
+    ],
+    "oneirMinute": [
+      {
+        "title": "Grèves de Postes Canada",
+        "description": "Comment les perturbations d'expédition affectent votre entreprise.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      },
+      {
+        "title": "Oneir et le commerce électronique",
+        "description": "Intégrez votre boutique en ligne avec Oneir en toute transparence.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      },
+      {
+        "title": "Oneir et les réseaux sociaux",
+        "description": "Exploitez les réseaux sociaux pour la croissance de votre entreprise.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      },
+      {
+        "title": "Traitement des cartes de crédit intégré Elavon",
+        "description": "Rationalisez le traitement des paiements avec Elavon.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      },
+      {
+        "title": "Intégration ERP automatique",
+        "description": "Connectez votre ERP avec un minimum de travail manuel.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      },
+      {
+        "title": "Tableaux de bord KPI d'Oneir",
+        "description": "Suivez les indicateurs clés en un coup d'œil.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      },
+      {
+        "title": "Service de paie d'Oneir",
+        "description": "Simplifiez la paie avec des solutions intégrées.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      },
+      {
+        "title": "Oneir et les tarifs",
+        "description": "Naviguez les changements tarifaires avec Oneir.",
+        "linkText": "Voir la vidéo",
+        "href": "#"
+      }
+    ]
+  },
+  "assistance": {
+    "title": "Besoin d'une aide supplémentaire?",
+    "ticketCard": {
+      "button": "Ouvrir un billet de support",
+      "description": "Vous ne trouvez pas ce que vous cherchez? Notre équipe de support est là pour vous aider."
+    },
+    "contactCard": {
+      "title": "Contacter le support",
+      "phone": "416.322.3580 poste 2",
+      "fax": "Télécopieur",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Lun - Ven, 9h - 17h HNE"
+    }
+  }
+}

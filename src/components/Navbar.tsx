@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './ui/Button';
+import { useDemoModal } from '@/context/DemoModalContext';
 
 interface NavbarProps {
   currentLocale: Locale;
@@ -26,16 +27,28 @@ export default function Navbar({ currentLocale }: NavbarProps) {
   const pathname = usePathname();
   const t = getTranslations(currentLocale);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openDemoModal } = useDemoModal();
 
   const switchLanguage = (locale: Locale) => {
     const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
     router.push(`/${locale}${pathWithoutLocale}`);
   };
 
+  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+
   const navigationItems = [
-    { key: 'home', href: `/${currentLocale}` },
-    { key: 'about', href: `/${currentLocale}/about-us` },
-    { key: 'support', href: `/${currentLocale}/support` },
+    { key: 'home', href: `/${currentLocale}`, isActive: pathWithoutLocale === '/' },
+    { key: 'about', href: `/${currentLocale}/about-us`, isActive: pathWithoutLocale.startsWith('/about-us') },
+    {
+      key: 'support',
+      href: `/${currentLocale}/support`,
+      isActive:
+        pathWithoutLocale.startsWith('/support') ||
+        pathWithoutLocale.startsWith('/common-questions') ||
+        pathWithoutLocale.startsWith('/product-manuals') ||
+        pathWithoutLocale.startsWith('/media-and-articles') ||
+        pathWithoutLocale.startsWith('/search'),
+    },
   ];
 
   return (
@@ -43,10 +56,10 @@ export default function Navbar({ currentLocale }: NavbarProps) {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[10px] bg-white/92 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
+        <div className="flex justify-between items-center h-[86px]">
           {/* Logo - Graphic + ONEIR + SOLUTIONS */}
           <Link href={`/${currentLocale}`} className="flex items-center gap-3 sm:gap-4">
             <motion.div
@@ -71,14 +84,18 @@ export default function Navbar({ currentLocale }: NavbarProps) {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="hidden lg:flex items-center gap-8 xl:gap-12"
+            className="hidden lg:flex items-center gap-[30px]"
           >
             {navigationItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
                 style={{ fontFamily: 'var(--font-outfit)' }}
-                className="text-[#303033] hover:text-gray-600 text-[15px] font-normal transition-colors"
+                className={`text-base transition-colors hover:text-[#070714] ${
+                  item.isActive
+                    ? 'text-[#070714] font-semibold'
+                    : 'text-[#434349] font-normal'
+                }`}
               >
                 {getNestedTranslation(t, `navigation.${item.key}`)}
               </Link>
@@ -92,13 +109,13 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="hidden sm:flex items-center gap-2 text-gray-600"
+              className="hidden sm:flex items-center gap-2 text-[#434349]"
             >
               <GlobeIcon className="w-5 h-5 flex-shrink-0" />
               <select
                 value={currentLocale}
                 onChange={(e) => switchLanguage(e.target.value as Locale)}
-                className="text-sm border-none bg-transparent text-gray-800 focus:outline-none font-medium cursor-pointer appearance-none pr-1"
+                className="text-sm border-none bg-transparent text-[#434349] focus:outline-none font-medium cursor-pointer appearance-none pr-1"
                 style={{ fontFamily: 'var(--font-outfit)' }}
               >
                 {locales.map((locale) => (
@@ -113,9 +130,18 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex items-center gap-4"
             >
-              <Button variant="primary" size="lg" animated={true}>
+              <Button variant="primary" size="lg" animated={true} onClick={openDemoModal}>
                 {getNestedTranslation(t, 'navigation.requestDemo')}
+              </Button>
+              <Button
+                variant="secondary"
+                size="lg"
+                animated={true}
+                href="#"
+              >
+                {getNestedTranslation(t, 'navigation.signIn')}
               </Button>
             </motion.div>
 
@@ -154,15 +180,28 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                 <Link
                   key={item.key}
                   href={item.href}
-                  className="text-gray-800 hover:text-[#65083A] text-base font-medium transition-colors py-2"
+                  className={`text-base transition-colors py-2 hover:text-[#65083A] ${
+                    item.isActive
+                      ? 'text-[#070714] font-semibold'
+                      : 'text-[#434349] font-normal'
+                  }`}
                   style={{ fontFamily: 'var(--font-outfit)' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {getNestedTranslation(t, `navigation.${item.key}`)}
                 </Link>
               ))}
-              <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
-                <GlobeIcon className="w-5 h-5 text-gray-500" />
+              <div className="flex flex-col gap-3 pt-2 border-t border-gray-100">
+                <div className="flex gap-3">
+                  <Button variant="primary" size="sm" className="flex-1" onClick={openDemoModal}>
+                    {getNestedTranslation(t, 'navigation.requestDemo')}
+                  </Button>
+                  <Button variant="secondary" size="sm" href="#" className="flex-1">
+                    {getNestedTranslation(t, 'navigation.signIn')}
+                  </Button>
+                </div>
+                <div className="flex items-center gap-2">
+                  <GlobeIcon className="w-5 h-5 text-gray-500" />
                 <select
                   value={currentLocale}
                   onChange={(e) => switchLanguage(e.target.value as Locale)}
@@ -174,6 +213,7 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                     </option>
                   ))}
                 </select>
+                </div>
               </div>
             </div>
           </motion.div>

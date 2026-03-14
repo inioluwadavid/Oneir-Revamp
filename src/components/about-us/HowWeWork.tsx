@@ -1,6 +1,9 @@
+"use client";
+
 import { type Locale } from "@/lib/translations";
 import enTranslations from "@/locales/about-us/en.json";
 import frTranslations from "@/locales/about-us/fr.json";
+import Image from "next/image";
 
 interface HowWeWorkProps {
   locale: Locale;
@@ -15,39 +18,49 @@ interface AboutUsTranslations {
 }
 
 export default function HowWeWork({ locale }: HowWeWorkProps) {
-  // Import translations based on locale
-  const translations = locale === 'fr' ? frTranslations : enTranslations;
-  
+  const translations = locale === "fr" ? frTranslations : enTranslations;
   const t = translations as AboutUsTranslations;
 
   return (
-    <section className="py-20 px-4 sm:px-[96px] ">
+    <section className="py-20 px-4 sm:px-6 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        {/* White rounded card */}
-        <div className="bg-white rounded-[32px] p-12 shadow-lg">
-          <div className="">
-            {/* Left side content */}
-            <div className="sm:w-[65%] mb-[80px] ">
-            <h3  style={{ fontFamily: 'var(--font-outfit)' }} className="text-2xl sm:text-[32px] font-[600] text-[#070714] leading-relaxed">
-                {t.howWeWork.intro}
-              </h3>
-            </div>
-             {/* Right side content */}
-             <div className=" flex  justify-end mb-[80px]    ">
-                <p className="text-[16px] font-[400] sm:w-[45%] text-end text-[#434349] leading-relaxed">
-                    {t.howWeWork.description}
-                </p>
-            </div>
-            
-            <div className="">
-              {/* Main title */}
-              <div  style={{ fontFamily: 'var(--font-outfit)' }} className="text-4xl sm:text-[48px] font-bold text-gray-900 leading-tight">
-                {t.howWeWork.mainTitle}
+        {/* White rounded card on light gray background */}
+        <div className="bg-white rounded-[28px] p-8 sm:p-12 shadow-lg">
+          {/* Top-left: Intro heading */}
+          <h3
+            style={{ fontFamily: "var(--font-outfit)" }}
+            className="text-xl sm:text-2xl lg:text-[32px] font-[600] text-[#070714] leading-relaxed mb-10 sm:mb-12"
+          >
+            {t.howWeWork.intro}
+          </h3>
+
+          {/* Middle: Image left, description right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center mb-10 sm:mb-12">
+            <div className="lg:col-span-7">
+              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden">
+                <Image
+                  src="/images/about/about2.png"
+                  alt="Oneir team collaborating around documents and laptop"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
               </div>
             </div>
-            
-           
+            <div className="lg:col-span-5 flex items-center justify-center lg:text-start">
+              <p className="text-[15px] sm:text-[16px] font-[400] text-[#434349] leading-relaxed max-w-sm">
+                {t.howWeWork.description}
+              </p>
+            </div>
           </div>
+
+          {/* Bottom-left: Main tagline */}
+          <h2
+            style={{ fontFamily: "var(--font-outfit)" }}
+            className="text-3xl sm:text-4xl lg:text-[48px] font-[700] text-[#070714] leading-tight"
+          >
+            {t.howWeWork.mainTitle}
+          </h2>
         </div>
       </div>
     </section>

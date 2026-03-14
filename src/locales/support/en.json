@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Answers at your fingertips",
+    "subtitle": "Search the knowledge base, troubleshoot in minutes, or open a ticket for tailored help."
+  },
+  "help": {
+    "title": "How can we help?",
+    "searchPlaceholder": "Search for articles, guides, downloads...",
+    "submitTicket": "Submit a Ticket",
+    "contactSupport": "Contact Support"
+  },
+  "resources": {
+    "title": "Browse Support Resources",
+    "commonQuestions": {
+      "title": "Common Questions",
+      "description": "Quick answers to frequently asked questions"
+    },
+    "productManuals": {
+      "title": "Product Manuals",
+      "description": "Detailed documentation and reference material"
+    },
+    "driversSoftware": {
+      "title": "Drivers & Software",
+      "description": "Applications, installers and tools"
+    },
+    "mediaArticles": {
+      "title": "Media and Articles",
+      "description": "Advanced workflows and best practices"
+    }
+  },
+  "assistance": {
+    "title": "Need Additional Assistance?",
+    "ticketCard": {
+      "button": "Open a Support Ticket",
+      "description": "Can't find what you're looking for? Our support team is here to help."
+    },
+    "contactCard": {
+      "title": "Contact Support",
+      "phone": "416.322.3580 ext. 2",
+      "fax": "Fax",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Mon - Fri, 9am - 5pm EST"
+    }
+  }
+}

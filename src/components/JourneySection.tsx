@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Button from './ui/Button';
+import { useDemoModal } from '@/context/DemoModalContext';
 
 interface JourneyStep {
   subheading: string;
@@ -16,6 +17,7 @@ export default function JourneySection({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { openDemoModal } = useDemoModal();
 
   const journey = t.journey as {
     title: string;
@@ -135,7 +137,7 @@ export default function JourneySection({ locale }: { locale: Locale }) {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Button variant="primary" size="md" animated>
+              <Button variant="primary" size="md" animated onClick={openDemoModal}>
                 {journey.cta}
               </Button>
             </motion.div>

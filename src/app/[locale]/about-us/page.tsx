@@ -2,6 +2,8 @@ import { type Locale } from "@/lib/translations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import WhoWeAre from "@/components/about-us/WhoWeAre";
+import OurFoundation from "@/components/about-us/OurFoundation";
+import OurFocus from "@/components/about-us/OurFocus";
 import Mission from "@/components/about-us/Mission";
 import HowWeWork from "@/components/about-us/HowWeWork";
 import Experience from "@/components/about-us/Experience";
@@ -45,12 +47,18 @@ export default async function AboutUs({ params }: AboutUsPageProps) {
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
       <Navbar currentLocale={locale} />
-      <WhoWeAre locale={locale} />
-      <Mission locale={locale} />
+      <div className="pt-16 sm:pt-20 lg:pt-24">
+        <WhoWeAre locale={locale} />
+       
+      {/* <Mission locale={locale} /> */}
       <HowWeWork locale={locale} />
-      <Experience locale={locale} />
-      <Values locale={locale} />
+    
+      <OurFoundation locale={locale} />
+      <OurFocus locale={locale} />
+      {/* <Experience locale={locale} />
+      <Values locale={locale} /> */}
       <WhyChoose locale={locale} />
+      </div>
       <Footer locale={locale} />
     </div>
   );

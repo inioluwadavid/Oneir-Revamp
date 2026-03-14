@@ -1,0 +1,163 @@
+{
+  "hero": {
+    "title": "Product Manuals",
+    "subtitle": "Detailed Documentation and Reference Material.",
+    "backToSupport": "Back to previous page"
+  },
+  "tabs": {
+    "manuals": "Manuals",
+    "printingEmailing": "Printing and Emailing",
+    "importingExporting": "Importing and Exporting",
+    "electronicFundTransfers": "Electronic Fund Transfers",
+    "termsConditions": "Terms and Conditions"
+  },
+  "linkText": "View manual",
+  "sections": {
+    "manuals": {
+      "title": "Manuals",
+      "items": [
+        {
+          "title": "Oneir Manual",
+          "description": "A comprehensive guide to using the Oneir accounting system, including setup, daily operations, and detailed instructions for each module such as General Ledger, Accounts Receivable, Inventory, Sales Orders, and Point of Sale.",
+          "href": "#"
+        },
+        {
+          "title": "Oneir Payroll",
+          "description": "Explains how to configure and process payroll in Oneir, including employee setup, deductions, payroll processing, year-end procedures, and troubleshooting common payroll issues.",
+          "href": "#"
+        },
+        {
+          "title": "Oneir Purchase Orders",
+          "description": "Provides an overview of the Oneir Purchase Order module, including creating orders, receiving inventory, printing purchase orders, and managing order reports.",
+          "href": "#"
+        },
+        {
+          "title": "Order Guide",
+          "description": "Explains how to create purchase order guides based on recent sales and return activity, helping users quickly build vendor orders with suggested products.",
+          "href": "#"
+        },
+        {
+          "title": "Generating PO's",
+          "description": "Describes how to automatically generate purchase orders based on inventory levels, reorder quantities, and current stock commitments to help maintain optimal inventory levels.",
+          "href": "#"
+        },
+        {
+          "title": "Container Receiving",
+          "description": "Details the process for receiving purchase orders into containers, including handling multiple currencies, freight and duty costs, and distributing landed costs across received products.",
+          "href": "#"
+        }
+      ]
+    },
+    "printingEmailing": {
+      "title": "Printing and Emailing",
+      "items": [
+        {
+          "title": "Printing With Oneir",
+          "description": "Outlines printer compatibility requirements and recommendations for printing reports, forms, and POS receipts within the Oneir system.",
+          "href": "#"
+        },
+        {
+          "title": "Emailing With Oneir",
+          "description": "Explains how emails are sent from Oneir through the Perfect Mail relay service and outlines the DKIM, SPF, and DMARC authentication requirements needed to ensure reliable email delivery.",
+          "href": "#"
+        },
+        {
+          "title": "Postscript Printing & Email",
+          "description": "Describes how PostScript printing enables advanced form features such as logos and watermarks, allowing businesses to print invoices, receipts, and other documents without pre-printed forms.",
+          "href": "#"
+        },
+        {
+          "title": "WatchFolder",
+          "description": "Instructions for installing and using WatchFolder, a tool that automatically displays Oneir reports as PDFs so users can preview, search, or print them from their computer.",
+          "href": "#"
+        },
+        {
+          "title": "Cloud Printing",
+          "description": "Provides instructions for printing reports and forms from the Oneir cloud environment using either the Windows PDF printing app or direct printer passthrough via Eric's Telnet terminal.",
+          "href": "#"
+        }
+      ]
+    },
+    "importingExporting": {
+      "title": "Importing and Exporting",
+      "items": [
+        {
+          "title": "Data Mining Sales History",
+          "description": "Shows how to export sales history data from Oneir for reporting and analysis, including filtering options and saving results for use in external tools such as Excel.",
+          "href": "#"
+        },
+        {
+          "title": "Exporting Customer Emails",
+          "description": "Step-by-step instructions for exporting customer email addresses from the Accounts Receivable module into a file that can be opened in Excel.",
+          "href": "#"
+        },
+        {
+          "title": "Exporting to Excel",
+          "description": "Explains how to export Oneir reports to spreadsheet format, including setting up the export folder and saving files for use in Excel.",
+          "href": "#"
+        },
+        {
+          "title": "Importing Data Into Oneir",
+          "description": "Provides guidelines for importing customers, products, or vendors into Oneir using properly formatted CSV files.",
+          "href": "#"
+        }
+      ]
+    },
+    "electronicFundTransfers": {
+      "title": "Electronic Fund Transfers",
+      "items": [
+        {
+          "title": "Oneir EFT's to Vendors",
+          "description": "Explains how to send vendor payments electronically through your bank using Oneir's EFT functionality, reducing manual cheque processing and improving payment efficiency.",
+          "href": "#"
+        },
+        {
+          "title": "Sample Remittance Notice",
+          "description": "Example of the remittance advice vendors receive when payments are issued through electronic funds transfer.",
+          "href": "#"
+        },
+        {
+          "title": "Tides Canada Enrollment",
+          "description": "A form used by vendors to authorize Tides Canada to send payments through electronic funds transfer directly to their bank account. It includes vendor details, banking information, and authorization for ongoing EFT payments.",
+          "href": "#"
+        },
+        {
+          "title": "Sample Direct Deposit Enrollment",
+          "description": "Example vendor enrollment forms used to collect banking information required to set up electronic payments through direct deposit.",
+          "href": "#"
+        },
+        {
+          "title": "North Vancouver Enrollment",
+          "description": "A vendor enrollment form used to authorize Electronic Funds Transfer (EFT) payments from the District of North Vancouver. Vendors provide their banking details and contact information so payments can be deposited directly into their bank account.",
+          "href": "#"
+        }
+      ]
+    },
+    "termsConditions": {
+      "title": "Terms and Conditions",
+      "items": [
+        {
+          "title": "Constitution",
+          "description": "Outlines the terms, service scope, and support levels provided under the Oneir and Vigilant Software Maintenance Plan, including response times, backup policies, and customer responsibilities. The document also details subscription terms, payment conditions, liability limitations, and procedures for updates, termination, and dispute resolution.",
+          "href": "https://docs.google.com/document/d/15cyphfZydZHZ-iai7MdEjtOvOh_iI0tR/edit?usp=drive_link&ouid=102888090148756009700&rtpof=true&sd=true",
+          "linkText": "View here"
+        }
+      ]
+    }
+  },
+  "assistance": {
+    "title": "Need Additional Assistance?",
+    "ticketCard": {
+      "button": "Open a Support Ticket",
+      "description": "Can't find what you're looking for? Our support team is here to help."
+    },
+    "contactCard": {
+      "title": "Contact Support",
+      "phone": "416.322.3580 ext. 2",
+      "fax": "Fax",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Mon - Fri, 9am - 5pm EST"
+    }
+  }
+}

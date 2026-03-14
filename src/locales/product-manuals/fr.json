@@ -1,0 +1,163 @@
+{
+  "hero": {
+    "title": "Manuels produits",
+    "subtitle": "Documentation détaillée et matériel de référence.",
+    "backToSupport": "Retour à la page précédente"
+  },
+  "tabs": {
+    "manuals": "Manuels",
+    "printingEmailing": "Impression et courriel",
+    "importingExporting": "Importation et exportation",
+    "electronicFundTransfers": "Virements électroniques",
+    "termsConditions": "Conditions générales"
+  },
+  "linkText": "Voir le manuel",
+  "sections": {
+    "manuals": {
+      "title": "Manuels",
+      "items": [
+        {
+          "title": "Manuel Oneir",
+          "description": "Guide complet d'utilisation du système comptable Oneir, incluant la configuration, les opérations quotidiennes et des instructions détaillées pour chaque module : Grand livre, Comptes clients, Inventaire, Commandes de vente et Point de vente.",
+          "href": "#"
+        },
+        {
+          "title": "Paie Oneir",
+          "description": "Explique comment configurer et traiter la paie dans Oneir, y compris la configuration des employés, les déductions, le traitement de la paie, les procédures de fin d'année et le dépannage des problèmes courants.",
+          "href": "#"
+        },
+        {
+          "title": "Bons de commande Oneir",
+          "description": "Vue d'ensemble du module Bon de commande Oneir, incluant la création de commandes, la réception de l'inventaire, l'impression des bons de commande et la gestion des rapports de commande.",
+          "href": "#"
+        },
+        {
+          "title": "Guide de commande",
+          "description": "Explique comment créer des guides de bons de commande basés sur les ventes et retours récents, aidant les utilisateurs à constituer rapidement des commandes fournisseurs avec des produits suggérés.",
+          "href": "#"
+        },
+        {
+          "title": "Génération des BC",
+          "description": "Décrit comment générer automatiquement des bons de commande en fonction des niveaux d'inventaire, des quantités de réapprovisionnement et des engagements de stock actuels.",
+          "href": "#"
+        },
+        {
+          "title": "Réception de conteneurs",
+          "description": "Détaille le processus de réception des bons de commande dans les conteneurs, incluant la gestion des devises multiples, les coûts de fret et de douane, et la répartition des coûts d'approche sur les produits reçus.",
+          "href": "#"
+        }
+      ]
+    },
+    "printingEmailing": {
+      "title": "Impression et courriel",
+      "items": [
+        {
+          "title": "Impression avec Oneir",
+          "description": "Présente les exigences de compatibilité des imprimantes et les recommandations pour l'impression des rapports, formulaires et reçus PDV dans le système Oneir.",
+          "href": "#"
+        },
+        {
+          "title": "Courriel avec Oneir",
+          "description": "Explique comment les courriels sont envoyés depuis Oneir via le service de relais Perfect Mail et décrit les exigences d'authentification DKIM, SPF et DMARC pour assurer une livraison fiable.",
+          "href": "#"
+        },
+        {
+          "title": "Impression PostScript et courriel",
+          "description": "Décrit comment l'impression PostScript permet des fonctionnalités avancées comme les logos et filigranes pour imprimer factures, reçus et autres documents sans formulaires préimprimés.",
+          "href": "#"
+        },
+        {
+          "title": "WatchFolder",
+          "description": "Instructions d'installation et d'utilisation de WatchFolder, un outil qui affiche automatiquement les rapports Oneir en PDF pour prévisualisation, recherche ou impression depuis votre ordinateur.",
+          "href": "#"
+        },
+        {
+          "title": "Impression cloud",
+          "description": "Instructions pour imprimer rapports et formulaires depuis l'environnement cloud Oneir via l'application Windows PDF ou la connexion directe à l'imprimante via le terminal Telnet Eric.",
+          "href": "#"
+        }
+      ]
+    },
+    "importingExporting": {
+      "title": "Importation et exportation",
+      "items": [
+        {
+          "title": "Exploration des historiques de vente",
+          "description": "Montre comment exporter les données d'historique des ventes depuis Oneir pour analyse et reporting, incluant les options de filtrage et l'enregistrement des résultats pour Excel.",
+          "href": "#"
+        },
+        {
+          "title": "Exportation des courriels clients",
+          "description": "Instructions étape par étape pour exporter les adresses courriel des clients depuis le module Comptes clients vers un fichier ouvrable dans Excel.",
+          "href": "#"
+        },
+        {
+          "title": "Exportation vers Excel",
+          "description": "Explique comment exporter les rapports Oneir au format tableur, incluant la configuration du dossier d'export et l'enregistrement des fichiers pour Excel.",
+          "href": "#"
+        },
+        {
+          "title": "Importation de données dans Oneir",
+          "description": "Directives pour importer clients, produits ou fournisseurs dans Oneir en utilisant des fichiers CSV correctement formatés.",
+          "href": "#"
+        }
+      ]
+    },
+    "electronicFundTransfers": {
+      "title": "Virements électroniques",
+      "items": [
+        {
+          "title": "Virements Oneir aux fournisseurs",
+          "description": "Explique comment envoyer les paiements fournisseurs électroniquement via votre banque avec la fonctionnalité VEM d'Oneir, réduisant le traitement manuel des chèques.",
+          "href": "#"
+        },
+        {
+          "title": "Exemple d'avis de paiement",
+          "description": "Exemple de l'avis de paiement que les fournisseurs reçoivent lors des virements électroniques.",
+          "href": "#"
+        },
+        {
+          "title": "Inscription Tides Canada",
+          "description": "Formulaire d'autorisation des fournisseurs pour recevoir les paiements par virement électronique de Tides Canada. Inclut les coordonnées, informations bancaires et autorisation.",
+          "href": "#"
+        },
+        {
+          "title": "Exemple d'inscription dépôt direct",
+          "description": "Exemples de formulaires d'inscription fournisseur pour recueillir les informations bancaires nécessaires aux paiements électroniques.",
+          "href": "#"
+        },
+        {
+          "title": "Inscription North Vancouver",
+          "description": "Formulaire d'inscription fournisseur pour autoriser les virements du district de North Vancouver. Les fournisseurs fournissent leurs coordonnées bancaires pour recevoir les paiements directement.",
+          "href": "#"
+        }
+      ]
+    },
+    "termsConditions": {
+      "title": "Conditions générales",
+      "items": [
+        {
+          "title": "Constitution",
+          "description": "Présente les conditions, le périmètre des services et les niveaux de support du Plan de maintenance Oneir et Vigilant Software : délais de réponse, politiques de sauvegarde et responsabilités client. Détaille également les termes d'abonnement, conditions de paiement, limitations de responsabilité et procédures de mise à jour, résiliation et résolution des litiges.",
+          "href": "https://docs.google.com/document/d/15cyphfZydZHZ-iai7MdEjtOvOh_iI0tR/edit?usp=drive_link&ouid=102888090148756009700&rtpof=true&sd=true",
+          "linkText": "Voir ici"
+        }
+      ]
+    }
+  },
+  "assistance": {
+    "title": "Besoin d'une aide supplémentaire?",
+    "ticketCard": {
+      "button": "Ouvrir un billet de support",
+      "description": "Vous ne trouvez pas ce que vous cherchez? Notre équipe de support est là pour vous aider."
+    },
+    "contactCard": {
+      "title": "Contacter le support",
+      "phone": "416.322.3580 poste 2",
+      "fax": "Télécopieur",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Lun - Ven, 9h - 17h HNE"
+    }
+  }
+}

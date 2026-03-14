@@ -40,9 +40,9 @@ const variantStyles = {
       borderColor: 'transparent'
     },
     hover: {
-      background: 'white',
-      color: '#070714',
-      borderColor: '#9B9BBD'
+      background: '#C0C0D5',
+      color: 'white',
+      borderColor: '#FFFFFF'
     }
   },
   secondary: {
@@ -52,9 +52,9 @@ const variantStyles = {
       borderColor: '#FFFFFF'
     },
     hover: {
-      background: 'linear-gradient(to right, #65083A, #393965)',
+      background: '#C0C0D5',
       color: 'white',
-      borderColor: 'transparent'
+      borderColor: '#FFFFFF'
     }
   },
   outline: {

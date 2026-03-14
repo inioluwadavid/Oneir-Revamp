@@ -4,6 +4,7 @@ import { getTranslations, type Locale } from '@/lib/translations';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import { useDemoModal } from '@/context/DemoModalContext';
 
 const SELL_ICONS = [
   '/images/sell/sell1.svg',
@@ -26,6 +27,7 @@ export default function SellAnywhere({ locale }: { locale: Locale }) {
   const t = getTranslations(locale);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { openDemoModal } = useDemoModal();
 
   const sell = t.sellAnywhere as {
     title: string;
@@ -106,12 +108,13 @@ export default function SellAnywhere({ locale }: { locale: Locale }) {
                   <p className="text-[16px] text-white font-[400] leading-relaxed mb-3">
                     {feature.description}
                   </p>
-                  <a
-                    href="#"
-                    className="text-sm text-white underline underline-offset-2 hover:text-white/90 transition-colors"
+                  <button
+                    type="button"
+                    onClick={openDemoModal}
+                    className="text-sm text-white underline cursor-pointer underline-offset-2 hover:text-white/90 transition-colors text-left"
                   >
                     {sell.learnMore}
-                  </a>
+                  </button>
                 </motion.article>
               ))}
             </div>

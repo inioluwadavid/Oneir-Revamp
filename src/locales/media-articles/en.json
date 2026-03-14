@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Media and Articles",
+    "subtitle": "Learn best practices and how Oneir can help your business.",
+    "backToSupport": "Back to previous page"
+  },
+  "sections": {
+    "techAdvisor": {
+      "title": "Tech Advisor Articles",
+      "subtitle": "Expert insights and technical guidance"
+    },
+    "oneirMinute": {
+      "title": "Oneir Minute",
+      "subtitle": "Quick tips and industry updates"
+    }
+  },
+  "articles": {
+    "techAdvisor": [
+      {
+        "title": "Disaster Recovery",
+        "description": "Prepare your business for the unexpected with proven recovery strategies.",
+        "linkText": "Learn more",
+        "href": "#"
+      },
+      {
+        "title": "Long-Term Technical Support",
+        "description": "Sustain your systems with ongoing support and maintenance.",
+        "linkText": "Learn more",
+        "href": "#"
+      },
+      {
+        "title": "Unwanted Access",
+        "description": "Protect your data and systems from unauthorized access.",
+        "linkText": "Learn more",
+        "href": "#"
+      }
+    ],
+    "oneirMinute": [
+      {
+        "title": "Canada Post Strikes",
+        "description": "How shipping disruptions affect your business.",
+        "linkText": "View video",
+        "href": "#"
+      },
+      {
+        "title": "Oneir and E-Commerce",
+        "description": "Integrate your online store with Oneir seamlessly.",
+        "linkText": "View video",
+        "href": "#"
+      },
+      {
+        "title": "Oneir and Social Media",
+        "description": "Leverage social channels for business growth.",
+        "linkText": "View video",
+        "href": "#"
+      },
+      {
+        "title": "Elavon Integrated Credit Processing",
+        "description": "Streamline payment processing with Elavon.",
+        "linkText": "View video",
+        "href": "#"
+      },
+      {
+        "title": "Automatic ERP Integration",
+        "description": "Connect your ERP with minimal manual work.",
+        "linkText": "View video",
+        "href": "#"
+      },
+      {
+        "title": "Oneir's KPI Dashboards",
+        "description": "Track key metrics at a glance.",
+        "linkText": "View video",
+        "href": "#"
+      },
+      {
+        "title": "Oneir's Payroll Service",
+        "description": "Simplify payroll with integrated solutions.",
+        "linkText": "View video",
+        "href": "#"
+      },
+      {
+        "title": "Oneir and Tariffs",
+        "description": "Navigate tariff changes with Oneir.",
+        "linkText": "View video",
+        "href": "#"
+      }
+    ]
+  },
+  "assistance": {
+    "title": "Need Additional Assistance?",
+    "ticketCard": {
+      "button": "Open a Support Ticket",
+      "description": "Can't find what you're looking for? Our support team is here to help."
+    },
+    "contactCard": {
+      "title": "Contact Support",
+      "phone": "416.322.3580 ext. 2",
+      "fax": "Fax",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Mon - Fri, 9am - 5pm EST"
+    }
+  }
+}

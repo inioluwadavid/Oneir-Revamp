@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import HowBusinessesRun from "@/components/HowBusinessesRun";
 import type { Metadata } from "next";
-
 interface SuccessStoriesPageProps {
   params: Promise<{ locale: string }>;
 }
@@ -39,6 +38,8 @@ export default async function SuccessStories({ params }: SuccessStoriesPageProps
     <div className="min-h-screen bg-[#EFEFF3]">
       <Navbar currentLocale={locale} />
       <div className="pt-16 sm:pt-20 lg:pt-24">
+        {/* Header: back + logo + title */}
+        
         <HowBusinessesRun locale={locale} variant="full" />
       </div>
       <Footer locale={locale} />

@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Button from './ui/Button';
+import { useDemoModal } from '@/context/DemoModalContext';
 
 interface HeroProps {
   locale: Locale;
@@ -14,6 +15,7 @@ export default function Hero({ locale }: HeroProps) {
   const t = getTranslations(locale);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { openDemoModal } = useDemoModal();
 
   return (
     <motion.section
@@ -35,6 +37,15 @@ export default function Hero({ locale }: HeroProps) {
           sizes="100vw"
         />
       </div>
+      {/* Soft blend gradient at bottom - transitions hero into next section */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[5] h-24 sm:h-28 lg:h-32"
+        style={{
+          background:
+            "linear-gradient(to top, #EFEFF3 0%, rgba(239, 239, 243, 0.6) 30%, rgba(217, 136, 167, 0.15) 90%, transparent 100%)",
+        }}
+        aria-hidden
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-24">
@@ -91,10 +102,10 @@ export default function Hero({ locale }: HeroProps) {
               transition={{ duration: 0.5, delay: 0.55 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
             >
-              <Button variant="primary" size="lg" animated>
+              <Button variant="primary" size="lg" animated onClick={openDemoModal}>
                 {getNestedTranslation(t, 'hero.requestDemo')}
               </Button>
-              <Button variant="primary" size="lg" animated>
+              <Button variant="primary" size="lg" animated onClick={openDemoModal}>
                 {getNestedTranslation(t, 'hero.bookDiscovery')}
               </Button>
             </motion.div>

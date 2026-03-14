@@ -1,7 +1,24 @@
 {
   "whoWeAre": {
-    "title": "Qui nous sommes",
-    "subtitle": "Oneir (du grec Oneirus, \"interprète des rêves\") est plus que notre nom."
+    "title": "Qui nous sommes.",
+    "paragraph1": "Oneir (du grec Oneirus, \"interprète des rêves\") est plus que notre nom.",
+    "paragraph2": "Notre mission est de nous associer aux entreprises, comprendre leur vision et fournir des solutions de planification des ressources d'entreprise (ERP) qui transforment leur vision en réalité.",
+    "paragraph3": "Nous croyons que l'ERP doit s'adapter à la façon dont les entreprises fonctionnent réellement—et non l'inverse. C'est pourquoi nous adoptons une approche consultative et pratique, alliant une connaissance approfondie de l'industrie à une expertise technologique concrète pour livrer des systèmes utilisables, évolutifs et conçus pour le succès à long terme.",
+    "paragraph4": "Depuis plus de 25 ans, Oneir soutient des organisations dans la fabrication, la distribution, le commerce de détail et la production alimentaire. Si les industries et les technologies évoluent, une vérité demeure constante : la vision de chaque client est unique—et le succès dépend de sa compréhension."
+  },
+  "ourFocus": {
+    "block1": "Chez Oneir, la technologie n'est que",
+    "block2": "une partie de l'histoire.",
+    "block3": "Notre cœur est dans les relations :",
+    "block4": "des partenariats à long terme bâtis sur",
+    "block5": "la confiance, la clarté et des résultats",
+    "block6": "qui comptent.",
+    "block7": "C'est notre priorité."
+  },
+  "foundation": {
+    "title": "Notre Fondation",
+    "mainText": "Notre ERP repose sur une fondation éprouvée et de niveau entreprise, approuvée par les fournisseurs de télécommunications, les institutions financières et les organisations critiques pour la rapidité, la précision et la fiabilité.",
+    "subText": "Avec une architecture prête pour l'avenir, incluant la conteneurisation et l'IA, nos solutions sont conçues pour évoluer avec votre entreprise."
   },
   "howWeWork": {
     "intro": "Notre processus commence par l'écoute. Nous prenons le temps de comprendre vos objectifs, défis et opportunités.",
@@ -44,8 +61,14 @@
     "industriesLabel": "Industries Servies"
   },
   "why": {
-    "title": "Pourquoi Choisir Oneir",
-    "description": "Nous combinons une connaissance approfondie de l'industrie avec une technologie de pointe pour fournir des solutions ERP qui ne répondent pas seulement à vos besoins d'aujourd'hui—mais qui évoluent avec votre entreprise demain. Notre expérience éprouvée s'étend sur plus de deux décennies, servant diverses industries avec des solutions personnalisées qui génèrent de vrais résultats commerciaux."
+    "title": "Pourquoi Oneir",
+    "cards": [
+      { "title": "Clarté", "description": "Rendre le complexe simple pour que vous puissiez agir en toute confiance.", "icon": "why1" },
+      { "title": "Confiance", "description": "Une fiabilité bâtie sur des décennies de service et d'innovation.", "icon": "why2" },
+      { "title": "Évolution", "description": "Une amélioration constante pour vous garder compétitif.", "icon": "why3" },
+      { "title": "Centré client", "description": "Écouter d'abord et bâtir des relations durables.", "icon": "why4" },
+      { "title": "Résultats", "description": "Transformer votre vision en croissance mesurable.", "icon": "why5" }
+    ]
   },
   "cta": {
     "title": "Prêt à Transformer Votre Entreprise?",

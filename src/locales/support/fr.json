@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Des réponses à portée de main",
+    "subtitle": "Consultez la base de connaissances, résolvez les problèmes en quelques minutes ou ouvrez un billet pour une aide personnalisée."
+  },
+  "help": {
+    "title": "Comment pouvons-nous vous aider?",
+    "searchPlaceholder": "Rechercher des articles, guides, téléchargements...",
+    "submitTicket": "Ouvrir un billet",
+    "contactSupport": "Contacter le support"
+  },
+  "resources": {
+    "title": "Parcourir les ressources de support",
+    "commonQuestions": {
+      "title": "Questions courantes",
+      "description": "Réponses rapides aux questions fréquemment posées"
+    },
+    "productManuals": {
+      "title": "Manuels produits",
+      "description": "Documentation détaillée et matériel de référence"
+    },
+    "driversSoftware": {
+      "title": "Pilotes et logiciels",
+      "description": "Applications, installateurs et outils"
+    },
+    "mediaArticles": {
+      "title": "Médias et articles",
+      "description": "Processus avancés et meilleures pratiques"
+    }
+  },
+  "assistance": {
+    "title": "Besoin d'une aide supplémentaire?",
+    "ticketCard": {
+      "button": "Ouvrir un billet de support",
+      "description": "Vous ne trouvez pas ce que vous cherchez? Notre équipe de support est là pour vous aider."
+    },
+    "contactCard": {
+      "title": "Contacter le support",
+      "phone": "416.322.3580 poste 2",
+      "fax": "Télécopieur",
+      "faxNumber": "416.322.0809",
+      "email": "support@oneirsolutions.com",
+      "hours": "Lun - Ven, 9h - 17h HNE"
+    }
+  }
+}

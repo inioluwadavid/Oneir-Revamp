@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "../globals.css";
 import { defaultLocale, type Locale } from "@/lib/translations";
+import ScrollToTopBottom from "@/components/ui/ScrollToTopBottom";
+import DemoModalProviderWrapper from "@/components/providers/DemoModalProviderWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -120,9 +122,12 @@ export default async function LocaleLayout({
       <body
         className={`${inter.variable} ${outfit.variable} font-sans antialiased`}
       >
-        <div className="min-h-screen">
-          {children}
-        </div>
+        <DemoModalProviderWrapper locale={locale}>
+          <div className="min-h-screen">
+            {children}
+          </div>
+          <ScrollToTopBottom bottomOffset={24} rightOffset={24} />
+        </DemoModalProviderWrapper>
       </body>
     </html>
   );
