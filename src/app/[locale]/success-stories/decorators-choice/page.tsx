@@ -1,3 +1,4 @@
+import { Fragment, type ReactNode } from "react";
 import { type Locale } from "@/lib/translations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
@@ -30,23 +31,27 @@ export async function generateMetadata({
 }
 
 type LinkDef = { phrase: string; url: string };
+type RichSegment = { variant: "body" | "quote"; text: string };
 type Paragraph = {
   type: string;
   text?: string;
   items?: unknown[];
   attribution?: string;
   links?: LinkDef[];
+  plain?: boolean;
+  quotes?: string[];
+  segments?: RichSegment[];
 };
 
 function renderTextWithLinks(
   text: string,
   links?: LinkDef[],
   className?: string
-): React.ReactNode {
+): ReactNode {
   if (!links?.length) {
     return <span>{text}</span>;
   }
-  const parts: React.ReactNode[] = [];
+  const parts: ReactNode[] = [];
   let remaining = text;
   for (const { phrase, url } of links) {
     const idx = remaining.indexOf(phrase);
@@ -60,7 +65,7 @@ function renderTextWithLinks(
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#942C56] underline hover:no-underline"
+        className="text-[#434349] underline decoration-solid underline-offset-2 hover:no-underline"
       >
         {phrase}
       </a>
@@ -69,6 +74,18 @@ function renderTextWithLinks(
   }
   if (remaining) parts.push(remaining);
   return <span className={className}>{parts}</span>;
+}
+
+function renderRichSegments(segments: RichSegment[]): ReactNode {
+  return segments.map((s, i) =>
+    s.variant === "quote" ? (
+      <span key={i} className="text-[20px] font-semibold leading-8 text-[#434349]">
+        {s.text}
+      </span>
+    ) : (
+      <span key={i}>{s.text}</span>
+    )
+  );
 }
 
 export default async function DecoratorsChoiceCaseStudy({ params }: CaseStudyPageProps) {
@@ -88,12 +105,13 @@ export default async function DecoratorsChoiceCaseStudy({ params }: CaseStudyPag
   const title = "Decorators Choice";
   const logo = caseStudy.logo ?? "/images/how_businesses/how3.svg";
 
+  const bodyClass = "text-[16px] leading-6 text-[#434349]";
   const paragraphClasses: Record<string, string> = {
-    intro: "text-[16px] sm:text-[17px] leading-relaxed text-[#434349] pb-3",
-    descriptive: "text-[14px] sm:text-[15px] leading-relaxed text-[#434349] pb-3",
-    quote: "text-[18px] sm:text-[20px] font-[600] leading-relaxed text-[#434349] pb-3",
-    sectionHeader: "text-[16px] sm:text-[17px] font-[600] text-[#070714] pb-3",
-    attribution: "text-[14px] sm:text-[15px] text-[#434349]/80 italic pb-3",
+    intro: `${bodyClass} pb-6`,
+    descriptive: `${bodyClass} pb-6`,
+    quote: "text-[20px] font-semibold leading-8 text-[#434349] pb-6",
+    sectionHeader: "text-[16px] font-semibold leading-6 text-[#070714] pb-6",
+    attribution: "text-[16px] leading-6 text-[#434349] pb-6",
   };
 
   return (
@@ -122,28 +140,53 @@ export default async function DecoratorsChoiceCaseStudy({ params }: CaseStudyPag
           </div>
 
           <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm">
-            <div className="flex flex-col">
+            <div className="max-w-3xl flex flex-col">
               {caseStudy.paragraphs.map((p, i) => {
-                const marginTop = i === 0 ? "" : "mt-0";
                 return (
-                  <div key={i} className={marginTop}>
+                  <div key={i}>
                     {p.type === "bullets" && Array.isArray(p.items) ? (
-                      <ul className="list-disc list-inside text-[14px] sm:text-[15px] leading-relaxed text-[#434349] space-y-0 ml-2 pb-3">
+                      <ul
+                        className={`list-disc pl-5 ${bodyClass} space-y-0 pb-6 marker:text-[#434349]`}
+                      >
                         {(p.items as string[]).map((item, j) => (
-                          <li key={j}>{item}</li>
+                          <li key={j} className="pl-1">
+                            <span className="-ml-0.5">{item}</span>
+                          </li>
                         ))}
                       </ul>
+                    ) : p.type === "quoteMulti" && Array.isArray(p.quotes) ? (
+                      <p className={paragraphClasses.quote}>
+                        {(p.quotes as string[]).map((q, j) => (
+                          <Fragment key={j}>
+                            {j > 0 ? (
+                              <>
+                                <br />
+                                <br />
+                              </>
+                            ) : null}
+                            {q}
+                          </Fragment>
+                        ))}
+                      </p>
+                    ) : p.type === "rich" && Array.isArray(p.segments) ? (
+                      <p className={`${bodyClass} whitespace-pre-wrap pb-6`}>
+                        {renderRichSegments(p.segments as RichSegment[])}
+                      </p>
                     ) : p.type === "sectionHeader" && p.text ? (
                       <h2 className={paragraphClasses.sectionHeader}>{p.text}</h2>
                     ) : p.type === "quote" && p.text ? (
-                      <div>
-                        <p className={paragraphClasses.quote}>
-                          &ldquo;{p.text}&rdquo;
-                          {p.attribution && (
-                            <span className="font-normal text-[14px] sm:text-[15px]"> {p.attribution}</span>
-                          )}
-                        </p>
-                      </div>
+                      <p className={paragraphClasses.quote}>
+                        {p.plain ? (
+                          p.text
+                        ) : (
+                          <>
+                            &ldquo;{p.text}&rdquo;
+                            {p.attribution && (
+                              <span className="font-normal text-[16px] leading-6"> {p.attribution}</span>
+                            )}
+                          </>
+                        )}
+                      </p>
                     ) : p.type === "attribution" && p.text ? (
                       <p className={paragraphClasses.attribution}>{p.text}</p>
                     ) : p.type === "descriptive" && p.text ? (
@@ -151,8 +194,12 @@ export default async function DecoratorsChoiceCaseStudy({ params }: CaseStudyPag
                         {renderTextWithLinks(p.text, p.links)}
                       </p>
                     ) : (
-                      <p className={paragraphClasses[p.type as keyof typeof paragraphClasses] ?? paragraphClasses.intro}>
-                        {p.text}
+                      <p
+                        className={
+                          paragraphClasses[p.type as keyof typeof paragraphClasses] ?? paragraphClasses.intro
+                        }
+                      >
+                        {p.text ? renderTextWithLinks(p.text, p.links) : null}
                       </p>
                     )}
                   </div>

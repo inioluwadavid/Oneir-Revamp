@@ -84,7 +84,7 @@ export default function Navbar({ currentLocale }: NavbarProps) {
             {/* Vertical dashed rule — matches Figma node 1821:2132 (rotated line asset) */}
             <span
               aria-hidden
-              className="hidden h-14 w-0 shrink-0 self-center border-l border-dashed border-[#C6C7CA] lg:block lg:h-16"
+              className="block h-12 w-0 shrink-0 self-center border-l border-dashed border-[#C6C7CA] sm:h-14 lg:h-16"
             />
           </Link>
 

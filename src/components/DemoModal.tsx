@@ -232,24 +232,24 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/40 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex touch-manipulation items-stretch justify-center p-0 sm:items-center sm:p-4 md:p-6 bg-black/40 backdrop-blur-sm"
           onClick={handleBackdropClick}
           aria-modal="true"
           role="dialog"
           aria-labelledby="demo-modal-heading"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 8 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 8 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-[672px] max-h-[90vh] overflow-hidden flex flex-col bg-white rounded-2xl shadow-[0px_16px_40px_0px_rgba(0,0,0,0.1)]"
+            className="relative flex h-[100dvh] min-h-[100dvh] w-full max-w-none flex-col overflow-hidden overscroll-y-none bg-white shadow-[0px_16px_40px_0px_rgba(0,0,0,0.1)] sm:h-auto sm:min-h-0 sm:max-h-[min(90vh,900px)] sm:max-w-[672px] sm:rounded-2xl"
           >
-            {/* Close button */}
+            {/* Close button — safe area on notched phones */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 p-1 rounded-full text-[#434349] hover:bg-[#e0e3eb] hover:text-[#2d2d2d] transition-colors focus:outline-none focus:ring-2 focus:ring-[#65083A] focus:ring-offset-2"
+              className="absolute right-3 top-[max(0.75rem,env(safe-area-inset-top))] z-10 rounded-full p-2 text-[#434349] hover:bg-[#e0e3eb] hover:text-[#2d2d2d] transition-colors focus:outline-none focus:ring-2 focus:ring-[#65083A] focus:ring-offset-2 sm:right-5 sm:top-5 md:right-6 md:top-6"
               aria-label={getNestedTranslation(t, 'demoModal.close')}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -259,8 +259,8 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
 
             {showSuccess ? (
               /* Success content */
-              <div className="flex flex-col items-center justify-center px-10 sm:px-14 py-12 sm:py-16">
-                <div className="flex flex-col gap-12 sm:gap-[72px] items-center">
+              <div className="flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[max(3.5rem,env(safe-area-inset-top))] sm:px-14 sm:py-16">
+                <div className="flex w-full max-w-md flex-col items-center gap-10 sm:gap-[72px]">
                   <div className="flex flex-col gap-4 items-center">
                     {/* Success icon with glow */}
                     <div className="relative w-20 h-20">
@@ -301,7 +301,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     variant="primary"
                     size="lg"
                     animated
-                    className="flex items-center justify-center gap-2 min-w-[218px]"
+                    className="flex w-full max-w-[min(100%,218px)] items-center justify-center gap-2 sm:w-auto sm:min-w-[218px]"
                     onClick={onClose}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -324,8 +324,8 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
               </div>
             ) : (
               <>
-            {/* Main content */}
-            <div className="flex flex-col gap-8 sm:gap-10 px-6 sm:px-10 pt-8 sm:pt-10 pb-6 overflow-y-auto flex-1 min-h-0">
+            {/* Main content — scroll; extra top padding clears fixed close on small screens */}
+            <div className="flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto overflow-x-hidden overscroll-y-contain px-4 pb-4 pr-14 pt-[max(3.25rem,env(safe-area-inset-top))] sm:gap-10 sm:px-10 sm:pb-6 sm:pr-10 sm:pt-10">
               {/* Progress bar */}
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">
@@ -598,13 +598,13 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                       </label>
                       <label
                         htmlFor="demo-file-upload"
-                        className="flex gap-3 items-center justify-center h-[60px] border-2 border-dashed border-[#e0e3eb] rounded-[10px] px-2 py-2 cursor-pointer hover:border-[#9b9bbd] hover:bg-[#f8f8fb] transition-colors"
+                        className="flex min-h-[60px] cursor-pointer flex-col items-center justify-center gap-2 rounded-[10px] border-2 border-dashed border-[#e0e3eb] px-3 py-3 sm:flex-row sm:gap-3 sm:px-2 sm:py-2 hover:border-[#9b9bbd] hover:bg-[#f8f8fb] transition-colors"
                       >
-                        <svg className="w-5 h-5 text-[#0a0a0a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="h-5 w-5 shrink-0 text-[#0a0a0a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                         </svg>
                         <span
-                          className="text-base text-[#0a0a0a] tracking-[-0.31px]"
+                          className="break-all text-center text-sm text-[#0a0a0a] tracking-[-0.31px] sm:text-base"
                           style={{ fontFamily: 'var(--font-inter)' }}
                         >
                           {step4Data.file ? step4Data.file.name : stepLabels.fileUploadHint}
@@ -648,21 +648,21 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
               )}
             </div>
 
-            {/* Footer */}
-            <div className="shrink-0 px-6 sm:px-10 py-6 sm:py-8 bg-[rgba(248,248,251,0.5)] border-t border-[#e0e3eb]">
+            {/* Footer — stack on narrow screens; safe area for home indicator */}
+            <div className="shrink-0 border-t border-[#e0e3eb] bg-[rgba(248,248,251,0.5)] px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-10 sm:py-8">
               {currentStep === 1 ? (
                 <Button variant="primary" size="lg" animated className="w-full" onClick={() => setCurrentStep(2)}>
                   {stepLabels.nextButton}
                 </Button>
               ) : currentStep === 2 ? (
-                <div className="flex gap-4 sm:gap-6 items-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-6">
                   <button
                     type="button"
                     onClick={() => setCurrentStep(1)}
-                    className="flex items-center gap-2 h-[59px] px-5 py-[18px] bg-white border border-[#e0e3eb] rounded-[40px] text-[#2d2d2d] font-medium text-lg hover:bg-[#f8f8fb] transition-colors focus:outline-none focus:ring-2 focus:ring-[#65083A]/30"
+                    className="flex h-[52px] w-full shrink-0 items-center justify-center gap-2 rounded-[40px] border border-[#e0e3eb] bg-white px-4 py-3 text-base font-medium text-[#2d2d2d] hover:bg-[#f8f8fb] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 sm:h-[59px] sm:w-auto sm:min-w-0 sm:px-5 sm:text-lg"
                     style={{ fontFamily: 'var(--font-inter)' }}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                     {stepLabels.backButton}
@@ -671,21 +671,21 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     variant="primary"
                     size="lg"
                     animated
-                    className="flex-1"
+                    className="w-full sm:flex-1"
                     onClick={() => setCurrentStep(3)}
                   >
                     {stepLabels.nextButtonStep2}
                   </Button>
                 </div>
               ) : currentStep === 3 ? (
-                <div className="flex gap-4 sm:gap-6 items-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-6">
                   <button
                     type="button"
                     onClick={() => setCurrentStep(2)}
-                    className="flex items-center gap-2 h-[59px] px-5 py-[18px] bg-white border border-[#e0e3eb] rounded-[40px] text-[#2d2d2d] font-medium text-lg hover:bg-[#f8f8fb] transition-colors focus:outline-none focus:ring-2 focus:ring-[#65083A]/30"
+                    className="flex h-[52px] w-full shrink-0 items-center justify-center gap-2 rounded-[40px] border border-[#e0e3eb] bg-white px-4 py-3 text-base font-medium text-[#2d2d2d] hover:bg-[#f8f8fb] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 sm:h-[59px] sm:w-auto sm:min-w-0 sm:px-5 sm:text-lg"
                     style={{ fontFamily: 'var(--font-inter)' }}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                     {stepLabels.backButton}
@@ -694,21 +694,21 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     variant="primary"
                     size="lg"
                     animated
-                    className="flex-1"
+                    className="w-full sm:flex-1"
                     onClick={() => setCurrentStep(4)}
                   >
                     {stepLabels.nextButtonStep3}
                   </Button>
                 </div>
               ) : (
-                <div className="flex gap-4 sm:gap-6 items-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-6">
                   <button
                     type="button"
                     onClick={() => setCurrentStep(3)}
-                    className="flex items-center gap-2 h-[59px] px-5 py-[18px] bg-white border border-[#e0e3eb] rounded-[40px] text-[#2d2d2d] font-medium text-lg hover:bg-[#f8f8fb] transition-colors focus:outline-none focus:ring-2 focus:ring-[#65083A]/30"
+                    className="flex h-[52px] w-full shrink-0 items-center justify-center gap-2 rounded-[40px] border border-[#e0e3eb] bg-white px-4 py-3 text-base font-medium text-[#2d2d2d] hover:bg-[#f8f8fb] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 sm:h-[59px] sm:w-auto sm:min-w-0 sm:px-5 sm:text-lg"
                     style={{ fontFamily: 'var(--font-inter)' }}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                     {stepLabels.backButton}
@@ -717,7 +717,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     variant="primary"
                     size="lg"
                     animated
-                    className="flex-1"
+                    className="w-full sm:flex-1"
                     onClick={() => setShowSuccess(true)}
                   >
                     {stepLabels.sendButton}
