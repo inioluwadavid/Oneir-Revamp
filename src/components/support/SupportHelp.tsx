@@ -1,6 +1,7 @@
 import { type Locale } from "@/lib/translations";
 import SupportSearch from "@/components/support/SupportSearch";
 import Button from "@/components/ui/Button";
+import ContactSupportButton from "@/components/support/ContactSupportButton";
 import FadeInSection from "@/components/motion/FadeInSection";
 import enTranslations from "@/locales/support/en.json";
 import frTranslations from "@/locales/support/fr.json";
@@ -38,15 +39,7 @@ export default function SupportHelp({ locale }: SupportHelpProps) {
             <Image src="/images/ticket.svg" alt="" width={24} height={24} className="shrink-0" />
             {t.help.submitTicket}
           </Button>
-          <Button
-            href="#contact-support"
-            variant="secondary"
-            size="lg"
-            className="inline-flex items-center justify-center gap-2"
-          >
-            <Image src="/images/comment.svg" alt="" width={24} height={19} className="shrink-0" />
-            {t.help.contactSupport}
-          </Button>
+          <ContactSupportButton label={t.help.contactSupport} />
         </div>
         </FadeInSection>
       </div>
