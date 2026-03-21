@@ -46,10 +46,12 @@ export default function HowBusinessesRun({ locale, variant = 'compact' }: HowBus
       className="py-12 sm:py-[80px] lg:py-20 px-4 sm:px-[96px] "
     >
       <div className="max-w-7xl mx-auto">
-      <BackButton
+        {variant === "full" && (
+          <BackButton
             ariaLabel={locale === "en" ? "Go back" : "Retour"}
             className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/60 transition-colors mb-4"
           />
+        )}
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm p-6 sm:p-8 lg:p-12">
           {/* Main title */}
           <motion.h2

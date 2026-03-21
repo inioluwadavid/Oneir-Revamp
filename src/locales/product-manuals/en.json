@@ -5,142 +5,218 @@
     "backToSupport": "Back to previous page"
   },
   "tabs": {
-    "manuals": "Manuals",
-    "printingEmailing": "Printing and Emailing",
-    "importingExporting": "Importing and Exporting",
-    "electronicFundTransfers": "Electronic Fund Transfers",
-    "termsConditions": "Terms and Conditions"
+    "gettingStartedSystemSetup": "Getting Started & System Setup",
+    "salesCustomersCrm": "Sales, Customers & CRM",
+    "purchasingInventoryProduction": "Purchasing, Inventory & Production",
+    "paymentsPayrollFinancialProcesses": "Payments, Payroll & Financial Processes",
+    "printingEmailDocuments": "Printing, Email & Documents",
+    "systemAdministrationDataSupport": "System Administration, Data & Support"
   },
   "linkText": "View manual",
   "sections": {
-    "manuals": {
-      "title": "Manuals",
+    "gettingStartedSystemSetup": {
+      "title": "Getting Started & System Setup",
       "items": [
         {
           "title": "Oneir Manual",
           "description": "A comprehensive guide to using the Oneir accounting system, including setup, daily operations, and detailed instructions for each module such as General Ledger, Accounts Receivable, Inventory, Sales Orders, and Point of Sale.",
-          "href": "#"
+          "href": "https://drive.google.com/file/d/14BT-ODpc4TC-ENQIr3VuxRF3KTeCt2AU/view?usp=drive_link"
         },
         {
-          "title": "Oneir Payroll",
-          "description": "Explains how to configure and process payroll in Oneir, including employee setup, deductions, payroll processing, year-end procedures, and troubleshooting common payroll issues.",
-          "href": "#"
+          "title": "Elavon Install Checklist",
+          "description": "Step-by-step checklist outlining the requirements and configuration tasks needed to successfully install and integrate Elavon payment processing with Oneir systems.",
+          "href": "https://drive.google.com/file/d/14BT-ODpc4TC-ENQIr3VuxRF3KTeCt2AU/view?usp=drive_link"
         },
         {
-          "title": "Oneir Purchase Orders",
-          "description": "Provides an overview of the Oneir Purchase Order module, including creating orders, receiving inventory, printing purchase orders, and managing order reports.",
-          "href": "#"
+          "title": "VMs with Oneir",
+          "description": "Explains recommended virtualization options such as VMware Workstation, VMware Cloud, and ESXi for hosting Oneir systems, including template requirements and configuration tips.",
+          "href": "https://docs.google.com/document/d/1biWJHckgsvW5vAqFhRpABW2mKauLfXuY/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
-          "title": "Order Guide",
-          "description": "Explains how to create purchase order guides based on recent sales and return activity, helping users quickly build vendor orders with suggested products.",
-          "href": "#"
+          "title": "How to Set Up Employees to Work From Home Over VPN",
+          "description": "Explains how employees can securely access Oneir remotely using a VPN connection and Telnet software to log in to the company server as if they were in the office.",
+          "href": "https://docs.google.com/document/d/1IhKm46m2x3w8I2Ft_W586ck1b5KtxwRo/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
-          "title": "Generating PO's",
-          "description": "Describes how to automatically generate purchase orders based on inventory levels, reorder quantities, and current stock commitments to help maintain optimal inventory levels.",
-          "href": "#"
-        },
-        {
-          "title": "Container Receiving",
-          "description": "Details the process for receiving purchase orders into containers, including handling multiple currencies, freight and duty costs, and distributing landed costs across received products.",
-          "href": "#"
+          "title": "Oneir Security",
+          "description": "Details the nine-level security model used in Oneir to control access to features and data, ensuring users only perform tasks appropriate to their role.",
+          "href": "https://docs.google.com/document/d/19KqnPuhYqG5WbS0KAnLxyVxRn_gTc_Hn/edit?rtpof=true&tab=t.0"
         }
       ]
     },
-    "printingEmailing": {
-      "title": "Printing and Emailing",
+    "salesCustomersCrm": {
+      "title": "Sales, Customers & CRM",
       "items": [
         {
-          "title": "Printing With Oneir",
-          "description": "Outlines printer compatibility requirements and recommendations for printing reports, forms, and POS receipts within the Oneir system.",
-          "href": "#"
+          "title": "Oneir Relationship Management Features",
+          "description": "Describes the memo and contact management tools in Oneir that allow users to record notes, communications, and follow-ups related to customers, vendors, employees, and inventory items.",
+          "href": "https://docs.google.com/document/d/1xCOOn4vBcRzrflTzCsnNKSOJ6BmjOQeB/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
-          "title": "Emailing With Oneir",
-          "description": "Explains how emails are sent from Oneir through the Perfect Mail relay service and outlines the DKIM, SPF, and DMARC authentication requirements needed to ensure reliable email delivery.",
-          "href": "#"
+          "title": "Oneir Statements with Invoice Copies",
+          "description": "Explains how to configure and send customer statements that include PDF copies of invoices and credit notes when emailed to clients.",
+          "href": "https://docs.google.com/document/d/1FWi2GGRftpZZEpcDUm6qgrY0KWANV5h5/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
-          "title": "Postscript Printing & Email",
-          "description": "Describes how PostScript printing enables advanced form features such as logos and watermarks, allowing businesses to print invoices, receipts, and other documents without pre-printed forms.",
-          "href": "#"
-        },
-        {
-          "title": "WatchFolder",
-          "description": "Instructions for installing and using WatchFolder, a tool that automatically displays Oneir reports as PDFs so users can preview, search, or print them from their computer.",
-          "href": "#"
-        },
-        {
-          "title": "Cloud Printing",
-          "description": "Provides instructions for printing reports and forms from the Oneir cloud environment using either the Windows PDF printing app or direct printer passthrough via Eric's Telnet terminal.",
-          "href": "#"
-        }
-      ]
-    },
-    "importingExporting": {
-      "title": "Importing and Exporting",
-      "items": [
-        {
-          "title": "Data Mining Sales History",
-          "description": "Shows how to export sales history data from Oneir for reporting and analysis, including filtering options and saving results for use in external tools such as Excel.",
-          "href": "#"
+          "title": "Integrated Bank Credit",
+          "description": "Describes how Oneir integrates credit card and banking functions with accounts receivable and payment processing to streamline customer transactions and reconciliation.",
+          "href": "https://docs.google.com/document/d/1BoXLve6CXMlWbhBWAW3u0Qasc9OU_0lB/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
           "title": "Exporting Customer Emails",
           "description": "Step-by-step instructions for exporting customer email addresses from the Accounts Receivable module into a file that can be opened in Excel.",
-          "href": "#"
-        },
-        {
-          "title": "Exporting to Excel",
-          "description": "Explains how to export Oneir reports to spreadsheet format, including setting up the export folder and saving files for use in Excel.",
-          "href": "#"
-        },
-        {
-          "title": "Importing Data Into Oneir",
-          "description": "Provides guidelines for importing customers, products, or vendors into Oneir using properly formatted CSV files.",
-          "href": "#"
+          "href": "https://docs.google.com/document/d/10KngQFEM7N7Od2Rm-Ye-8t-xKnxOJdOK/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         }
       ]
     },
-    "electronicFundTransfers": {
-      "title": "Electronic Fund Transfers",
+    "purchasingInventoryProduction": {
+      "title": "Purchasing, Inventory & Production",
       "items": [
+        {
+          "title": "Oneir Purchase Orders",
+          "description": "Provides an overview of the Oneir Purchase Order module, including creating orders, receiving inventory, printing purchase orders, and managing order reports.",
+          "href": "https://drive.google.com/file/d/14dX1PCUw_6CiI7Aq8csf_p9wIrsbDWlb/view?usp=drive_link"
+        },
+        {
+          "title": "Generating PO's",
+          "description": "Describes how to automatically generate purchase orders based on inventory levels, reorder quantities, and current stock commitments to help maintain optimal inventory levels.",
+          "href": "https://docs.google.com/document/d/1Z1YzeyBy1pBBy3BhekKQvB46RAy0GpCb/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Order Guide",
+          "description": "Explains how to create purchase order guides based on recent sales and return activity, helping users quickly build vendor orders with suggested products.",
+          "href": "https://docs.google.com/document/d/1vonD2eKdt4zBgYIQsqM8S2iCDfdUvgSo/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Container Receiving",
+          "description": "Details the process for receiving purchase orders into containers, including handling multiple currencies, freight and duty costs, and distributing landed costs across received products.",
+          "href": "https://docs.google.com/document/d/1hFx0xsBH3xlXKK7i8Ku1zCWLriKCRVck/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Oneir Bill of Materials",
+          "description": "Overview of the Bill of Materials feature used to define product assemblies, manage components, and support manufacturing or production workflows within Oneir.",
+          "href": "https://docs.google.com/document/d/1VK61CZSkNuH7kX9eA2lFWzZCd7l1LJ5D/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Oneir Job Costing",
+          "description": "Comprehensive guide to tracking job estimates, labour, materials, and overhead costs, allowing businesses to monitor profitability and performance throughout each project lifecycle.",
+          "href": "https://drive.google.com/file/d/1q4DH3W7Ade2xKIHa29Iw37PQYRuABTFf/view?usp=drive_link"
+        },
+        {
+          "title": "Oneir Kitting, Tag Along and Mix and Match Products",
+          "description": "Explains three promotional and bundling features—Mix and Match, Tag Along, and Kitting—that allow multiple products to be grouped or priced together for flexible sales and inventory management.",
+          "href": "https://docs.google.com/document/d/1DRsWxJ5cImG2q_B6sNB8hfdd_GxHoEtN/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        }
+      ]
+    },
+    "paymentsPayrollFinancialProcesses": {
+      "title": "Payments, Payroll & Financial Processes",
+      "items": [
+        {
+          "title": "Oneir Payroll",
+          "description": "Explains how to configure and process payroll in Oneir, including employee setup, deductions, payroll processing, year-end procedures, and troubleshooting common payroll issues.",
+          "href": "https://drive.google.com/file/d/1Q8BjhvtSlf1T9H922mWRnSMeYgYkwQjo/view?usp=drive_link"
+        },
         {
           "title": "Oneir EFT's to Vendors",
           "description": "Explains how to send vendor payments electronically through your bank using Oneir's EFT functionality, reducing manual cheque processing and improving payment efficiency.",
-          "href": "#"
+          "href": "https://docs.google.com/document/d/13-O4z-nQOgblv2TmgImUP5-CE55hjBb5/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
-          "title": "Sample Remittance Notice",
-          "description": "Example of the remittance advice vendors receive when payments are issued through electronic funds transfer.",
-          "href": "#"
-        },
-        {
-          "title": "Tides Canada Enrollment",
-          "description": "A form used by vendors to authorize Tides Canada to send payments through electronic funds transfer directly to their bank account. It includes vendor details, banking information, and authorization for ongoing EFT payments.",
-          "href": "#"
+          "title": "EFT Payments",
+          "description": "Outlines requirements for setting up EFT and direct deposit payments in Oneir, including bank file format documentation and company banking information needed to generate payment files.",
+          "href": "https://docs.google.com/document/d/1MMR-2gZRnSDUqFRo2ZeF3vwkHYL3hZQb/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
           "title": "Sample Direct Deposit Enrollment",
           "description": "Example vendor enrollment forms used to collect banking information required to set up electronic payments through direct deposit.",
-          "href": "#"
+          "href": "https://docs.google.com/document/d/1GDs4s8kq3nj0R9vl7wGfVaAgPxeX4TOd/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         },
         {
           "title": "North Vancouver Enrollment",
           "description": "A vendor enrollment form used to authorize Electronic Funds Transfer (EFT) payments from the District of North Vancouver. Vendors provide their banking details and contact information so payments can be deposited directly into their bank account.",
-          "href": "#"
+          "href": "https://drive.google.com/file/d/1JAke8uwBHEzCs8wsV1D2zc7C0LtK_pTC/view?usp=drive_link"
+        },
+        {
+          "title": "Tides Canada Enrollment",
+          "description": "A form used by vendors to authorize Tides Canada to send payments through electronic funds transfer directly to their bank account. It includes vendor details, banking information, and authorization for ongoing EFT payments.",
+          "href": "https://docs.google.com/document/d/1VKefmP7jlhJlYdhT098mgiIzZw49lmX6/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Sample Remittance Notice",
+          "description": "Example of the remittance advice vendors receive when payments are issued through electronic funds transfer.",
+          "href": "https://drive.google.com/file/d/1W2512mTbbwjKCxhAEcYNGXSxaRngv2rB/view?usp=drive_link"
         }
       ]
     },
-    "termsConditions": {
-      "title": "Terms and Conditions",
+    "printingEmailDocuments": {
+      "title": "Printing, Email & Documents",
       "items": [
+        {
+          "title": "Printing With Oneir",
+          "description": "Outlines printer compatibility requirements and recommendations for printing reports, forms, and POS receipts within the Oneir system.",
+          "href": "https://docs.google.com/document/d/15OMOM-qmpFXhg7Kd7PdopFREmOBzTE79/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Cloud Printing",
+          "description": "Provides instructions for printing reports and forms from the Oneir cloud environment using either the Windows PDF printing app or direct printer passthrough via Eric's Telnet terminal.",
+          "href": "https://docs.google.com/document/d/112TYTlodvzy0N726sqz_m1FHeDYR-fCE/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Postscript Printing & Email",
+          "description": "Describes how PostScript printing enables advanced form features such as logos and watermarks, allowing businesses to print invoices, receipts, and other documents without pre-printed forms.",
+          "href": "https://docs.google.com/document/d/1PJFa91Xk7KZsgDMdJVILLVr306t1-M_S/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Emailing With Oneir",
+          "description": "Explains how emails are sent from Oneir through the Perfect Mail relay service and outlines the DKIM, SPF, and DMARC authentication requirements needed to ensure reliable email delivery.",
+          "href": "https://docs.google.com/document/d/1JeN6zVCDJfZdutInuL0HAaxN2BihRkhk/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "WatchFolder",
+          "description": "Instructions for installing and using WatchFolder, a tool that automatically displays Oneir reports as PDFs so users can preview, search, or print them from their computer.",
+          "href": "https://docs.google.com/document/d/1JPoTHLznvRGzV5v7fTzrzSBO77Io7Tbc/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        }
+      ]
+    },
+    "systemAdministrationDataSupport": {
+      "title": "System Administration, Data & Support",
+      "items": [
+        {
+          "title": "Oneir Year End Closing Procedure",
+          "description": "Provides instructions for safely closing the fiscal year in Oneir, including backup requirements and steps to update fiscal periods in the General Ledger.",
+          "href": "https://docs.google.com/document/d/1WJrBmghwmbVeKNL4Ed4SDCVcYOl9poQ1/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
         {
           "title": "Constitution",
           "description": "Outlines the terms, service scope, and support levels provided under the Oneir and Vigilant Software Maintenance Plan, including response times, backup policies, and customer responsibilities. The document also details subscription terms, payment conditions, liability limitations, and procedures for updates, termination, and dispute resolution.",
           "href": "https://docs.google.com/document/d/15cyphfZydZHZ-iai7MdEjtOvOh_iI0tR/edit?usp=drive_link&ouid=102888090148756009700&rtpof=true&sd=true",
           "linkText": "View here"
+        },
+        {
+          "title": "Support Summary",
+          "description": "Overview of Oneir's support services, including available channels, support hours, responsibilities between Oneir and technical advisors, and system deployment guidance.",
+          "href": "https://docs.google.com/document/d/1IO7uf3ayLD1AHATxccjkO43yVwMGS-gT/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Training",
+          "description": "Describes Oneir's customized training programs designed to help customers learn the system efficiently through tailored sessions and a training environment using real company data.",
+          "href": "https://docs.google.com/document/d/1bp9ml91-4c0oJiPrSBtrom2jEOSF_Glr/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Data Mining Sales History",
+          "description": "Shows how to export sales history data from Oneir for reporting and analysis, including filtering options and saving results for use in external tools such as Excel.",
+          "href": "https://docs.google.com/document/d/1c9w5bknj92arfsDw6_eJTXH5crdOIu1H/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Exporting to Excel",
+          "description": "Explains how to export Oneir reports to spreadsheet format, including setting up the export folder and saving files for use in Excel.",
+          "href": "https://docs.google.com/document/d/1eT0ofDiL-H8TUZ3V9uMbXfeDfbjFr0NR/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
+        },
+        {
+          "title": "Importing Data Into Oneir",
+          "description": "Provides guidelines for importing customers, products, or vendors into Oneir using properly formatted CSV files.",
+          "href": "https://docs.google.com/document/d/1bl9GjWkiPyCwT1TIW7RrUqD5yIdVg_E1/edit?usp=drive_link&ouid=109224091616934502470&rtpof=true&sd=true"
         }
       ]
     }

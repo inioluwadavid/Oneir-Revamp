@@ -31,11 +31,12 @@ export async function generateMetadata({
 }
 
 const SECTION_KEYS = [
-  "manuals",
-  "printingEmailing",
-  "importingExporting",
-  "electronicFundTransfers",
-  "termsConditions",
+  "gettingStartedSystemSetup",
+  "salesCustomersCrm",
+  "purchasingInventoryProduction",
+  "paymentsPayrollFinancialProcesses",
+  "printingEmailDocuments",
+  "systemAdministrationDataSupport",
 ] as const;
 
 type SectionKey = (typeof SECTION_KEYS)[number];
@@ -65,7 +66,7 @@ export default async function ProductManualsPage({
                 title={section.title}
                 items={section.items}
                 linkText={t.linkText}
-                layout={key === "termsConditions" ? "single" : "grid"}
+                layout="grid"
               />
             );
           })}

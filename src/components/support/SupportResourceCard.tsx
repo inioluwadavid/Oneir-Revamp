@@ -1,8 +1,14 @@
+"use client";
+
 import { type Locale } from "@/lib/translations";
 import enTranslations from "@/locales/support/en.json";
 import frTranslations from "@/locales/support/fr.json";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { DURATION, EASE_OUT } from "@/lib/motion-variants";
+
+const MotionLink = motion(Link);
 
 interface SupportResourceCardProps {
   locale: Locale;
@@ -50,21 +56,36 @@ export default function SupportResourceCard({
   const className =
     "flex w-full flex-col items-start rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] transition-shadow hover:shadow-md sm:p-8 sm:px-10";
 
+  const motionProps = {
+    whileHover: { y: -4, transition: { duration: DURATION.fast, ease: EASE_OUT } },
+    whileTap: { scale: 0.99 },
+  } as const;
+
   if (href) {
     const isExternal = href.startsWith("http");
     if (isExternal) {
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+        <motion.a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+          {...motionProps}
+        >
           {content}
-        </a>
+        </motion.a>
       );
     }
     return (
-      <Link href={href} className={className}>
+      <MotionLink href={href} className={className} {...motionProps}>
         {content}
-      </Link>
+      </MotionLink>
     );
   }
 
-  return <div className={className}>{content}</div>;
+  return (
+    <motion.div className={className} {...motionProps}>
+      {content}
+    </motion.div>
+  );
 }

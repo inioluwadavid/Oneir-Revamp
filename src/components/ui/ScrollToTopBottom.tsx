@@ -65,15 +65,19 @@ export default function ScrollToTopBottom({
 }: ScrollToTopBottomProps) {
   const [visible, setVisible] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [showScrollUp, setShowScrollUp] = useState(false);
 
   const checkScroll = useCallback(() => {
+    if (typeof window === "undefined" || typeof document === "undefined") return;
+
     const y = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const halfway = docHeight / 2;
 
-    setScrollY(y);
+    const isAtBottom = y >= docHeight - 50;
     setVisible(y > threshold || (docHeight > threshold && y < docHeight - threshold));
-    setAtBottom(y >= docHeight - 50);
+    setAtBottom(isAtBottom);
+    setShowScrollUp(isAtBottom || y > halfway);
   }, [threshold]);
 
   useEffect(() => {
@@ -87,10 +91,12 @@ export default function ScrollToTopBottom({
   }, [checkScroll]);
 
   const scrollToTop = () => {
+    if (typeof window === "undefined") return;
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const scrollToBottom = () => {
+    if (typeof window === "undefined" || typeof document === "undefined") return;
     window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: "smooth",
@@ -98,14 +104,12 @@ export default function ScrollToTopBottom({
   };
 
   const handleClick = () => {
-    if (atBottom || scrollY > (document.documentElement.scrollHeight - window.innerHeight) / 2) {
+    if (showScrollUp) {
       scrollToTop();
     } else {
       scrollToBottom();
     }
   };
-
-  const showScrollUp = atBottom || scrollY > (document.documentElement.scrollHeight - window.innerHeight) / 2;
 
   return (
     <AnimatePresence>

@@ -82,10 +82,11 @@ export default function CommonQuestionsHero({ locale }: CommonQuestionsHeroProps
         }}
         aria-hidden
       />
-      <div className="relative z-10 flex flex-col items-center gap-8 px-4 pt-24 pb-16 sm:gap-10 sm:pt-32 sm:pb-20 lg:gap-16 lg:px-8 lg:pt-40 lg:pb-28">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1210px] flex-col items-center gap-8 px-4 pt-24 pb-16 sm:px-6 sm:gap-10 sm:pt-32 sm:pb-20 lg:gap-16 lg:px-8 lg:pt-40 lg:pb-28">
         <HeroHeaderRow
           title={t.hero.title}
           backAriaLabel={t.hero.backToSupport}
+          backHref={`/${locale}/support`}
         />
         <nav
           className="flex w-full max-w-[1086px] flex-col gap-6 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-[96px]"

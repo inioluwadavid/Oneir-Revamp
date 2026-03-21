@@ -108,7 +108,7 @@ export default function Button({
   type = 'button'
 }: ButtonProps) {
   const baseClasses = `
-    font-medium transition-all duration-200 border
+    inline-flex items-center justify-center text-center font-medium transition-all duration-200 border
     ${sizeClasses[size]}
     ${fullWidth ? 'w-full' : ''}
     ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}

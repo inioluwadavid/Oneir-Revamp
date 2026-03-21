@@ -1,4 +1,5 @@
 import ManualCard from "./ManualCard";
+import FadeInSection from "@/components/motion/FadeInSection";
 import { createProductManualItemAnchor } from "@/lib/anchor-utils";
 
 export interface ManualItem {
@@ -80,10 +81,12 @@ export default function ProductManualsSection({
   );
 
   return (
-    <section id={id} className="scroll-mt-24 mb-16 sm:mb-20 lg:mb-[80px]">
-      <div className="rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-8 lg:p-12 lg:py-16 lg:px-24">
-        {content}
-      </div>
-    </section>
+    <FadeInSection className="mb-16 scroll-mt-24 sm:mb-20 lg:mb-[80px]">
+      <section id={id}>
+        <div className="rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-8 lg:p-12 lg:py-16 lg:px-24">
+          {content}
+        </div>
+      </section>
+    </FadeInSection>
   );
 }

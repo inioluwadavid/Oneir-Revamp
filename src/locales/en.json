@@ -1,4 +1,14 @@
 {
+  "signIn": {
+    "title": "Sign in",
+    "emailLabel": "Email",
+    "emailPlaceholder": "e.g. name@company.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "continueButton": "Continue",
+    "noAccount": "Don't have an account?",
+    "contactUs": "Contact us"
+  },
   "navigation": {
     "home": "Home",
     "aboutUs": "About Us",

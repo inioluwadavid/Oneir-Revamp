@@ -11,11 +11,12 @@ interface ProductManualsHeroProps {
 }
 
 const TAB_IDS = [
-  "manuals",
-  "printingEmailing",
-  "importingExporting",
-  "electronicFundTransfers",
-  "termsConditions",
+  "gettingStartedSystemSetup",
+  "salesCustomersCrm",
+  "purchasingInventoryProduction",
+  "paymentsPayrollFinancialProcesses",
+  "printingEmailDocuments",
+  "systemAdministrationDataSupport",
 ] as const;
 
 export default function ProductManualsHero({ locale }: ProductManualsHeroProps) {
@@ -48,10 +49,11 @@ export default function ProductManualsHero({ locale }: ProductManualsHeroProps) 
         }}
         aria-hidden
       />
-      <div className="relative z-10 flex flex-col items-center gap-8 px-4 pt-24 pb-16 sm:pt-32 sm:pb-20 lg:gap-16 lg:pt-40 lg:pb-28">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1210px] flex-col items-center gap-8 px-4 pt-24 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:gap-16 lg:px-8 lg:pt-40 lg:pb-28">
         <HeroHeaderRow
           title={t.hero.title}
           backAriaLabel={t.hero.backToSupport}
+          backHref={`/${locale}/support`}
         />
         {/* Subtitle block - centered */}
         <div className="flex flex-col items-center gap-4 text-center">
@@ -59,22 +61,36 @@ export default function ProductManualsHero({ locale }: ProductManualsHeroProps) 
             {t.hero.subtitle}
           </p>
         </div>
-        {/* Section tabs - grid on mobile, horizontal flex on larger screens */}
+        {/* Section tabs - 2 rows on desktop per Figma (Frame 4588) */}
         <nav
           className="flex w-full max-w-[1210px] justify-center pb-2"
           aria-label="Product manual sections"
         >
-          <div className="grid w-full grid-cols-2 justify-items-center gap-x-4 gap-y-4 sm:flex sm:w-auto sm:shrink-0 sm:flex-wrap sm:justify-center sm:gap-6 md:gap-8 lg:gap-16">
-            {TAB_IDS.map((tabId) => (
-              <button
-                key={tabId}
-                type="button"
-                onClick={() => scrollToSection(tabId)}
-                className="whitespace-nowrap text-base font-normal text-white underline decoration-white underline-offset-2 transition-colors duration-200 hover:text-white/80 hover:decoration-white/80"
-              >
-                {t.tabs[tabId]}
-              </button>
-            ))}
+          <div className="flex w-full max-w-[939px] flex-col items-center gap-6 sm:gap-12">
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16">
+              {TAB_IDS.slice(0, 3).map((tabId) => (
+                <button
+                  key={tabId}
+                  type="button"
+                  onClick={() => scrollToSection(tabId)}
+                  className="text-center text-balance text-base font-normal text-white underline decoration-white underline-offset-2 transition-colors duration-200 hover:text-white/80 hover:decoration-white/80 sm:whitespace-nowrap"
+                >
+                  {t.tabs[tabId]}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16">
+              {TAB_IDS.slice(3, 6).map((tabId) => (
+                <button
+                  key={tabId}
+                  type="button"
+                  onClick={() => scrollToSection(tabId)}
+                  className="text-center text-balance text-base font-normal text-white underline decoration-white underline-offset-2 transition-colors duration-200 hover:text-white/80 hover:decoration-white/80 sm:whitespace-nowrap"
+                >
+                  {t.tabs[tabId]}
+                </button>
+              ))}
+            </div>
           </div>
         </nav>
       </div>

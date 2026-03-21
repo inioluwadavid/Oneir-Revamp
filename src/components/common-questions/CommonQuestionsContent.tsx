@@ -7,6 +7,7 @@ import {
   type FAQCategory,
   type FAQSubcategory,
 } from "@/data/common-questions";
+import FadeInSection from "@/components/motion/FadeInSection";
 import enTranslations from "@/locales/common-questions/en.json";
 import frTranslations from "@/locales/common-questions/fr.json";
 
@@ -32,14 +33,15 @@ export default function CommonQuestionsContent({ locale }: CommonQuestionsConten
 
   return (
     <div className="flex flex-col gap-8 sm:gap-10">
-      {faqData.map((category: FAQCategory) => (
-        <FAQCategorySection
-          key={category.categoryKey}
-          category={category}
-          categories={categories}
-          subcategories={subcategories}
-          getCategoryId={getCategoryId}
-        />
+      {faqData.map((category: FAQCategory, index: number) => (
+        <FadeInSection key={category.categoryKey} delay={index * 0.06}>
+          <FAQCategorySection
+            category={category}
+            categories={categories}
+            subcategories={subcategories}
+            getCategoryId={getCategoryId}
+          />
+        </FadeInSection>
       ))}
     </div>
   );
@@ -65,7 +67,7 @@ function FAQCategorySection({
           <section
             key={getCategoryId(category.categoryKey, sub.subcategoryKey)}
             id={getCategoryId(category.categoryKey, sub.subcategoryKey)}
-            className="scroll-mt-28 sm:my-[46px] rounded-2xl bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-[96px]"
+            className="scroll-mt-28 rounded-2xl bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:my-[46px] sm:p-[96px]"
           >
             <h2
               className="mb-6 text-xl font-semibold text-[#070714] sm:text-2xl"

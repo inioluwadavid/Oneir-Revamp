@@ -35,10 +35,11 @@ export default function MediaArticlesHero({ locale }: MediaArticlesHeroProps) {
         }}
         aria-hidden
       />
-      <div className="relative z-10 flex flex-col items-center gap-4 px-4 pt-24 pb-16 text-center sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1210px] flex-col items-center gap-4 px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-32 sm:pb-20 lg:px-8 lg:pt-40 lg:pb-28">
         <HeroHeaderRow
           title={t.hero.title}
           backAriaLabel={t.hero.backToSupport}
+          backHref={`/${locale}/support`}
         />
         <p className="max-w-[584px] text-base leading-relaxed text-white/95 sm:text-lg">
           {t.hero.subtitle}

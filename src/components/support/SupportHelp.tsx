@@ -1,6 +1,7 @@
 import { type Locale } from "@/lib/translations";
 import SupportSearch from "@/components/support/SupportSearch";
 import Button from "@/components/ui/Button";
+import FadeInSection from "@/components/motion/FadeInSection";
 import enTranslations from "@/locales/support/en.json";
 import frTranslations from "@/locales/support/fr.json";
 import Image from "next/image";
@@ -13,16 +14,21 @@ export default function SupportHelp({ locale }: SupportHelpProps) {
   const t = locale === "fr" ? frTranslations : enTranslations;
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 mb-20 sm:mb-24 lg:mb-[120px] flex flex-col items-center gap-8 sm:gap-10">
-      <h2
-        className="text-2xl font-semibold text-[#070714] sm:text-4xl lg:text-[48px] text-center"
-        style={{ fontFamily: "var(--font-outfit)" }}
-      >
-        {t.help.title}
-      </h2>
+    <section className="mb-20 flex flex-col items-center gap-8 py-16 sm:mb-24 sm:gap-10 sm:py-20 lg:mb-[120px] lg:py-24">
+      <FadeInSection className="w-full text-center">
+        <h2
+          className="text-2xl font-semibold text-[#070714] sm:text-4xl lg:text-[48px]"
+          style={{ fontFamily: "var(--font-outfit)" }}
+        >
+          {t.help.title}
+        </h2>
+      </FadeInSection>
       <div className="flex w-full max-w-[688px] flex-col items-center gap-8 sm:gap-10">
-        <SupportSearch placeholder={t.help.searchPlaceholder} locale={locale} />
-        <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
+        <FadeInSection className="w-full" delay={0.08}>
+          <SupportSearch placeholder={t.help.searchPlaceholder} locale={locale} />
+        </FadeInSection>
+        <FadeInSection className="w-full" delay={0.16}>
+        <div className="flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
           <Button
             href="mailto:support@oneirsolutions.com?subject=Support%20Ticket"
             variant="primary"
@@ -42,6 +48,7 @@ export default function SupportHelp({ locale }: SupportHelpProps) {
             {t.help.contactSupport}
           </Button>
         </div>
+        </FadeInSection>
       </div>
     </section>
   );

@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Matches Navbar: fixed bar height for content offset and in-page anchor scrolling */
 :root {
+  --navbar-height: 86px;
   --background: #ffffff;
   --foreground: #171717;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
 }
 
 @theme inline {
@@ -24,7 +27,7 @@ html {
 }
 
 body {
-  background: '#EFEFF3';
-  color: '#303033';
+  background: #efeff3;
+  color: #303033;
   font-family: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
 }

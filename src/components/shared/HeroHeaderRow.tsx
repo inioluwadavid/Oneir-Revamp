@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 interface HeroHeaderRowProps {
@@ -8,6 +9,8 @@ interface HeroHeaderRowProps {
   titleClassName?: string;
   /** "hero" = white text/arrow (dark bg), "light" = dark text/arrow (light bg) */
   variant?: "hero" | "light";
+  /** When provided, back button links here instead of router.back() */
+  backHref?: string;
 }
 
 const BackArrowIcon = () => (
@@ -31,6 +34,7 @@ export default function HeroHeaderRow({
   backAriaLabel,
   titleClassName,
   variant = "hero",
+  backHref,
 }: HeroHeaderRowProps) {
   const router = useRouter();
 
@@ -39,20 +43,32 @@ export default function HeroHeaderRow({
     ? "text-2xl font-semibold text-[#070714] sm:text-4xl lg:text-[48px]"
     : "text-2xl font-semibold text-white sm:text-4xl lg:text-[48px]";
 
+  const backButtonClass = `z-10 shrink-0 p-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+    isLight
+      ? "text-[#434349] hover:text-[#070714] focus-visible:ring-[#942c56] focus-visible:ring-offset-transparent"
+      : "text-white/90 hover:text-white focus-visible:ring-white focus-visible:ring-offset-transparent"
+  }`;
+
   return (
     <div className="flex w-full items-center">
-      <button
-        type="button"
-        onClick={() => router.back()}
-        className={`z-10 -ml-2 shrink-0 p-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-          isLight
-            ? "text-[#434349] hover:text-[#070714] focus-visible:ring-[#942c56] focus-visible:ring-offset-transparent"
-            : "text-white/90 hover:text-white focus-visible:ring-white focus-visible:ring-offset-transparent"
-        }`}
-        aria-label={backAriaLabel}
-      >
-        <BackArrowIcon />
-      </button>
+      {backHref ? (
+        <Link
+          href={backHref}
+          className={backButtonClass}
+          aria-label={backAriaLabel}
+        >
+          <BackArrowIcon />
+        </Link>
+      ) : (
+        <button
+          type="button"
+          onClick={() => router.back()}
+          className={backButtonClass}
+          aria-label={backAriaLabel}
+        >
+          <BackArrowIcon />
+        </button>
+      )}
       <h1
         className={`flex-1 text-center ${titleClassName ?? defaultTitleClass}`}
         style={{ fontFamily: "var(--font-outfit)" }}

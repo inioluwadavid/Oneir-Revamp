@@ -47,7 +47,7 @@ export default async function AboutUs({ params }: AboutUsPageProps) {
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
       <Navbar currentLocale={locale} />
-      <div className="pt-16 sm:pt-20 lg:pt-24">
+      <div className="pt-[var(--navbar-height)] sm:pt-24 lg:pt-24">
         <WhoWeAre locale={locale} />
        
       {/* <Mission locale={locale} /> */}

@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { DURATION, EASE_OUT } from "@/lib/motion-variants";
 
 interface ArticleCardProps {
   id?: string;
@@ -10,7 +14,15 @@ interface ArticleCardProps {
 
 export default function ArticleCard({ id, title, description, linkText, href }: ArticleCardProps) {
   return (
-    <article id={id} className="scroll-mt-28 flex flex-col gap-4 rounded-[24px] p-6 sm:p-8">
+    <motion.article
+      id={id}
+      className="scroll-mt-28 flex flex-col gap-4 rounded-[24px] p-6 sm:p-8"
+      whileHover={{
+        y: -4,
+        boxShadow: "0px 12px 28px 0px rgba(57, 57, 101, 0.1)",
+        transition: { duration: DURATION.fast, ease: EASE_OUT },
+      }}
+    >
       <h3
         className="text-lg font-semibold text-[#070714] sm:text-xl lg:text-[32px]"
         style={{ fontFamily: "var(--font-outfit)" }}
@@ -24,6 +36,6 @@ export default function ArticleCard({ id, title, description, linkText, href }: 
       >
         {linkText}
       </Link>
-    </article>
+    </motion.article>
   );
 }

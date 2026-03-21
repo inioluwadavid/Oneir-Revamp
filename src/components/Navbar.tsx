@@ -47,7 +47,8 @@ export default function Navbar({ currentLocale }: NavbarProps) {
         pathWithoutLocale.startsWith('/common-questions') ||
         pathWithoutLocale.startsWith('/product-manuals') ||
         pathWithoutLocale.startsWith('/media-and-articles') ||
-        pathWithoutLocale.startsWith('/search'),
+        pathWithoutLocale.startsWith('/search') ||
+        pathWithoutLocale.startsWith('/signin'),
     },
   ];
 
@@ -60,8 +61,11 @@ export default function Navbar({ currentLocale }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-[86px]">
-          {/* Logo - Graphic + ONEIR + SOLUTIONS */}
-          <Link href={`/${currentLocale}`} className="flex items-center gap-3 sm:gap-4">
+          {/* Logo + vertical dashed divider (Figma Final Nav bar — 48px gap, ~64px line) */}
+          <Link
+            href={`/${currentLocale}`}
+            className="flex items-center gap-10 sm:gap-12 lg:gap-12"
+          >
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -71,12 +75,17 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               <Image
                 src="/images/oneir_logo.svg"
                 alt="Oneir"
-                width={100}
-                height={100}
-                className=""
+                width={158}
+                height={44}
+                className="h-9 w-auto sm:h-11"
+                priority
               />
             </motion.div>
-          
+            {/* Vertical dashed rule — matches Figma node 1821:2132 (rotated line asset) */}
+            <span
+              aria-hidden
+              className="hidden h-14 w-0 shrink-0 self-center border-l border-dashed border-[#C6C7CA] lg:block lg:h-16"
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -126,11 +135,12 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               </select>
             </motion.div>
 
+            {/* Desktop / large tablet only — on smaller screens these live in the hamburger menu */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="flex items-center gap-4"
+              className="hidden items-center gap-4 lg:flex"
             >
               <Button variant="primary" size="lg" animated={true} onClick={openDemoModal}>
                 {getNestedTranslation(t, 'navigation.requestDemo')}
@@ -139,7 +149,7 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                 variant="secondary"
                 size="lg"
                 animated={true}
-                href="#"
+                href={`/${currentLocale}/signin`}
               >
                 {getNestedTranslation(t, 'navigation.signIn')}
               </Button>
@@ -147,9 +157,11 @@ export default function Navbar({ currentLocale }: NavbarProps) {
 
             {/* Mobile Menu Button */}
             <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 rounded-md text-gray-800 hover:text-gray-600 focus:outline-none"
               aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -193,10 +205,24 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               ))}
               <div className="flex flex-col gap-3 pt-2 border-t border-gray-100">
                 <div className="flex gap-3">
-                  <Button variant="primary" size="sm" className="flex-1" onClick={openDemoModal}>
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    className="flex-1"
+                    onClick={() => {
+                      openDemoModal();
+                      setIsMenuOpen(false);
+                    }}
+                  >
                     {getNestedTranslation(t, 'navigation.requestDemo')}
                   </Button>
-                  <Button variant="secondary" size="sm" href="#" className="flex-1">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    href={`/${currentLocale}/signin`}
+                    className="flex-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     {getNestedTranslation(t, 'navigation.signIn')}
                   </Button>
                 </div>

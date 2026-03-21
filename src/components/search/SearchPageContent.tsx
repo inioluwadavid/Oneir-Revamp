@@ -8,6 +8,8 @@ import frTranslations from "@/locales/search/fr.json";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useDeferredValue, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { DURATION, EASE_OUT } from "@/lib/motion-variants";
 
 interface SearchPageContentProps {
   locale: Locale;
@@ -92,13 +94,23 @@ export default function SearchPageContent({ locale, initialQuery = "" }: SearchP
   return (
     <div className="mx-auto max-w-[1210px] px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center gap-10 sm:gap-14">
-        <div className="flex w-full max-w-[688px] flex-col items-center gap-10">
+        <motion.div
+          className="flex w-full max-w-[688px] flex-col items-center gap-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: DURATION.normal, ease: EASE_OUT }}
+        >
           <HeroHeaderRow
           title={t.title}
           backAriaLabel={t.backToSupport}
           variant="light"
         />
-          <div className="flex w-full max-w-[689px] flex-col gap-10">
+          <motion.div
+            className="flex w-full max-w-[689px] flex-col gap-10"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: DURATION.normal, delay: 0.1, ease: EASE_OUT }}
+          >
             <div className="relative flex h-14 w-full max-w-[689px] items-center overflow-hidden rounded-[32px] bg-white px-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.04)] sm:h-16 sm:px-8">
               <input
                 type="text"
@@ -124,10 +136,15 @@ export default function SearchPageContent({ locale, initialQuery = "" }: SearchP
                 </div>
               )}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="flex w-full max-w-[688px] flex-col items-center gap-6 text-center">
+        <motion.div
+          className="flex w-full max-w-[688px] flex-col items-center gap-6 text-center"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: DURATION.normal, delay: 0.2, ease: EASE_OUT }}
+        >
           <p
             className="text-2xl font-semibold text-[#070714] sm:text-[32px]"
             style={{ fontFamily: "var(--font-outfit)" }}
@@ -140,19 +157,29 @@ export default function SearchPageContent({ locale, initialQuery = "" }: SearchP
             </p>
           ) : (
             <div className="flex flex-col items-center gap-4">
-              {filteredResults.map((result) => (
-                <Link
+              {filteredResults.map((result, i) => (
+                <motion.div
                   key={result.id}
-                  href={result.href}
-                  className="text-lg text-[#942c56] underline decoration-solid underline-offset-2 transition-colors hover:text-[#65083A]"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: DURATION.fast,
+                    delay: 0.05 + i * 0.04,
+                    ease: EASE_OUT,
+                  }}
                 >
-                  {result.title}
-                </Link>
+                  <Link
+                    href={result.href}
+                    className="text-lg text-[#942c56] underline decoration-solid underline-offset-2 transition-colors hover:text-[#65083A]"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    {result.title}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

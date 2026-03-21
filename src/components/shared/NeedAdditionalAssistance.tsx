@@ -1,6 +1,10 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { DURATION, EASE_OUT } from "@/lib/motion-variants";
 
 export interface NeedAdditionalAssistanceTranslations {
   title: string;
@@ -37,15 +41,26 @@ export default function NeedAdditionalAssistance({
       className="rounded-[24px] p-6 sm:p-8 lg:rounded-[32px] lg:p-12 lg:px-24"
       style={{ background: ASSISTANCE_GRADIENT }}
     >
-      <h2
+      <motion.h2
         className="mb-6 text-center text-2xl font-semibold text-white sm:mb-8 sm:text-3xl lg:mb-12 lg:text-[48px]"
         style={{ fontFamily: "var(--font-outfit)" }}
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: DURATION.normal, ease: EASE_OUT }}
       >
         {t.title}
-      </h2>
+      </motion.h2>
       <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:justify-center lg:gap-[72px] xl:gap-[118px]">
         {/* Ticket card */}
-        <div className="flex flex-col gap-4 rounded-[24px] bg-white p-5 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:gap-6 sm:p-8 lg:w-full lg:max-w-[450px]">
+        <motion.div
+          className="flex flex-col gap-4 rounded-[24px] bg-white p-5 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:gap-6 sm:p-8 lg:w-full lg:max-w-[450px]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: DURATION.normal, delay: 0.08, ease: EASE_OUT }}
+          whileHover={{ y: -3, transition: { duration: DURATION.fast, ease: EASE_OUT } }}
+        >
           <Button
             href="mailto:support@oneirsolutions.com?subject=Support%20Ticket"
             variant="primary"
@@ -58,10 +73,17 @@ export default function NeedAdditionalAssistance({
           <p className="text-sm leading-relaxed text-[#434349] sm:text-base lg:text-lg">
             {t.ticketCard.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact card */}
-        <div className="flex flex-col gap-4 rounded-[24px] bg-white p-5 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:gap-5 sm:p-8 lg:w-full lg:max-w-[450px]">
+        <motion.div
+          className="flex flex-col gap-4 rounded-[24px] bg-white p-5 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:gap-5 sm:p-8 lg:w-full lg:max-w-[450px]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: DURATION.normal, delay: 0.16, ease: EASE_OUT }}
+          whileHover={{ y: -3, transition: { duration: DURATION.fast, ease: EASE_OUT } }}
+        >
           <h3
             className="text-lg font-semibold text-[#070714] sm:text-xl lg:text-[32px]"
             style={{ fontFamily: "var(--font-outfit)" }}
@@ -100,7 +122,7 @@ export default function NeedAdditionalAssistance({
               <span className="text-xs text-[#434349] sm:text-sm">{t.contactCard.hours}</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

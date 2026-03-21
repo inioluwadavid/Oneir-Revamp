@@ -1,4 +1,5 @@
 import ArticleCard from "@/components/media-articles/ArticleCard";
+import FadeInSection from "@/components/motion/FadeInSection";
 import Image from "next/image";
 import { createMediaArticleAnchor } from "@/lib/anchor-utils";
 
@@ -67,14 +68,16 @@ export default function ArticleSection({
   );
 
   return (
-    <section id={sectionId} className="scroll-mt-24 mb-16 sm:mb-20 lg:mb-[80px]">
-      {background === "white" ? (
-        <div className="rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-8 lg:p-12">
-          {content}
-        </div>
-      ) : (
-        content
-      )}
-    </section>
+    <FadeInSection className="mb-16 scroll-mt-24 sm:mb-20 lg:mb-[80px]">
+      <section id={sectionId}>
+        {background === "white" ? (
+          <div className="rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-8 lg:p-12">
+            {content}
+          </div>
+        ) : (
+          content
+        )}
+      </section>
+    </FadeInSection>
   );
 }

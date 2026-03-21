@@ -1,4 +1,14 @@
 {
+  "signIn": {
+    "title": "Se connecter",
+    "emailLabel": "Courriel",
+    "emailPlaceholder": "ex. nom@entreprise.com",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "continueButton": "Continuer",
+    "noAccount": "Vous n'avez pas de compte?",
+    "contactUs": "Contactez-nous"
+  },
   "navigation": {
     "home": "Accueil",
     "aboutUs": "À Propos de Nous",
