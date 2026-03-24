@@ -3,5 +3,7 @@
   "searchPlaceholder": "Search for articles, guides, downloads...",
   "resultsCount": "{count} results",
   "backToSupport": "Back to Support",
-  "noResults": "No results found. Try another keyword."
+  "noResults": "No results found. Try another keyword.",
+  "emptyStateTitle": "Start your search",
+  "emptyStateDescription": "Type a keyword in the field above to find articles, guides, and downloads."
 }

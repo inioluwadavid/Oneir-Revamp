@@ -7,7 +7,7 @@ import enTranslations from "@/locales/search/en.json";
 import frTranslations from "@/locales/search/fr.json";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useDeferredValue, useMemo, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { DURATION, EASE_OUT } from "@/lib/motion-variants";
 
@@ -52,6 +52,10 @@ export default function SearchPageContent({ locale, initialQuery = "" }: SearchP
   const deferredQuery = useDeferredValue(query);
   const searchIndex = useMemo(() => buildSearchIndex(locale), [locale]);
 
+  useEffect(() => {
+    setQuery(initialQuery);
+  }, [initialQuery]);
+
   const updateQuery = useCallback(
     (value: string) => {
       setQuery(value);
@@ -65,9 +69,11 @@ export default function SearchPageContent({ locale, initialQuery = "" }: SearchP
     updateQuery("");
   };
 
+  const hasQuery = deferredQuery.trim().length > 0;
+
   const filteredResults = useMemo(() => {
     const normalized = deferredQuery.trim().toLowerCase();
-    if (!normalized) return searchIndex;
+    if (!normalized) return [];
 
     const terms = normalized.split(/\s+/).filter(Boolean);
     const matches = searchIndex.filter((entry) => {
@@ -145,39 +151,55 @@ export default function SearchPageContent({ locale, initialQuery = "" }: SearchP
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: DURATION.normal, delay: 0.2, ease: EASE_OUT }}
         >
-          <p
-            className="text-2xl font-semibold text-[#070714] sm:text-[32px]"
-            style={{ fontFamily: "var(--font-outfit)" }}
-          >
-            {t.resultsCount.replace("{count}", String(filteredResults.length))}
-          </p>
-          {filteredResults.length === 0 ? (
-            <p className="text-base text-[#434349]" style={{ fontFamily: "var(--font-inter)" }}>
-              {t.noResults}
-            </p>
-          ) : (
-            <div className="flex flex-col items-center gap-4">
-              {filteredResults.map((result, i) => (
-                <motion.div
-                  key={result.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: DURATION.fast,
-                    delay: 0.05 + i * 0.04,
-                    ease: EASE_OUT,
-                  }}
-                >
-                  <Link
-                    href={result.href}
-                    className="text-lg text-[#942c56] underline decoration-solid underline-offset-2 transition-colors hover:text-[#65083A]"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    {result.title}
-                  </Link>
-                </motion.div>
-              ))}
+          {!hasQuery ? (
+            <div className="flex max-w-md flex-col gap-3 rounded-[24px] border border-dashed border-[#C6C7CA] bg-white/60 px-8 py-10 sm:px-10">
+              <p
+                className="text-xl font-semibold text-[#070714] sm:text-2xl"
+                style={{ fontFamily: "var(--font-outfit)" }}
+              >
+                {t.emptyStateTitle}
+              </p>
+              <p className="text-base leading-relaxed text-[#434349]" style={{ fontFamily: "var(--font-inter)" }}>
+                {t.emptyStateDescription}
+              </p>
             </div>
+          ) : (
+            <>
+              <p
+                className="text-2xl font-semibold text-[#070714] sm:text-[32px]"
+                style={{ fontFamily: "var(--font-outfit)" }}
+              >
+                {t.resultsCount.replace("{count}", String(filteredResults.length))}
+              </p>
+              {filteredResults.length === 0 ? (
+                <p className="text-base text-[#434349]" style={{ fontFamily: "var(--font-inter)" }}>
+                  {t.noResults}
+                </p>
+              ) : (
+                <div className="flex flex-col items-center gap-4">
+                  {filteredResults.map((result, i) => (
+                    <motion.div
+                      key={result.id}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: DURATION.fast,
+                        delay: 0.05 + i * 0.04,
+                        ease: EASE_OUT,
+                      }}
+                    >
+                      <Link
+                        href={result.href}
+                        className="text-lg text-[#942c56] underline decoration-solid underline-offset-2 transition-colors hover:text-[#65083A]"
+                        style={{ fontFamily: "var(--font-inter)" }}
+                      >
+                        {result.title}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </motion.div>
       </div>

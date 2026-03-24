@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState, useMemo } from 'react';
 import { getTranslations, getNestedTranslation, type Locale } from '@/lib/translations';
 import Image from 'next/image';
+import { useDemoModal } from '@/context/DemoModalContext';
 import Button from './ui/Button';
 import SelectDropdown, { type SelectDropdownOption } from './ui/SelectDropdown';
 import RadioGroup, { EmailIcon, PhoneIcon, type RadioOption } from './ui/RadioGroup';
@@ -24,6 +25,7 @@ const HEAR_ABOUT_KEYS = ['google', 'linkedin', 'industryEvent', 'referral', 'soc
 const COUNTRY_KEYS = ['us', 'canada', 'uk', 'australia', 'germany', 'france', 'india', 'singapore', 'other'] as const;
 
 export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
+  const { launchWatchDemoVideo } = useDemoModal();
   const t = getTranslations(locale);
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -291,7 +293,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     size="lg"
                     animated
                     className="flex w-full max-w-[min(100%,218px)] items-center justify-center gap-2 sm:w-auto sm:min-w-[218px]"
-                    onClick={onClose}
+                    onClick={launchWatchDemoVideo}
                   >
                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M4 2L13.3333 8L4 14V2Z" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>

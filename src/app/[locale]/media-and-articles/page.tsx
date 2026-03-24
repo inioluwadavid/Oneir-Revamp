@@ -61,6 +61,7 @@ export default async function MediaArticlesPage({ params }: MediaArticlesPagePro
             iconAlt=""
             articles={t.articles.oneirMinute}
             background="white"
+            embedDriveVideo
           />
           <NeedAdditionalAssistance
             translations={t.assistance}

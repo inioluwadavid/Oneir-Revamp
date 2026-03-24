@@ -3,5 +3,7 @@
   "searchPlaceholder": "Rechercher des articles, guides, téléchargements...",
   "resultsCount": "{count} résultats",
   "backToSupport": "Retour au support",
-  "noResults": "Aucun résultat trouvé. Essayez un autre mot-clé."
+  "noResults": "Aucun résultat trouvé. Essayez un autre mot-clé.",
+  "emptyStateTitle": "Lancez une recherche",
+  "emptyStateDescription": "Saisissez un mot-clé dans le champ ci-dessus pour trouver des articles, guides et téléchargements."
 }

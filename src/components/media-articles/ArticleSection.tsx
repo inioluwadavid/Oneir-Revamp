@@ -19,6 +19,8 @@ interface ArticleSectionProps {
   articles: ArticleItem[];
   /** When "white", wraps section in a white card (e.g. for Oneir Minute) */
   background?: "white" | "transparent";
+  /** Open Google Drive video links in an embedded modal (Oneir Minute). */
+  embedDriveVideo?: boolean;
 }
 
 export default function ArticleSection({
@@ -29,6 +31,7 @@ export default function ArticleSection({
   iconAlt = "",
   articles,
   background = "transparent",
+  embedDriveVideo = false,
 }: ArticleSectionProps) {
   const content = (
     <div>
@@ -60,6 +63,7 @@ export default function ArticleSection({
               description={article.description}
               linkText={article.linkText}
               href={resolvedHref}
+              embedDriveVideo={embedDriveVideo}
             />
           );
         })}
