@@ -32,7 +32,7 @@ export default function Hero({ locale }: HeroProps) {
           src="/images/hero/hero_bg.svg"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-top"
           priority
           sizes="100vw"
         />
@@ -48,7 +48,7 @@ export default function Hero({ locale }: HeroProps) {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[calc(var(--navbar-height)+3.5rem)] sm:pt-[calc(6rem+4rem)] lg:pt-[calc(6rem+6rem)] pb-14 sm:pb-16 lg:pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[calc(var(--navbar-height)+3.5rem)] sm:py-[calc(6rem+4rem)] lg:py-[calc(6rem+6rem)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left - Text content */}
           <div className="flex flex-col justify-center order-1 text-center lg:text-left">
