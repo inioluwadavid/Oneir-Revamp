@@ -7,7 +7,14 @@
     "passwordPlaceholder": "Enter your password",
     "continueButton": "Continue",
     "noAccount": "Don't have an account?",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "contactModal": {
+      "title": "Contact Support",
+      "supportPhone": "416.322.3580 ext. 2",
+      "email": "support@oneirsolutions.com",
+      "hours": "Mon - Fri, 9am - 5pm EST",
+      "close": "Close"
+    }
   },
   "navigation": {
     "home": "Home",

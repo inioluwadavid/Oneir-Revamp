@@ -7,7 +7,14 @@
     "passwordPlaceholder": "Entrez votre mot de passe",
     "continueButton": "Continuer",
     "noAccount": "Vous n'avez pas de compte?",
-    "contactUs": "Contactez-nous"
+    "contactUs": "Contactez-nous",
+    "contactModal": {
+      "title": "Contacter le support",
+      "supportPhone": "416.322.3580 poste 2",
+      "email": "support@oneirsolutions.com",
+      "hours": "Lun - Ven, 9h - 17h HNE",
+      "close": "Fermer"
+    }
   },
   "navigation": {
     "home": "Accueil",

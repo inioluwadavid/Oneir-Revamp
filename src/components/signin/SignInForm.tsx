@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { type Locale } from "@/lib/translations";
 import { getTranslations, getNestedTranslation } from "@/lib/translations";
 import Button from "@/components/ui/Button";
+import SignInContactModal from "@/components/signin/SignInContactModal";
 import FadeInOnMount from "@/components/motion/FadeInOnMount";
 import { scaleFadeIn, staggerContainer, staggerItem } from "@/lib/motion-variants";
 
@@ -17,6 +17,7 @@ export default function SignInForm({ locale }: SignInFormProps) {
   const t = getTranslations(locale);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [contactOpen, setContactOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,15 +108,17 @@ export default function SignInForm({ locale }: SignInFormProps) {
         <FadeInOnMount delay={0.45}>
           <p className="flex items-center justify-center gap-1 text-center text-base text-[#434349]">
             {getNestedTranslation(t, "signIn.noAccount")}{" "}
-            <Link
-              href={`/${locale}/support`}
+            <button
+              type="button"
+              onClick={() => setContactOpen(true)}
               className="font-normal text-[#942c56] underline decoration-[#942c56] underline-offset-2 transition-colors hover:text-[#7a2446]"
             >
               {getNestedTranslation(t, "signIn.contactUs")}
-            </Link>
+            </button>
           </p>
         </FadeInOnMount>
       </div>
+      <SignInContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} locale={locale} />
     </section>
   );
 }
