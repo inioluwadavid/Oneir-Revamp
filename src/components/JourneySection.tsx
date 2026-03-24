@@ -137,7 +137,7 @@ export default function JourneySection({ locale }: { locale: Locale }) {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Button variant="primary" size="md" animated onClick={openDemoModal}>
+              <Button variant="primary" size="lg" animated onClick={openDemoModal}>
                 {journey.cta}
               </Button>
             </motion.div>

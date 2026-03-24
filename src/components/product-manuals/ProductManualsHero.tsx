@@ -34,7 +34,7 @@ export default function ProductManualsHero({ locale }: ProductManualsHeroProps) 
           src="/images/hero/hero_bg.svg"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover object-top"
           style={{ objectPosition: "center top" }}
           priority
           sizes="100vw"

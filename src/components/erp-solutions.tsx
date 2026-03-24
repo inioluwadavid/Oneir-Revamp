@@ -85,8 +85,8 @@ export default function ErpSolutions({ locale }: { locale: Locale }) {
                 <Image
                   src={CARD_ICONS[index]}
                   alt={card.title}
-                  width={56}
-                  height={56}
+                  width={85}
+                  height={81}
                   className="object-contain"
                 />
               </div>

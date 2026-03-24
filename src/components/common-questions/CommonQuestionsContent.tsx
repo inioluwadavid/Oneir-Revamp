@@ -32,7 +32,7 @@ export default function CommonQuestionsContent({ locale }: CommonQuestionsConten
   const faqData = getCommonQuestionsData(locale);
 
   return (
-    <div className="flex flex-col gap-8 sm:gap-10">
+    <div className="flex flex-col">
       {faqData.map((category: FAQCategory, index: number) => (
         <FadeInSection key={category.categoryKey} delay={index * 0.06}>
           <FAQCategorySection
@@ -62,15 +62,15 @@ function FAQCategorySection({
 }: FAQCategorySectionProps) {
   if (category.subcategories) {
     return (
-      <>
+      <div className="flex flex-col">
         {category.subcategories.map((sub: FAQSubcategory) => (
           <section
             key={getCategoryId(category.categoryKey, sub.subcategoryKey)}
             id={getCategoryId(category.categoryKey, sub.subcategoryKey)}
-            className="scroll-mt-28 rounded-2xl bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:my-[46px] sm:p-[96px]"
+            className="my-[40px] rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] lg:my-[60px] sm:p-[96px]"
           >
             <h2
-              className="mb-6 text-xl font-semibold text-[#070714] sm:text-2xl"
+              className="mb-6 text-xl font-semibold text-[#070714] sm:text-[40px]"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
               {subcategories[sub.subcategoryKey] ?? sub.subcategoryKey}
@@ -81,7 +81,7 @@ function FAQCategorySection({
             />
           </section>
         ))}
-      </>
+      </div>
     );
   }
 
@@ -90,10 +90,10 @@ function FAQCategorySection({
   return (
     <section
       id={getCategoryId(category.categoryKey)}
-      className="scroll-mt-28 sm:my-[46px] rounded-2xl bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-[96px]"
+      className="my-[40px] scroll-mt-28 rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] lg:my-[60px] sm:p-[96px]"
     >
       <h2
-        className="mb-6 text-xl font-semibold text-[#070714] sm:text-2xl"
+        className="mb-6 text-xl font-semibold text-[#070714] sm:text-[40px]"
         style={{ fontFamily: "var(--font-outfit)" }}
       >
         {categories[category.categoryKey] ?? category.categoryKey}

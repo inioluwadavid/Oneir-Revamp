@@ -39,7 +39,7 @@ export default function SupportHelp({ locale }: SupportHelpProps) {
             <Image src="/images/ticket.svg" alt="" width={24} height={24} className="shrink-0" />
             {t.help.submitTicket}
           </Button>
-          <ContactSupportButton label={t.help.contactSupport} />
+          <ContactSupportButton href="#contact-support" label={t.help.contactSupport} />
         </div>
         </FadeInSection>
       </div>

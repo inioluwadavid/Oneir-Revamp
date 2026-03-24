@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './ui/Button';
+import NavbarSecondaryButton from './ui/NavbarSecondaryButton';
 import { useDemoModal } from '@/context/DemoModalContext';
 
 interface NavbarProps {
@@ -142,17 +143,17 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="hidden items-center gap-4 lg:flex"
             >
-              <Button variant="primary" size="lg" animated={true} onClick={openDemoModal}>
+              <Button variant="primary" size="md" animated={true} onClick={openDemoModal}>
                 {getNestedTranslation(t, 'navigation.requestDemo')}
               </Button>
-              <Button
-                variant="secondary"
-                size="lg"
-                animated={true}
+              <NavbarSecondaryButton
                 href={`/${currentLocale}/signin`}
+                isActive={pathWithoutLocale.startsWith('/signin')}
+                size="md"
+                animated
               >
                 {getNestedTranslation(t, 'navigation.signIn')}
-              </Button>
+              </NavbarSecondaryButton>
             </motion.div>
 
             {/* Mobile Menu Button */}
@@ -216,15 +217,16 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                   >
                     {getNestedTranslation(t, 'navigation.requestDemo')}
                   </Button>
-                  <Button
-                    variant="secondary"
-                    size="sm"
+                  <NavbarSecondaryButton
                     href={`/${currentLocale}/signin`}
+                    isActive={pathWithoutLocale.startsWith('/signin')}
+                    size="sm"
+                    animated
                     className="flex-1"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {getNestedTranslation(t, 'navigation.signIn')}
-                  </Button>
+                  </NavbarSecondaryButton>
                 </div>
                 <div className="flex items-center gap-2">
                   <GlobeIcon className="w-5 h-5 text-gray-500" />

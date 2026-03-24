@@ -20,8 +20,8 @@ export default function MediaArticlesHero({ locale }: MediaArticlesHeroProps) {
           src="/images/hero/hero_bg.svg"
           alt=""
           fill
-          className="object-cover"
-          style={{ objectPosition: "center top" }}
+          className="object-cover object-top"
+          style={{ objectPosition: "" }}
           priority
           sizes="100vw"
         />

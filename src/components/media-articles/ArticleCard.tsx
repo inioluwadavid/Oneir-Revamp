@@ -32,7 +32,7 @@ export default function ArticleCard({ id, title, description, linkText, href }: 
       <p className="text-sm leading-relaxed text-[#434349] sm:text-base">{description}</p>
       <Link
         href={href}
-        className="mt-auto inline-flex items-center text-sm font-medium text-[#942c56] underline decoration-[#942c56] underline-offset-2 transition-colors hover:text-[#7a2446] sm:text-[14px]"
+        className=" text-sm font-medium text-[#942c56] underline decoration-[#942c56] underline-offset-2 transition-colors hover:text-[#7a2446] sm:text-[14px]"
       >
         {linkText}
       </Link>

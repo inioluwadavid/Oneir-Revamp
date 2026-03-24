@@ -5,11 +5,13 @@ import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { ensureAtlassianJsdEmbedScript } from "@/lib/atlassianJsdWidget";
 
-interface ContactSupportButtonProps {
+export interface ContactSupportButtonProps {
   label: string;
+  /** When set, renders as a link (e.g. in-page scroll) instead of opening the support widget. */
+  href?: string;
 }
 
-export default function ContactSupportButton({ label }: ContactSupportButtonProps) {
+export default function ContactSupportButton({ label, href }: ContactSupportButtonProps) {
   const handleClick = useCallback(async () => {
     try {
       await ensureAtlassianJsdEmbedScript();
@@ -24,7 +26,8 @@ export default function ContactSupportButton({ label }: ContactSupportButtonProp
       variant="secondary"
       size="lg"
       className="inline-flex items-center justify-center gap-2"
-      onClick={handleClick}
+      href={href}
+      onClick={href ? undefined : handleClick}
       animated
     >
       <Image src="/images/comment.svg" alt="" width={24} height={19} className="shrink-0" />

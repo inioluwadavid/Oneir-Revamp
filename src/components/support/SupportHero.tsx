@@ -17,7 +17,7 @@ export default function SupportHero({ locale }: SupportHeroProps) {
           src="/images/hero/hero_bg.svg"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-top"
           priority
           sizes="100vw"
         />

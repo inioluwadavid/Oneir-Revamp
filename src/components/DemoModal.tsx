@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState, useMemo } from 'react';
 import { getTranslations, getNestedTranslation, type Locale } from '@/lib/translations';
+import Image from 'next/image';
 import Button from './ui/Button';
 import SelectDropdown, { type SelectDropdownOption } from './ui/SelectDropdown';
 import RadioGroup, { EmailIcon, PhoneIcon, type RadioOption } from './ui/RadioGroup';
@@ -239,10 +240,10 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
           aria-labelledby="demo-modal-heading"
         >
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 16 }}
-            transition={{ duration: 0.22, ease: 'easeOut' }}
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 12, scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 420, damping: 30, mass: 0.7 }}
             onClick={(e) => e.stopPropagation()}
             className="relative flex h-[100dvh] min-h-[100dvh] w-full max-w-none flex-col overflow-hidden overscroll-y-none bg-white shadow-[0px_16px_40px_0px_rgba(0,0,0,0.1)] sm:h-auto sm:min-h-0 sm:max-h-[min(90vh,900px)] sm:max-w-[672px] sm:rounded-2xl"
           >
@@ -269,19 +270,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         style={{ background: 'rgba(108,99,255,0.1)' }}
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <svg
-                          className="w-20 h-20 text-[#6C63FF]"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
+                        <Image src="/images/succ_icon.svg" alt="" width={80} height={80} aria-hidden="true" />
                       </div>
                     </div>
                     <h2
@@ -304,20 +293,9 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     className="flex w-full max-w-[min(100%,218px)] items-center justify-center gap-2 sm:w-auto sm:min-w-[218px]"
                     onClick={onClose}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 2L13.3333 8L4 14V2Z" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                     {stepLabels.watchDemo}
                   </Button>
                 </div>

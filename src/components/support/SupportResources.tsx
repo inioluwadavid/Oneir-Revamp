@@ -37,7 +37,7 @@ export default function SupportResources({ locale }: SupportResourcesProps) {
     <section className="mb-20 sm:mb-24 lg:mb-[120px]">
       <FadeInSection className="mb-10 sm:mb-16 lg:mb-[64px]">
         <h2
-          className="text-2xl font-semibold text-[#070714] sm:text-4xl lg:text-[48px]"
+          className="text-2xl font-semibold text-[#070714] text-center sm:text-4xl lg:text-[48px]"
           style={{ fontFamily: "var(--font-outfit)" }}
         >
           {t.resources.title}

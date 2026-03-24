@@ -31,7 +31,7 @@ export default function ArticleSection({
   background = "transparent",
 }: ArticleSectionProps) {
   const content = (
-    <>
+    <div>
       <div className="mb-8 flex flex-col gap-2 sm:mb-10 sm:flex-row sm:items-start sm:gap-2 lg:mb-12 lg:gap-2">
         <div className="flex ">
           
@@ -64,18 +64,20 @@ export default function ArticleSection({
           );
         })}
       </div>
-    </>
+    </div>
   );
 
   return (
     <FadeInSection className="mb-16 scroll-mt-24 sm:mb-20 lg:mb-[80px]">
       <section id={sectionId}>
         {background === "white" ? (
-          <div className="rounded-[32px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-8 lg:p-12">
+          <div className="rounded-[32px] my-[120px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-8 lg:p-12 ">
             {content}
           </div>
         ) : (
-          content
+          <div className="">
+          {content}
+          </div>
         )}
       </section>
     </FadeInSection>
