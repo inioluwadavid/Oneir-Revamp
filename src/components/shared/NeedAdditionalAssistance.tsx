@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/ui/Button";
+import SubmitTicketButton from "@/components/support/SubmitTicketButton";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -61,15 +61,10 @@ export default function NeedAdditionalAssistance({
           transition={{ duration: DURATION.normal, delay: 0.08, ease: EASE_OUT }}
           whileHover={{ y: -3, transition: { duration: DURATION.fast, ease: EASE_OUT } }}
         >
-          <Button
-            href="mailto:support@oneirsolutions.com?subject=Support%20Ticket"
-            variant="primary"
-            size="lg"
-            className="inline-flex w-full items-center justify-center gap-2"
-          >
+          <SubmitTicketButton className="w-full">
             <Image src="/images/ticket.svg" alt="" width={24} height={24} className="shrink-0" />
             {t.ticketCard.button}
-          </Button>
+          </SubmitTicketButton>
           <p className="text-sm leading-relaxed text-[#434349] sm:text-base lg:text-lg">
             {t.ticketCard.description}
           </p>

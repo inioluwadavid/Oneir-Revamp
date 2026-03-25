@@ -6,9 +6,13 @@ import { openAtlassianSupportWidget } from "@/lib/atlassianJsdWidget";
 
 interface SubmitTicketButtonProps {
   children: ReactNode;
+  className?: string;
 }
 
-export default function SubmitTicketButton({ children }: SubmitTicketButtonProps) {
+export default function SubmitTicketButton({
+  children,
+  className = "",
+}: SubmitTicketButtonProps) {
   const handleClick = useCallback(async () => {
     try {
       await openAtlassianSupportWidget();
@@ -22,7 +26,7 @@ export default function SubmitTicketButton({ children }: SubmitTicketButtonProps
       type="button"
       variant="primary"
       size="lg"
-      className="inline-flex items-center justify-center gap-2"
+      className={`inline-flex items-center justify-center gap-2 ${className}`.trim()}
       onClick={handleClick}
       animated
     >
