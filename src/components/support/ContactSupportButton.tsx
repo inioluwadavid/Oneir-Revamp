@@ -3,7 +3,7 @@
 import { useCallback } from "react";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-import { ensureAtlassianJsdEmbedScript } from "@/lib/atlassianJsdWidget";
+import { openAtlassianSupportWidget } from "@/lib/atlassianJsdWidget";
 
 export interface ContactSupportButtonProps {
   label: string;
@@ -14,7 +14,7 @@ export interface ContactSupportButtonProps {
 export default function ContactSupportButton({ label, href }: ContactSupportButtonProps) {
   const handleClick = useCallback(async () => {
     try {
-      await ensureAtlassianJsdEmbedScript();
+      await openAtlassianSupportWidget();
     } catch (e) {
       console.error(e);
     }

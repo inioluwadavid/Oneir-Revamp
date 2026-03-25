@@ -1,7 +1,7 @@
 import { type Locale } from "@/lib/translations";
 import SupportSearch from "@/components/support/SupportSearch";
-import Button from "@/components/ui/Button";
 import ContactSupportButton from "@/components/support/ContactSupportButton";
+import SubmitTicketButton from "@/components/support/SubmitTicketButton";
 import FadeInSection from "@/components/motion/FadeInSection";
 import enTranslations from "@/locales/support/en.json";
 import frTranslations from "@/locales/support/fr.json";
@@ -30,15 +30,10 @@ export default function SupportHelp({ locale }: SupportHelpProps) {
         </FadeInSection>
         <FadeInSection className="w-full" delay={0.16}>
         <div className="flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
-          <Button
-            href="mailto:support@oneirsolutions.com?subject=Support%20Ticket"
-            variant="primary"
-            size="lg"
-            className="inline-flex items-center justify-center gap-2"
-          >
+          <SubmitTicketButton>
             <Image src="/images/ticket.svg" alt="" width={24} height={24} className="shrink-0" />
             {t.help.submitTicket}
-          </Button>
+          </SubmitTicketButton>
           <ContactSupportButton href="#contact-support" label={t.help.contactSupport} />
         </div>
         </FadeInSection>
