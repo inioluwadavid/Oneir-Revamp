@@ -66,6 +66,7 @@ export default async function ProductManualsPage({
                 title={section.title}
                 items={section.items}
                 linkText={t.linkText}
+                viewHereLink={t.viewHereLink}
                 layout="grid"
               />
             );

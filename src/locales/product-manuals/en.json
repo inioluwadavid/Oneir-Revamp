@@ -12,7 +12,8 @@
     "printingEmailDocuments": "Printing, Email & Documents",
     "systemAdministrationDataSupport": "System Administration, Data & Support"
   },
-  "linkText": "View manual",
+  "linkText": "View link",
+  "viewHereLink": "View here",
   "sections": {
     "gettingStartedSystemSetup": {
       "title": "Getting Started & System Setup",
@@ -191,7 +192,7 @@
           "title": "Constitution",
           "description": "Outlines the terms, service scope, and support levels provided under the Oneir and Vigilant Software Maintenance Plan, including response times, backup policies, and customer responsibilities. The document also details subscription terms, payment conditions, liability limitations, and procedures for updates, termination, and dispute resolution.",
           "href": "https://docs.google.com/document/d/15cyphfZydZHZ-iai7MdEjtOvOh_iI0tR/edit?usp=drive_link&ouid=102888090148756009700&rtpof=true&sd=true",
-          "linkText": "View here"
+          "linkTextKey": "viewHere"
         },
         {
           "title": "Support Summary",

@@ -6,8 +6,10 @@ export interface ManualItem {
   title: string;
   description: string;
   href: string;
-  /** Optional per-item link text (e.g. "View here" for Terms) */
+  /** Overrides default CTA for this item */
   linkText?: string;
+  /** When `"viewHere"`, CTA uses `viewHereLink` from locale ("View here" / "Voir ici"). */
+  linkTextKey?: string;
 }
 
 interface ProductManualsSectionProps {
@@ -15,8 +17,14 @@ interface ProductManualsSectionProps {
   title: string;
   items: ManualItem[];
   linkText: string;
+  viewHereLink: string;
   /** "single" = full-width single column (e.g. Terms and Conditions) */
   layout?: "grid" | "single";
+}
+
+function resolveItemLinkText(item: ManualItem, defaultLinkText: string, viewHereLink: string) {
+  if (item.linkTextKey === "viewHere") return viewHereLink;
+  return item.linkText ?? defaultLinkText;
 }
 
 export default function ProductManualsSection({
@@ -24,6 +32,7 @@ export default function ProductManualsSection({
   title,
   items,
   linkText,
+  viewHereLink,
   layout = "grid",
 }: ProductManualsSectionProps) {
   const content = (
@@ -54,7 +63,7 @@ export default function ProductManualsSection({
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm font-normal text-[#942c56] underline decoration-[#942c56] underline-offset-2 transition-colors hover:text-[#7a2446]"
               >
-                {item.linkText ?? linkText}
+                {resolveItemLinkText(item, linkText, viewHereLink)}
               </a>
             </div>
           ))}
@@ -70,7 +79,7 @@ export default function ProductManualsSection({
                 id={itemAnchor}
                 title={item.title}
                 description={item.description}
-                linkText={item.linkText ?? linkText}
+                linkText={resolveItemLinkText(item, linkText, viewHereLink)}
                 href={resolvedHref}
               />
             );

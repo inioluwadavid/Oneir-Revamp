@@ -12,7 +12,8 @@
     "printingEmailDocuments": "Impression, courriel et documents",
     "systemAdministrationDataSupport": "Administration système, données et support"
   },
-  "linkText": "Voir le manuel",
+  "linkText": "Voir le lien",
+  "viewHereLink": "Voir ici",
   "sections": {
     "gettingStartedSystemSetup": {
       "title": "Démarrage et configuration système",
@@ -191,7 +192,7 @@
           "title": "Constitution",
           "description": "Présente les conditions, le périmètre des services et les niveaux de support du Plan de maintenance Oneir et Vigilant Software : délais de réponse, politiques de sauvegarde et responsabilités client. Détaille également les termes d'abonnement, conditions de paiement, limitations de responsabilité et procédures de mise à jour, résiliation et résolution des litiges.",
           "href": "https://docs.google.com/document/d/15cyphfZydZHZ-iai7MdEjtOvOh_iI0tR/edit?usp=drive_link&ouid=102888090148756009700&rtpof=true&sd=true",
-          "linkText": "Voir ici"
+          "linkTextKey": "viewHere"
         },
         {
           "title": "Résumé du support",
