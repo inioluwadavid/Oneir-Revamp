@@ -24,43 +24,45 @@ export default function HowWeWork({ locale }: HowWeWorkProps) {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        {/* White rounded card on light gray background */}
-        <div className="bg-white rounded-[28px] p-8 sm:p-12 shadow-lg">
-          {/* Top-left: Intro heading */}
-          <h3
-            style={{ fontFamily: "var(--font-outfit)" }}
-            className="text-xl sm:text-2xl lg:text-[32px] font-[600] text-[#070714] leading-relaxed mb-10 sm:mb-12"
-          >
-            {t.howWeWork.intro}
-          </h3>
+        <div
+          className="bg-white rounded-[32px] px-4 py-8 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:px-8 sm:py-12 lg:px-24 lg:py-20"
+          aria-labelledby="how-we-work-tagline"
+        >
+          <div className="flex flex-col gap-12 lg:gap-20 items-start w-full">
+            <p
+              style={{ fontFamily: "var(--font-outfit)" }}
+              className="max-w-[644px] text-2xl sm:text-[32px] font-[600] text-[#070714] leading-normal"
+            >
+              {t.howWeWork.intro}
+            </p>
 
-          {/* Middle: Image left, description right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center mb-10 sm:mb-12">
-            <div className="lg:col-span-7">
-              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-[88px] w-full">
+              <div className="relative h-[220px] sm:h-[280px] lg:h-[308px] w-full max-w-[473px] shrink-0 overflow-hidden rounded-[32px]">
                 <Image
                   src="/images/about/about2.png"
                   alt="Oneir team collaborating around documents and laptop"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  width={1419}
+                  height={924}
+                  className="absolute max-w-none object-cover w-[111.85%] h-[117.55%] left-[-3.9%] top-[-4.59%]"
+                  sizes="(max-width: 1024px) 100vw, 473px"
                 />
               </div>
-            </div>
-            <div className="lg:col-span-5 flex items-center justify-center lg:text-start">
-              <p className="text-[15px] sm:text-[16px] font-[400] text-[#434349] leading-relaxed max-w-sm">
+              <p
+                className="w-full max-w-[457px] text-base font-[400] text-[#434349] leading-6"
+                style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+              >
                 {t.howWeWork.description}
               </p>
             </div>
-          </div>
 
-          {/* Bottom-left: Main tagline */}
-          <h2
-            style={{ fontFamily: "var(--font-outfit)" }}
-            className="text-3xl sm:text-4xl lg:text-[48px] font-[700] text-[#070714] leading-tight"
-          >
-            {t.howWeWork.mainTitle}
-          </h2>
+            <h2
+              id="how-we-work-tagline"
+              style={{ fontFamily: "var(--font-outfit)" }}
+              className="text-2xl sm:text-[48px] font-[600] text-[#070714] leading-normal w-full min-w-full"
+            >
+              {t.howWeWork.mainTitle}
+            </h2>
+          </div>
         </div>
       </div>
     </section>

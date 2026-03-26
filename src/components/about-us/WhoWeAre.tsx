@@ -54,7 +54,7 @@ export default function WhoWeAre({ locale }: WhoWeAreProps) {
             <h1
               id="about-hero-heading"
               style={{ fontFamily: "var(--font-outfit)" }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-[600] text-white mb-6 leading-tight"
+              className="text-2xl sm:text-[48px] font-[600] text-white mb-6 leading-tight"
             >
               {t.whoWeAre.title}
             </h1>

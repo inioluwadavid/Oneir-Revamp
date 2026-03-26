@@ -38,7 +38,7 @@ export default function WhyChoose({ locale }: WhyChooseProps) {
         <div className="max-w-6xl mx-auto">
           <h2
             style={{ fontFamily: "var(--font-outfit)" }}
-            className="text-2xl sm:text-[48px] font-[600] text-[#434349] mb-10 text-left"
+            className="text-2xl sm:text-[48px] font-[600] text-[#070714] mb-10 text-left"
           >
             {t.why.title}
           </h2>
@@ -47,7 +47,7 @@ export default function WhyChoose({ locale }: WhyChooseProps) {
             {t.why.cards.map((card, index) => (
               <div
                 key={index}
-                className="bg-white rounded-[32px] p-6 lg:p-8 shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-[32px] p-[40px] shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="w-[64px] h-[64px] mb-5 relative flex-shrink-0">
                   <Image

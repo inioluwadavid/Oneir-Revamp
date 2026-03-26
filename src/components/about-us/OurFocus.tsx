@@ -67,7 +67,7 @@ export default function OurFocus({ locale }: OurFocusProps) {
                 </p>
                 <p
                   style={{ fontFamily: "var(--font-outfit)" }}
-                  className="text-2xl sm:text-3xl lg:text-[48px] text-white font-[700] leading-tight"
+                  className="text-2xl sm:text-3xl lg:text-[48px] text-white font-[600] leading-tight"
                 >
                   {t.ourFocus.block7}
                 </p>

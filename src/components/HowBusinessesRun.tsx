@@ -58,7 +58,7 @@ export default function HowBusinessesRun({ locale, variant = 'compact' }: HowBus
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className={`text-2xl sm:text-3xl md:text-4xl font-[600] text-[#070714] mb-8 sm:mb-10 lg:mb-12 ${isCompact ? '' : 'text-start'}`}
+            className={`text-2xl sm:text-[48px] font-[600] text-[#070714] mb-8 sm:mb-10 lg:mb-12 ${isCompact ? '' : 'text-start'}`}
             style={{ fontFamily: 'var(--font-outfit)' }}
           >
             {title}

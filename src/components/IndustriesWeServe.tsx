@@ -42,7 +42,7 @@ export default function IndustriesWeServe({ locale }: { locale: Locale }) {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#070714] mb-8 sm:mb-10"
+          className="text-2xl sm:text-[48px] font-[600] text-[#070714] mb-8 sm:mb-10"
           style={{ fontFamily: 'var(--font-outfit)' }}
         >
           {(t.industriesWeServe as { title: string }).title}
