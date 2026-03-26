@@ -11,7 +11,7 @@ export interface NavbarSecondaryButtonProps {
   children: ReactNode;
   /** When true, the current route matches this link (e.g. Sign in page). */
   isActive?: boolean;
-  size?: 'sm' | 'md';
+  size?: 'sm' | 'md'|'lg'|'xl';
   className?: string;
   onClick?: () => void;
   /** Matches `Button` — subtle scale on hover/tap. */
@@ -19,8 +19,10 @@ export interface NavbarSecondaryButtonProps {
 }
 
 const sizeClasses: Record<NonNullable<NavbarSecondaryButtonProps['size']>, string> = {
-  sm: 'px-3 py-2 text-sm rounded-full',
-  md: 'px-6 py-3 text-base rounded-full',
+  sm: 'px-3 py-2 text-sm rounded-[23px] sm:rounded-[46px]',
+  md: 'px-6 py-3 text-base rounded-[40px]',
+  lg: 'px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg rounded-[40px]',
+  xl: 'px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl rounded-[44px]'
 };
 
 /** Default: lavender fill; hover: Figma gradient + lavender border (pill) */

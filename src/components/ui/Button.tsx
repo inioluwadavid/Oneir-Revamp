@@ -25,6 +25,7 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
 }
 
+
 const sizeClasses = {
   sm: 'px-3 py-2 text-sm rounded-[23px] sm:rounded-[46px]',
   md: 'px-6 py-3 text-base rounded-[40px]',
