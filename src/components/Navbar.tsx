@@ -8,8 +8,8 @@ import Image from 'next/image';
 import { useState, useRef, useEffect, useId } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './ui/Button';
-import NavbarSecondaryButton from './ui/NavbarSecondaryButton';
 import { useDemoModal } from '@/context/DemoModalContext';
+import { MEDIA_SECTION_ANCHORS } from '@/lib/anchor-utils';
 
 interface NavbarProps {
   currentLocale: Locale;
@@ -123,7 +123,19 @@ export default function Navbar({ currentLocale }: NavbarProps) {
   const pathname = usePathname();
   const t = getTranslations(currentLocale);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hashFragment, setHashFragment] = useState('');
   const { openDemoModal } = useDemoModal();
+
+  useEffect(() => {
+    const syncHash = () => {
+      setHashFragment(
+        typeof window !== 'undefined' ? window.location.hash.replace(/^#/, '') : ''
+      );
+    };
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+    return () => window.removeEventListener('hashchange', syncHash);
+  }, [pathname]);
 
   const switchLanguage = (locale: Locale) => {
     const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
@@ -132,9 +144,23 @@ export default function Navbar({ currentLocale }: NavbarProps) {
 
   const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
 
+  const oneirMinuteAnchor = MEDIA_SECTION_ANCHORS.oneirMinute;
+
   const navigationItems = [
-    { key: 'home', href: `/${currentLocale}`, isActive: pathWithoutLocale === '/' },
+    {
+      key: 'home',
+      href: `/${currentLocale}`,
+      isActive:
+        pathWithoutLocale === '/' && hashFragment !== oneirMinuteAnchor,
+    },
     { key: 'about', href: `/${currentLocale}/about-us`, isActive: pathWithoutLocale.startsWith('/about-us') },
+    {
+      key: 'media',
+      href: `/${currentLocale}#${oneirMinuteAnchor}`,
+      isActive:
+        pathWithoutLocale.startsWith('/media-and-articles') ||
+        (pathWithoutLocale === '/' && hashFragment === oneirMinuteAnchor),
+    },
     {
       key: 'support',
       href: `/${currentLocale}/support`,
@@ -142,7 +168,6 @@ export default function Navbar({ currentLocale }: NavbarProps) {
         pathWithoutLocale.startsWith('/support') ||
         pathWithoutLocale.startsWith('/common-questions') ||
         pathWithoutLocale.startsWith('/product-manuals') ||
-        pathWithoutLocale.startsWith('/media-and-articles') ||
         pathWithoutLocale.startsWith('/search') ||
         pathWithoutLocale.startsWith('/signin'),
     },
@@ -233,14 +258,6 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               <Button variant="primary" size="md" animated={true} onClick={openDemoModal}>
                 {getNestedTranslation(t, 'navigation.requestDemo')}
               </Button>
-              <NavbarSecondaryButton
-                href={`/${currentLocale}/signin`}
-                isActive={pathWithoutLocale.startsWith('/signin')}
-                size="md"
-                animated
-              >
-                {getNestedTranslation(t, 'navigation.signIn')}
-              </NavbarSecondaryButton>
             </motion.div>
 
             {/* Mobile Menu Button */}
@@ -292,29 +309,17 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 pt-2 border-t border-gray-100">
-                <div className="flex gap-3">
-                  <Button
-                    variant="primary"
-                    size="sm"
-                    className="flex-1"
-                    onClick={() => {
-                      openDemoModal();
-                      setIsMenuOpen(false);
-                    }}
-                  >
-                    {getNestedTranslation(t, 'navigation.requestDemo')}
-                  </Button>
-                  <NavbarSecondaryButton
-                    href={`/${currentLocale}/signin`}
-                    isActive={pathWithoutLocale.startsWith('/signin')}
-                    size="sm"
-                    animated
-                    className="flex-1"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {getNestedTranslation(t, 'navigation.signIn')}
-                  </NavbarSecondaryButton>
-                </div>
+                <Button
+                  variant="primary"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => {
+                    openDemoModal();
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {getNestedTranslation(t, 'navigation.requestDemo')}
+                </Button>
                 <NavbarLocaleSelect
                   currentLocale={currentLocale}
                   onSelect={(locale) => {

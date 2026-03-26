@@ -53,16 +53,6 @@ export default async function MediaArticlesPage({ params }: MediaArticlesPagePro
             articles={t.articles.techAdvisor}
             background="white"
           />
-          <ArticleSection
-            sectionId={MEDIA_SECTION_ANCHORS.oneirMinute}
-            title={t.sections.oneirMinute.title}
-            subtitle={t.sections.oneirMinute.subtitle}
-            iconSrc="/images/onier_video.svg"
-            iconAlt=""
-            articles={t.articles.oneirMinute}
-            background="white"
-            embedDriveVideo
-          />
           <NeedAdditionalAssistance
             translations={t.assistance}
             sectionId="contact-support"

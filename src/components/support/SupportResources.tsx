@@ -1,6 +1,7 @@
 import { type Locale } from "@/lib/translations";
 import SupportResourceCard from "@/components/support/SupportResourceCard";
 import FadeInSection from "@/components/motion/FadeInSection";
+import { MEDIA_SECTION_ANCHORS } from "@/lib/anchor-utils";
 import enTranslations from "@/locales/support/en.json";
 import frTranslations from "@/locales/support/fr.json";
 
@@ -26,7 +27,8 @@ const RESOURCE_CARDS = [
   },
   {
     resourceKey: "mediaArticles" as const,
-    getHref: (locale: string) => `/${locale}/media-and-articles`,
+    getHref: (locale: string) =>
+      `/${locale}/media-and-articles#${MEDIA_SECTION_ANCHORS.techAdvisor}`,
   },
 ];
 

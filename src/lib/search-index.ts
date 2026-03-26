@@ -32,15 +32,20 @@ function createEntry(
   title: string,
   subtitle: string | undefined,
   keywords: string[],
+  /** Use `""` for home page anchors (e.g. Oneir Minute on `/[locale]`). */
   pagePath: string
 ): SearchIndexEntry {
+  const href =
+    pagePath === ""
+      ? `/${locale}#${anchorId}`
+      : `/${locale}/${pagePath}#${anchorId}`;
   return {
     id: `${source}:${locale}:${anchorId}`,
     source,
     title,
     subtitle,
     keywords,
-    href: `/${locale}/${pagePath}#${anchorId}`,
+    href,
     anchorId,
     locale,
   };
@@ -83,10 +88,18 @@ export function buildSearchIndex(locale: Locale): SearchIndexEntry[] {
     }
   }
 
-  // Media and articles: section headers + article titles
+  // Media and articles: section headers + article titles (Oneir Minute lives on home)
   const mediaSections = [
-    { key: "techAdvisor" as const, anchor: MEDIA_SECTION_ANCHORS.techAdvisor },
-    { key: "oneirMinute" as const, anchor: MEDIA_SECTION_ANCHORS.oneirMinute },
+    {
+      key: "techAdvisor" as const,
+      anchor: MEDIA_SECTION_ANCHORS.techAdvisor,
+      pagePath: "media-and-articles",
+    },
+    {
+      key: "oneirMinute" as const,
+      anchor: MEDIA_SECTION_ANCHORS.oneirMinute,
+      pagePath: "",
+    },
   ];
 
   for (const sectionMeta of mediaSections) {
@@ -101,7 +114,7 @@ export function buildSearchIndex(locale: Locale): SearchIndexEntry[] {
         section.title,
         section.subtitle,
         [mediaT.hero.title],
-        "media-and-articles"
+        sectionMeta.pagePath
       )
     );
 
@@ -115,7 +128,7 @@ export function buildSearchIndex(locale: Locale): SearchIndexEntry[] {
           article.title,
           article.description,
           [section.title],
-          "media-and-articles"
+          sectionMeta.pagePath
         )
       );
     }
