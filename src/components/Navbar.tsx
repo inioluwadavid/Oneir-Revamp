@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { locales, type Locale } from '@/lib/translations';
 import { getTranslations, getNestedTranslation } from '@/lib/translations';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef, useEffect, useId } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './ui/Button';
 import NavbarSecondaryButton from './ui/NavbarSecondaryButton';
@@ -20,6 +20,99 @@ function GlobeIcon({ className }: { className?: string }) {
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
     </svg>
+  );
+}
+
+function NavbarLocaleSelect({
+  currentLocale,
+  onSelect,
+  triggerClassName = '',
+  /** `stacked` keeps the list in normal flow (avoids clipping inside overflow-hidden mobile menus). */
+  menuVariant = 'popover',
+}: {
+  currentLocale: Locale;
+  onSelect: (locale: Locale) => void;
+  triggerClassName?: string;
+  menuVariant?: 'popover' | 'stacked';
+}) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const listboxId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: MouseEvent) => {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('mousedown', onPointerDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  return (
+    <div className="relative" ref={rootRef}>
+      <button
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-controls={listboxId}
+        aria-label="Language"
+        onClick={() => setOpen((o) => !o)}
+        className={`flex items-center gap-2 rounded text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9B9BBD]/40 ${triggerClassName}`.trim()}
+        style={{ fontFamily: 'var(--font-outfit)' }}
+      >
+        <GlobeIcon className="h-5 w-5 shrink-0" />
+        <span>{currentLocale.toUpperCase()}</span>
+        <svg className="h-4 w-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {open && (
+        <ul
+          id={listboxId}
+          role="listbox"
+          aria-label="Language"
+          className={
+            menuVariant === 'popover'
+              ? 'absolute right-0 top-full z-[60] mt-1 min-w-[5.5rem] rounded-md border border-[#C6C7CA] bg-white py-1 shadow-md'
+              : 'mt-2 w-full min-w-[5.5rem] rounded-md border border-[#C6C7CA] bg-white py-1 shadow-md'
+          }
+        >
+          {locales.map((locale) => {
+            const selected = locale === currentLocale;
+            return (
+              <li key={locale} role="presentation">
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={selected}
+                  className={`w-full px-3 py-2 text-left text-sm font-medium transition-colors ${
+                    selected
+                      ? 'bg-[#9B9BBD] text-white'
+                      : 'text-[#434349] hover:bg-[#9B9BBD] hover:text-white'
+                  }`}
+                  style={{ fontFamily: 'var(--font-outfit)' }}
+                  onClick={() => {
+                    onSelect(locale);
+                    setOpen(false);
+                  }}
+                >
+                  {locale.toUpperCase()}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
   );
 }
 
@@ -119,21 +212,13 @@ export default function Navbar({ currentLocale }: NavbarProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="hidden sm:flex items-center gap-2 text-[#434349]"
+              className="hidden sm:flex items-center text-[#9B9BBD]"
             >
-              <GlobeIcon className="w-5 h-5 flex-shrink-0" />
-              <select
-                value={currentLocale}
-                onChange={(e) => switchLanguage(e.target.value as Locale)}
-                className="text-sm border-none bg-transparent text-[#434349] focus:outline-none font-medium cursor-pointer appearance-none pr-1"
-                style={{ fontFamily: 'var(--font-outfit)' }}
-              >
-                {locales.map((locale) => (
-                  <option key={locale} value={locale}>
-                    {locale.toUpperCase()}
-                  </option>
-                ))}
-              </select>
+              <NavbarLocaleSelect
+                currentLocale={currentLocale}
+                onSelect={switchLanguage}
+                triggerClassName="text-[#9B9BBD]"
+              />
             </motion.div>
 
             {/* Desktop / large tablet only — on smaller screens these live in the hamburger menu */}
@@ -228,20 +313,15 @@ export default function Navbar({ currentLocale }: NavbarProps) {
                     {getNestedTranslation(t, 'navigation.signIn')}
                   </NavbarSecondaryButton>
                 </div>
-                <div className="flex items-center gap-2">
-                  <GlobeIcon className="w-5 h-5 text-gray-500" />
-                <select
-                  value={currentLocale}
-                  onChange={(e) => switchLanguage(e.target.value as Locale)}
-                  className="text-sm border-none bg-transparent text-gray-800 focus:outline-none font-medium"
-                >
-                  {locales.map((locale) => (
-                    <option key={locale} value={locale}>
-                      {locale.toUpperCase()}
-                    </option>
-                  ))}
-                </select>
-                </div>
+                <NavbarLocaleSelect
+                  currentLocale={currentLocale}
+                  onSelect={(locale) => {
+                    switchLanguage(locale);
+                    setIsMenuOpen(false);
+                  }}
+                  triggerClassName="text-[#9B9BBD]"
+                  menuVariant="stacked"
+                />
               </div>
             </div>
           </motion.div>
