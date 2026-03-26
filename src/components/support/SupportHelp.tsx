@@ -15,7 +15,7 @@ export default function SupportHelp({ locale }: SupportHelpProps) {
   const t = locale === "fr" ? frTranslations : enTranslations;
 
   return (
-    <section className="mb-20 flex flex-col items-center gap-8 py-16 sm:mb-24 sm:gap-10 sm:py-20 lg:mb-[120px] lg:py-24">
+    <section className="mb-20 flex flex-col items-center gap-8 py-16 sm:mb-24 sm:gap-10 sm:py-20 lg:pb-[120px] lg:py-24">
       <FadeInSection className="w-full text-center">
         <h2
           className="text-2xl font-semibold text-[#070714] sm:text-4xl lg:text-[48px]"
