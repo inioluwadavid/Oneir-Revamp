@@ -58,7 +58,7 @@ function NavbarLocaleSelect({
   }, [open]);
 
   return (
-    <div className="relative" ref={rootRef}>
+    <div className="relative inline-flex flex-col items-stretch" ref={rootRef}>
       <button
         type="button"
         aria-haspopup="listbox"
@@ -66,12 +66,14 @@ function NavbarLocaleSelect({
         aria-controls={listboxId}
         aria-label="Language"
         onClick={() => setOpen((o) => !o)}
-        className={`flex items-center gap-2 rounded text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9B9BBD]/40 ${triggerClassName}`.trim()}
+        className={`flex items-center gap-1.5 rounded-lg py-0.5 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9B9BBD]/40 ${triggerClassName}`.trim()}
         style={{ fontFamily: 'var(--font-outfit)' }}
       >
-        <GlobeIcon className="h-5 w-5 shrink-0" />
-        <span>{currentLocale.toUpperCase()}</span>
-        <svg className="h-4 w-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <GlobeIcon className="h-[18px] w-[18px] shrink-0" />
+        <span className="min-w-[1.25rem] text-center tabular-nums">
+          {currentLocale.toUpperCase()}
+        </span>
+        <svg className="h-3.5 w-3.5 shrink-0 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
@@ -82,22 +84,22 @@ function NavbarLocaleSelect({
           aria-label="Language"
           className={
             menuVariant === 'popover'
-              ? 'absolute right-0 top-full z-[60] mt-1 min-w-[5.5rem] rounded-md border border-[#C6C7CA] bg-white py-1 shadow-md'
-              : 'mt-2 w-full min-w-[5.5rem] rounded-md border border-[#C6C7CA] bg-white py-1 shadow-md'
+              ? 'absolute right-0 top-full z-[60] mt-1.5 w-full min-w-0 overflow-hidden rounded-xl border border-[#C6C7CA]/90 bg-white p-0 shadow-[0_8px_24px_rgba(7,7,20,0.08)]'
+              : 'mt-2 w-fit min-w-0 self-start overflow-hidden rounded-xl border border-[#C6C7CA]/90 bg-white p-0 shadow-[0_8px_24px_rgba(7,7,20,0.08)]'
           }
         >
           {locales.map((locale) => {
             const selected = locale === currentLocale;
             return (
-              <li key={locale} role="presentation">
+              <li key={locale} role="presentation" className="m-0 w-full list-none p-0">
                 <button
                   type="button"
                   role="option"
                   aria-selected={selected}
-                  className={`w-full px-3 py-2 text-left text-sm font-medium transition-colors ${
+                  className={`box-border block w-full min-w-0 cursor-pointer border-0 px-2 py-1.5 text-center text-xs font-semibold tracking-wide transition-colors [-webkit-tap-highlight-color:transparent] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#65083A]/25 ${
                     selected
-                      ? 'bg-[#9B9BBD] text-white'
-                      : 'text-[#434349] hover:bg-[#9B9BBD] hover:text-white'
+                      ? 'bg-[#9B9BBD] text-[#434349] hover:text-white'
+                      : 'bg-white text-[#9B9BBD] hover:text-[#434349]'
                   }`}
                   style={{ fontFamily: 'var(--font-outfit)' }}
                   onClick={() => {
