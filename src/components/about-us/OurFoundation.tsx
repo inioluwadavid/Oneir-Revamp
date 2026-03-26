@@ -30,7 +30,7 @@ export default function OurFoundation({ locale }: OurFoundationProps) {
       <div className="max-w-6xl mx-auto">
         <h2
           style={{ fontFamily: "var(--font-outfit)" }}
-          className="text-2xl sm:text-[48px] font-[600] text-[#434349] mb-8"
+          className="text-2xl sm:text-[48px] font-[600] text-[#070714] mb-8"
         >
           {t.foundation.title}
         </h2>
