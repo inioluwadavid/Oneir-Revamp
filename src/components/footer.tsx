@@ -1,5 +1,6 @@
 'use client';
 
+import { MEDIA_SECTION_ANCHORS } from '@/lib/anchor-utils';
 import { getTranslations, getNestedTranslation, type Locale } from '@/lib/translations';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -43,6 +44,7 @@ export default function Footer({ locale }: FooterProps) {
   const siteLinks = [
     { href: `/${locale}`, key: 'home' as const },
     { href: `/${locale}/about-us`, key: 'about' as const },
+    { href: `/${locale}#${MEDIA_SECTION_ANCHORS.oneirMinute}`, key: 'media' as const },
     { href: `/${locale}/support`, key: 'support' as const },
   ];
 
