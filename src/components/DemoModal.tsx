@@ -235,7 +235,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[100] flex touch-manipulation items-stretch justify-center p-0 sm:items-center sm:p-4 md:p-6 bg-black/40 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex touch-manipulation items-stretch justify-center p-0 sm:items-center sm:p-4 md:p-6 bg-modal-backdrop backdrop-blur-sm"
           onClick={handleBackdropClick}
           aria-modal="true"
           role="dialog"

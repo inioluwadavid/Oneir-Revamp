@@ -49,15 +49,14 @@ export default function ProductManualsHero({ locale }: ProductManualsHeroProps) 
         }}
         aria-hidden
       />
-      <div className="relative z-10 mx-auto flex w-full max-w-[1210px] flex-col items-center gap-8 px-4 pt-24 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:gap-16 lg:px-8 lg:pt-40 lg:pb-28">
-        <HeroHeaderRow
-          title={t.hero.title}
-          backAriaLabel={t.hero.backToSupport}
-          backHref={`/${locale}/support`}
-        />
-        {/* Subtitle block - centered */}
-        <div className="flex flex-col items-center gap-4 text-center">
-          <p className="max-w-[584px] text-base leading-6 text-white sm:text-lg lg:text-[18px]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1210px] flex-col items-center gap-8 px-4 pt-24 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:gap-10 lg:px-8 lg:pt-40 lg:pb-28">
+        <div className="flex w-full flex-col items-center gap-4 mb-[30px] text-center">
+          <HeroHeaderRow
+            title={t.hero.title}
+            backAriaLabel={t.hero.backToSupport}
+            backHref={`/${locale}/support`}
+          />
+          <p className="max-w-[584px] text-base leading-6 text-white sm:text-lg lg:text-[18px] lg:leading-6">
             {t.hero.subtitle}
           </p>
         </div>

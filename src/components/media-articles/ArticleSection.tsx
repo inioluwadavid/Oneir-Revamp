@@ -34,7 +34,7 @@ export default function ArticleSection({
   embedDriveVideo = false,
 }: ArticleSectionProps) {
   const content = (
-    <div>
+    <div className="">
       <div className="mb-8 flex flex-col gap-2 sm:mb-10 sm:flex-row sm:items-start sm:gap-2 lg:mb-12 lg:gap-2">
         <div className="flex ">
           
@@ -75,11 +75,11 @@ export default function ArticleSection({
     <FadeInSection className="mb-16 scroll-mt-24 sm:mb-20 lg:mb-[80px]">
       <section id={sectionId}>
         {background === "white" ? (
-          <div className="rounded-[32px] my-[120px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] sm:p-8 lg:p-12 ">
+          <div className="rounded-[32px] my-[120px] bg-white p-6 shadow-[0px_16px_20px_0px_rgba(0,0,0,0.01)] px-6 sm:px-[96px] py-8 sm:py-[80px] ">
             {content}
           </div>
         ) : (
-          <div className="">
+          <div className="px-6 sm:px-[96px] py-8 sm:py-[80px]">
           {content}
           </div>
         )}

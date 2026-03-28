@@ -33,7 +33,7 @@ export default async function Home({ params }: HomePageProps) {
         <IndustriesWeServe locale={locale} />
         <SellAnywhere locale={locale} />
         <HowBusinessesRun locale={locale} />
-        <div className=" max-w-7xl mx-auto px-4 sm:px-3 ">
+        <div className=" max-w-7xl mx-auto  ">
           <ArticleSection
             sectionId={MEDIA_SECTION_ANCHORS.oneirMinute}
             title={mediaT.sections.oneirMinute.title}

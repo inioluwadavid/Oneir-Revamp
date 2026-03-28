@@ -52,7 +52,7 @@ export default function HowBusinessesRun({ locale, variant = 'compact' }: HowBus
             className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/60 transition-colors mb-4"
           />
         )}
-        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm p-6 sm:p-8 lg:p-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm px-6 sm:px-[96px] py-8 sm:py-[80px]">
           {/* Main title */}
           <motion.h2
             initial={{ opacity: 0, y: 24 }}

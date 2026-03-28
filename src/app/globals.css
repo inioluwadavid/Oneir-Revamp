@@ -15,6 +15,8 @@ html {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /* Modal overlay scrim (Figma: #202E32 @ 88%) */
+  --color-modal-backdrop: rgba(32, 46, 50, 0.88);
   --font-sans: var(--font-inter);
   --font-outfit: var(--font-outfit);
 }

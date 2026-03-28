@@ -42,7 +42,7 @@ export default function GoogleDriveVideoModal({ isOpen, onClose, embedUrl, title
     >
       <button
         type="button"
-        className="absolute inset-0 bg-black/70"
+        className="absolute inset-0 bg-modal-backdrop backdrop-blur-sm"
         onClick={onClose}
         aria-label="Close video"
       />

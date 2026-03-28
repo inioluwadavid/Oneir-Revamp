@@ -38,7 +38,7 @@ export default function NeedAdditionalAssistance({
   return (
     <section
       id={sectionId}
-      className="rounded-[24px] p-6 sm:p-8 lg:rounded-[32px] lg:p-12 lg:px-24"
+      className="rounded-[24px] px-6 sm:px-[96px] py-8 sm:py-[80px] lg:rounded-[32px] "
       style={{ background: ASSISTANCE_GRADIENT }}
     >
       <motion.h2

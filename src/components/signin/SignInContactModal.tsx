@@ -49,7 +49,7 @@ export default function SignInContactModal({ isOpen, onClose, locale }: SignInCo
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[100] flex touch-manipulation items-center justify-center bg-black/40 p-4 backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-[100] flex touch-manipulation items-center justify-center bg-modal-backdrop p-4 backdrop-blur-sm sm:p-6"
           onClick={handleBackdrop}
           role="dialog"
           aria-modal="true"
