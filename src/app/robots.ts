@@ -3,10 +3,18 @@ import { MetadataRoute } from 'next'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/private/', '/admin/'],
+      userAgent: "*",
+      allow: "/",
+      disallow: [
+        "/private/",
+        "/admin/",
+        "/en/signin",
+        "/fr/signin",
+        "/en/search",
+        "/fr/search",
+      ],
     },
-    sitemap: 'https://oneirsolutions.com/sitemap.xml',
-  }
+    sitemap: "https://oneirsolutions.com/sitemap.xml",
+    host: "https://oneirsolutions.com",
+  };
 }

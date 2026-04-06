@@ -21,6 +21,17 @@ export async function generateMetadata({
     description: isEnglish
       ? "Sign in to your Oneir Solutions account."
       : "Connectez-vous à votre compte Oneir Solutions.",
+    robots: {
+      index: false,
+      follow: true,
+    },
+    alternates: {
+      canonical: `https://oneirsolutions.com/${locale}/signin`,
+      languages: {
+        en: "https://oneirsolutions.com/en/signin",
+        fr: "https://oneirsolutions.com/fr/signin",
+      },
+    },
     openGraph: {
       title: isEnglish ? "Sign in | Oneir Solutions" : "Se connecter | Oneir Solutions",
       description: isEnglish

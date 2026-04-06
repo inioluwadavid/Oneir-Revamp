@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState, useMemo } from 'react';
 import { getTranslations, getNestedTranslation, type Locale } from '@/lib/translations';
+import { trackEvent } from '@/lib/analytics';
 import Image from 'next/image';
 import { useDemoModal } from '@/context/DemoModalContext';
 import Button from './ui/Button';
@@ -24,10 +25,55 @@ const BEST_TIME_KEYS = ['morning', 'afternoon', 'evening', 'anytime'] as const;
 const HEAR_ABOUT_KEYS = ['google', 'linkedin', 'industryEvent', 'referral', 'socialMedia', 'newsArticle', 'other'] as const;
 const COUNTRY_KEYS = ['us', 'canada', 'uk', 'australia', 'germany', 'france', 'india', 'singapore', 'other'] as const;
 
+const DEMO_UPLOAD_MAX_BYTES = 10 * 1024 * 1024;
+const DEMO_UPLOAD_ALLOWED_TYPES = new Set([
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+  'image/gif',
+  'application/pdf',
+]);
+
+async function uploadFileWithCloudinaryPreset(file: File): Promise<string | null> {
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+  if (!cloudName?.trim() || !uploadPreset?.trim()) {
+    return null;
+  }
+  if (file.size === 0 || file.size > DEMO_UPLOAD_MAX_BYTES) {
+    return null;
+  }
+  const mime = file.type || 'application/octet-stream';
+  if (!DEMO_UPLOAD_ALLOWED_TYPES.has(mime)) {
+    return null;
+  }
+
+  const body = new FormData();
+  body.append('file', file);
+  body.append('upload_preset', uploadPreset.trim());
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${cloudName.trim()}/auto/upload`,
+    { method: 'POST', body },
+  );
+  if (!res.ok) {
+    return null;
+  }
+  const data = (await res.json()) as { secure_url?: string };
+  return typeof data.secure_url === 'string' ? data.secure_url : null;
+}
+
 export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
   const { launchWatchDemoVideo } = useDemoModal();
   const t = getTranslations(locale);
   const [currentStep, setCurrentStep] = useState(1);
+  const [step1Data, setStep1Data] = useState({
+    fullName: '',
+    companyName: '',
+    email: '',
+    phone: '',
+    jobTitle: '',
+  });
 
   const [step2Data, setStep2Data] = useState({
     industry: '',
@@ -49,13 +95,22 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
     requestType: 'productDemo' as 'productDemo' | 'scheduleCall' | 'newsletterOptIn',
     file: null as File | null,
   });
+  const [antiBotData, setAntiBotData] = useState({
+    humanConfirmed: false,
+    website: '',
+  });
 
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitFailed, setSubmitFailed] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
       setCurrentStep(1);
       setShowSuccess(false);
+      setSubmitFailed(false);
+      setIsSubmitting(false);
+      setAntiBotData({ humanConfirmed: false, website: '' });
     }
   }, [isOpen]);
 
@@ -124,6 +179,10 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
       scheduleCall: getNestedTranslation(t, 'demoModal.scheduleCall'),
       newsletterOptIn: getNestedTranslation(t, 'demoModal.newsletterOptIn'),
       sendButton: getNestedTranslation(t, 'demoModal.sendButton'),
+      sendButtonSubmitting: getNestedTranslation(t, 'demoModal.sendButtonSubmitting'),
+      submitError: getNestedTranslation(t, 'demoModal.submitError'),
+      robotCheck: getNestedTranslation(t, 'demoModal.robotCheck'),
+      robotFieldLabel: getNestedTranslation(t, 'demoModal.robotFieldLabel'),
       successTitle: getNestedTranslation(t, 'demoModal.successTitle'),
       successMessage: getNestedTranslation(t, 'demoModal.successMessage'),
       watchDemo: getNestedTranslation(t, 'demoModal.watchDemo'),
@@ -222,9 +281,82 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
 
   const totalSteps = 4;
   const progressPercent = (currentStep / totalSteps) * 100;
+  const isStep1Complete =
+    step1Data.fullName.trim() !== '' &&
+    step1Data.companyName.trim() !== '' &&
+    step1Data.email.trim() !== '' &&
+    step1Data.jobTitle.trim() !== '';
+  const isStep2Complete = Object.values(step2Data).every((value) => value.trim() !== '');
+  const isStep3Complete =
+    step3Data.preferredContact.trim() !== '' &&
+    step3Data.bestTime.trim() !== '' &&
+    step3Data.hearAbout.trim() !== '';
+  const isStep4Complete =
+    step4Data.message.trim() !== '' &&
+    step4Data.country.trim() !== '' &&
+    step4Data.requestType.trim() !== '' &&
+    antiBotData.humanConfirmed &&
+    antiBotData.website.trim() === '';
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) onClose();
+  };
+
+  const handleSubmitDemo = async () => {
+    if (!isStep4Complete || isSubmitting) return;
+    setIsSubmitting(true);
+    setSubmitFailed(false);
+    try {
+      let fileUrl: string | null = null;
+      if (step4Data.file) {
+        fileUrl = await uploadFileWithCloudinaryPreset(step4Data.file);
+        if (!fileUrl) {
+          setSubmitFailed(true);
+          return;
+        }
+      }
+
+      const res = await fetch('/api/demo-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          locale,
+          step1Data,
+          step2Data,
+          step3Data,
+          step4Data: {
+            message: step4Data.message,
+            country: step4Data.country,
+            requestType: step4Data.requestType,
+            fileName: step4Data.file?.name ?? null,
+            fileUrl,
+          },
+          antiBotData,
+        }),
+      });
+      if (!res.ok) {
+        trackEvent('demo_request_submit_failed', {
+          locale,
+          step: currentStep,
+        });
+        setSubmitFailed(true);
+        return;
+      }
+      trackEvent('generate_lead', {
+        locale,
+        method: 'demo_modal',
+        request_type: step4Data.requestType,
+      });
+      setShowSuccess(true);
+    } catch {
+      trackEvent('demo_request_submit_failed', {
+        locale,
+        step: currentStep,
+      });
+      setSubmitFailed(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -354,6 +486,8 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         id="demo-full-name"
                         type="text"
                         placeholder={stepLabels.fullNamePlaceholder}
+                        value={step1Data.fullName}
+                        onChange={(e) => setStep1Data((prev) => ({ ...prev, fullName: e.target.value }))}
                         className="w-full h-12 px-4 sm:px-[18px] py-1 bg-white border border-[#e0e3eb] rounded-xl text-sm text-[#2d2d2d] placeholder:text-[#717182] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 focus:border-[#65083A] transition-colors"
                         style={{ fontFamily: 'var(--font-inter)' }}
                       />
@@ -371,6 +505,8 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         id="demo-company"
                         type="text"
                         placeholder={stepLabels.companyNamePlaceholder}
+                        value={step1Data.companyName}
+                        onChange={(e) => setStep1Data((prev) => ({ ...prev, companyName: e.target.value }))}
                         className="w-full h-12 px-4 sm:px-[18px] py-1 bg-white border border-[#e0e3eb] rounded-xl text-sm text-[#2d2d2d] placeholder:text-[#717182] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 focus:border-[#65083A] transition-colors"
                         style={{ fontFamily: 'var(--font-inter)' }}
                       />
@@ -388,6 +524,8 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         id="demo-email"
                         type="email"
                         placeholder={stepLabels.emailPlaceholder}
+                        value={step1Data.email}
+                        onChange={(e) => setStep1Data((prev) => ({ ...prev, email: e.target.value }))}
                         className="w-full h-12 px-4 sm:px-[18px] py-1 bg-white border border-[#e0e3eb] rounded-xl text-sm text-[#2d2d2d] placeholder:text-[#717182] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 focus:border-[#65083A] transition-colors"
                         style={{ fontFamily: 'var(--font-inter)' }}
                       />
@@ -405,6 +543,8 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         id="demo-phone"
                         type="tel"
                         placeholder={stepLabels.phonePlaceholder}
+                        value={step1Data.phone}
+                        onChange={(e) => setStep1Data((prev) => ({ ...prev, phone: e.target.value }))}
                         className="w-full h-12 px-4 sm:px-[18px] py-1 bg-white border border-[#e0e3eb] rounded-xl text-sm text-[#2d2d2d] placeholder:text-[#717182] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 focus:border-[#65083A] transition-colors"
                         style={{ fontFamily: 'var(--font-inter)' }}
                       />
@@ -422,6 +562,8 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         id="demo-job-title"
                         type="text"
                         placeholder={stepLabels.jobTitlePlaceholder}
+                        value={step1Data.jobTitle}
+                        onChange={(e) => setStep1Data((prev) => ({ ...prev, jobTitle: e.target.value }))}
                         className="w-full h-12 px-4 sm:px-[18px] py-1 bg-white border border-[#e0e3eb] rounded-xl text-sm text-[#2d2d2d] placeholder:text-[#717182] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 focus:border-[#65083A] transition-colors"
                         style={{ fontFamily: 'var(--font-inter)' }}
                       />
@@ -592,6 +734,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         <input
                           id="demo-file-upload"
                           type="file"
+                          accept="image/jpeg,image/png,image/webp,image/gif,application/pdf"
                           className="hidden"
                           onChange={(e) => {
                             const file = e.target.files?.[0];
@@ -623,6 +766,37 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                         variant="square"
                       />
                     </div>
+                    <div className="flex items-center gap-3 rounded-xl border border-[#e0e3eb] bg-white px-4 py-3">
+                      <input
+                        id="demo-human-check"
+                        type="checkbox"
+                        checked={antiBotData.humanConfirmed}
+                        onChange={(e) =>
+                          setAntiBotData((prev) => ({ ...prev, humanConfirmed: e.target.checked }))
+                        }
+                        className="h-4 w-4 cursor-pointer rounded border-[#b9bfd2] text-[#65083A] focus:ring-[#65083A]/40"
+                      />
+                      <label
+                        htmlFor="demo-human-check"
+                        className="cursor-pointer text-sm text-[#2d2d2d] tracking-[-0.15px]"
+                        style={{ fontFamily: 'var(--font-inter)' }}
+                      >
+                        {stepLabels.robotCheck}
+                      </label>
+                    </div>
+                    <div className="sr-only" aria-hidden="true">
+                      <label htmlFor="demo-website">{stepLabels.robotFieldLabel}</label>
+                      <input
+                        id="demo-website"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={antiBotData.website}
+                        onChange={(e) =>
+                          setAntiBotData((prev) => ({ ...prev, website: e.target.value }))
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
               )}
@@ -631,7 +805,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
             {/* Footer — stack on narrow screens; safe area for home indicator */}
             <div className="shrink-0 border-t border-[#e0e3eb] bg-[rgba(248,248,251,0.5)] px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-10 sm:py-8">
               {currentStep === 1 ? (
-                <Button variant="primary" size="lg" animated className="w-full" onClick={() => setCurrentStep(2)}>
+                <Button variant="primary" size="lg" animated className="w-full" onClick={() => setCurrentStep(2)} disabled={!isStep1Complete}>
                   {stepLabels.nextButton}
                 </Button>
               ) : currentStep === 2 ? (
@@ -653,6 +827,7 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     animated
                     className="w-full sm:flex-1"
                     onClick={() => setCurrentStep(3)}
+                    disabled={!isStep2Complete}
                   >
                     {stepLabels.nextButtonStep2}
                   </Button>
@@ -676,32 +851,46 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
                     animated
                     className="w-full sm:flex-1"
                     onClick={() => setCurrentStep(4)}
+                    disabled={!isStep3Complete}
                   >
                     {stepLabels.nextButtonStep3}
                   </Button>
                 </div>
               ) : (
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-6">
-                  <button
-                    type="button"
-                    onClick={() => setCurrentStep(3)}
-                    className="flex h-[52px] w-full shrink-0 items-center justify-center gap-2 rounded-[40px] border border-[#e0e3eb] bg-white px-4 py-3 text-base font-medium text-[#2d2d2d] hover:bg-[#f8f8fb] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 sm:h-[59px] sm:w-auto sm:min-w-0 sm:px-5 sm:text-lg"
-                    style={{ fontFamily: 'var(--font-inter)' }}
-                  >
-                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                    {stepLabels.backButton}
-                  </button>
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    animated
-                    className="w-full sm:flex-1"
-                    onClick={() => setShowSuccess(true)}
-                  >
-                    {stepLabels.sendButton}
-                  </Button>
+                <div className="flex flex-col gap-3">
+                  {submitFailed ? (
+                    <p
+                      className="text-center text-sm text-[#b42318] sm:text-left"
+                      role="alert"
+                      style={{ fontFamily: 'var(--font-inter)' }}
+                    >
+                      {stepLabels.submitError}
+                    </p>
+                  ) : null}
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-6">
+                    <button
+                      type="button"
+                      onClick={() => setCurrentStep(3)}
+                      disabled={isSubmitting}
+                      className="flex h-[52px] w-full shrink-0 items-center justify-center gap-2 rounded-[40px] border border-[#e0e3eb] bg-white px-4 py-3 text-base font-medium text-[#2d2d2d] hover:bg-[#f8f8fb] focus:outline-none focus:ring-2 focus:ring-[#65083A]/30 enabled:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 sm:h-[59px] sm:w-auto sm:min-w-0 sm:px-5 sm:text-lg"
+                      style={{ fontFamily: 'var(--font-inter)' }}
+                    >
+                      <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      {stepLabels.backButton}
+                    </button>
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      animated
+                      className="w-full sm:flex-1"
+                      onClick={handleSubmitDemo}
+                      disabled={!isStep4Complete || isSubmitting}
+                    >
+                      {isSubmitting ? stepLabels.sendButtonSubmitting : stepLabels.sendButton}
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>

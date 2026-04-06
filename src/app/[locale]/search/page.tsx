@@ -21,6 +21,17 @@ export async function generateMetadata({
     description: isEnglish
       ? "Search the Oneir knowledge base for articles, guides, and support."
       : "Recherchez dans la base de connaissances Oneir.",
+    robots: {
+      index: false,
+      follow: true,
+    },
+    alternates: {
+      canonical: `https://oneirsolutions.com/${locale}/search`,
+      languages: {
+        en: "https://oneirsolutions.com/en/search",
+        fr: "https://oneirsolutions.com/fr/search",
+      },
+    },
     openGraph: {
       title: isEnglish ? "Search | Oneir Solutions" : "Recherche | Oneir Solutions",
       url: `https://oneirsolutions.com/${locale}/search`,

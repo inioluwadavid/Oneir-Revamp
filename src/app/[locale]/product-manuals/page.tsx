@@ -4,9 +4,12 @@ import Footer from "@/components/footer";
 import ProductManualsHero from "@/components/product-manuals/ProductManualsHero";
 import ProductManualsSection from "@/components/product-manuals/ProductManualsSection";
 import NeedAdditionalAssistance from "@/components/shared/NeedAdditionalAssistance";
+import SeoContentLinks from "@/components/shared/SeoContentLinks";
 import enTranslations from "@/locales/product-manuals/en.json";
 import frTranslations from "@/locales/product-manuals/fr.json";
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildWebPageSchema, localizedPath } from "@/lib/seo";
 
 interface ProductManualsPageProps {
   params: Promise<{ locale: string }>;
@@ -18,14 +21,17 @@ export async function generateMetadata({
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
   const t = locale === "fr" ? frTranslations : enTranslations;
+  const title = t.hero.title;
+  const description = t.hero.subtitle;
 
   return {
-    title: t.hero.title,
-    description: t.hero.subtitle,
+    title,
+    description,
+    alternates: buildAlternates(locale, "product-manuals"),
     openGraph: {
-      title: `${t.hero.title} | Oneir Solutions`,
-      description: t.hero.subtitle,
-      url: `https://oneirsolutions.com/${locale}/product-manuals`,
+      title: `${title} | Oneir Solutions`,
+      description,
+      url: localizedPath(locale, "product-manuals"),
     },
   };
 }
@@ -47,9 +53,17 @@ export default async function ProductManualsPage({
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
   const t = locale === "fr" ? frTranslations : enTranslations;
+  const manualsSchema = buildWebPageSchema({
+    locale,
+    route: "product-manuals",
+    title: t.hero.title,
+    description: t.hero.subtitle,
+    type: "CollectionPage",
+  });
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={manualsSchema} />
       <Navbar currentLocale={locale} />
 
       <ProductManualsHero locale={locale} />
@@ -75,6 +89,7 @@ export default async function ProductManualsPage({
             translations={t.assistance}
             sectionId="contact-support"
           />
+          <SeoContentLinks locale={locale} currentPath="product-manuals" />
         </div>
       </main>
 

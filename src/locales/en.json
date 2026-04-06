@@ -148,6 +148,10 @@
     "scheduleCall": "Schedule a demo call",
     "newsletterOptIn": "Opt-in for product updates and newsletters",
     "sendButton": "Send",
+    "sendButtonSubmitting": "Sending…",
+    "submitError": "Something went wrong. Please try again in a moment.",
+    "robotCheck": "I am not a robot",
+    "robotFieldLabel": "Leave this field blank",
     "countryOptions": {
       "us": "United States",
       "canada": "Canada",

@@ -96,6 +96,13 @@ const variantStyles = {
   }
 };
 
+/** Filled inactive state for primary CTAs (e.g. modal steps until form is complete). */
+const primaryDisabledStyle = {
+  background: '#9BA0C1',
+  color: '#FFFFFF',
+  borderColor: '#FFFFFF',
+} as const;
+
 export default function Button({
   children,
   variant = 'primary',
@@ -108,11 +115,14 @@ export default function Button({
   fullWidth = false,
   type = 'button'
 }: ButtonProps) {
+  const usesPrimaryInactiveDisabled =
+    disabled && (variant === 'primary' || variant === 'gradient-reverse');
+
   const baseClasses = `
     inline-flex items-center justify-center text-center font-medium transition-all duration-200 border
     ${sizeClasses[size]}
     ${fullWidth ? 'w-full' : ''}
-    ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+    ${disabled ? (usesPrimaryInactiveDisabled ? 'cursor-not-allowed' : 'opacity-50 cursor-not-allowed') : 'cursor-pointer'}
     ${className}
   `.trim();
 
@@ -144,7 +154,7 @@ export default function Button({
 
   const buttonProps = {
     className: baseClasses,
-    style: variantStyles[variant].base,
+    style: usesPrimaryInactiveDisabled ? primaryDisabledStyle : variantStyles[variant].base,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
     onClick: disabled ? undefined : onClick,

@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import BackButton from "@/components/BackButton";
 import type { Metadata } from "next";
 import { getTranslations } from "@/lib/translations";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildCaseStudySchema, localizedPath } from "@/lib/seo";
 
 interface CaseStudyPageProps {
   params: Promise<{ locale: string }>;
@@ -21,9 +23,10 @@ export async function generateMetadata({
     description: isEnglish
       ? "How a multi-company operation gained unified visibility, consolidated reporting, and centralized control with Oneir Solutions."
       : "Comment une opération multi-sociétés a obtenu une visibilité unifiée, des rapports consolidés et un contrôle centralisé avec Oneir Solutions.",
+    alternates: buildAlternates(locale, "success-stories/multi-company"),
     openGraph: {
       title: isEnglish ? "Multi-Company | Oneir Solutions" : "Multi-Company | Oneir Solutions",
-      url: `https://oneirsolutions.com/${locale}/success-stories/multi-company`,
+      url: localizedPath(locale, "success-stories/multi-company"),
     },
   };
 }
@@ -51,9 +54,19 @@ export default async function MultiCompanyCaseStudy({ params }: CaseStudyPagePro
     quote: "text-[18px] sm:text-[20px] font-[600] leading-relaxed text-[#434349] pb-3",
     sectionHeader: "text-[16px] sm:text-[17px] font-[600] text-[#070714] pb-3",
   };
+  const caseStudySchema = buildCaseStudySchema({
+    locale,
+    slug: "multi-company",
+    title: "Multi-Company",
+    description:
+      locale === "en"
+        ? "How a multi-company operation gained unified visibility, consolidated reporting, and centralized control with Oneir Solutions."
+        : "Comment une operation multi-societes a obtenu une visibilite unifiee et un controle centralise avec Oneir Solutions.",
+  });
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={caseStudySchema} />
       <Navbar currentLocale={locale} />
       <div className="pt-[var(--navbar-height)] sm:pt-24 lg:pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">

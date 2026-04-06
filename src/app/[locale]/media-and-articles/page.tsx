@@ -4,10 +4,13 @@ import Footer from "@/components/footer";
 import MediaArticlesHero from "@/components/media-articles/MediaArticlesHero";
 import ArticleSection from "@/components/media-articles/ArticleSection";
 import NeedAdditionalAssistance from "@/components/shared/NeedAdditionalAssistance";
+import SeoContentLinks from "@/components/shared/SeoContentLinks";
 import enTranslations from "@/locales/media-articles/en.json";
 import frTranslations from "@/locales/media-articles/fr.json";
 import { MEDIA_SECTION_ANCHORS } from "@/lib/anchor-utils";
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildWebPageSchema, localizedPath } from "@/lib/seo";
 
 interface MediaArticlesPageProps {
   params: Promise<{ locale: string }>;
@@ -19,14 +22,17 @@ export async function generateMetadata({
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
   const t = locale === "fr" ? frTranslations : enTranslations;
+  const title = t.hero.title;
+  const description = t.hero.subtitle;
 
   return {
-    title: t.hero.title,
-    description: t.hero.subtitle,
+    title,
+    description,
+    alternates: buildAlternates(locale, "media-and-articles"),
     openGraph: {
-      title: `${t.hero.title} | Oneir Solutions`,
-      description: t.hero.subtitle,
-      url: `https://oneirsolutions.com/${locale}/media-and-articles`,
+      title: `${title} | Oneir Solutions`,
+      description,
+      url: localizedPath(locale, "media-and-articles"),
     },
   };
 }
@@ -35,9 +41,30 @@ export default async function MediaArticlesPage({ params }: MediaArticlesPagePro
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
   const t = locale === "fr" ? frTranslations : enTranslations;
+  const mediaSchema = {
+    ...buildWebPageSchema({
+      locale,
+      route: "media-and-articles",
+      title: t.hero.title,
+      description: t.hero.subtitle,
+      type: "CollectionPage",
+    }),
+    hasPart: t.articles.techAdvisor.map((article) => ({
+      "@type": "Article",
+      headline: article.title,
+      description: article.description,
+      url: article.href,
+      inLanguage: locale,
+      publisher: {
+        "@type": "Organization",
+        name: "Oneir Solutions",
+      },
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={mediaSchema} />
       <Navbar currentLocale={locale} />
 
       <MediaArticlesHero locale={locale} />
@@ -57,6 +84,7 @@ export default async function MediaArticlesPage({ params }: MediaArticlesPagePro
             translations={t.assistance}
             sectionId="contact-support"
           />
+          <SeoContentLinks locale={locale} currentPath="media-and-articles" />
         </div>
       </main>
 

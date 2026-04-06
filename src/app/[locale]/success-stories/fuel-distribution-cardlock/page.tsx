@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import BackButton from "@/components/BackButton";
 import type { Metadata } from "next";
 import { getTranslations } from "@/lib/translations";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildCaseStudySchema, localizedPath } from "@/lib/seo";
 
 interface CaseStudyPageProps {
   params: Promise<{ locale: string }>;
@@ -21,9 +23,10 @@ export async function generateMetadata({
     description: isEnglish
       ? "How a fuel-distribution and rural-service supplier adopted Oneir's integrated platform for multi-channel operations and cardlock transactions."
       : "Comment un fournisseur de distribution de carburant a adopté la plateforme intégrée de Oneir pour les opérations multi-canaux et les transactions par carte.",
+    alternates: buildAlternates(locale, "success-stories/fuel-distribution-cardlock"),
     openGraph: {
       title: isEnglish ? "Fuel Distribution with Cardlock | Oneir Solutions" : "Distribution de carburant avec carte-carburant | Oneir Solutions",
-      url: `https://oneirsolutions.com/${locale}/success-stories/fuel-distribution-cardlock`,
+      url: localizedPath(locale, "success-stories/fuel-distribution-cardlock"),
     },
   };
 }
@@ -51,9 +54,19 @@ export default async function FuelDistributionCardlockCaseStudy({ params }: Case
     quote: "text-[18px] sm:text-[20px] font-[600] leading-relaxed text-[#434349] mb-2",
     sectionHeader: "text-[16px] sm:text-[17px] font-[600] text-[#070714] mb-0",
   };
+  const caseStudySchema = buildCaseStudySchema({
+    locale,
+    slug: "fuel-distribution-cardlock",
+    title,
+    description:
+      locale === "en"
+        ? "How a fuel-distribution and rural-service supplier adopted Oneir's integrated platform for multi-channel operations and cardlock transactions."
+        : "Comment un fournisseur de distribution de carburant a adopte la plateforme integree de Oneir pour les operations multi-canaux.",
+  });
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={caseStudySchema} />
       <Navbar currentLocale={locale} />
       <div className="pt-[var(--navbar-height)] sm:pt-24 lg:pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">

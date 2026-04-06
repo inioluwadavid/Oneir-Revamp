@@ -14,18 +14,59 @@ import ArticleSection from "@/components/media-articles/ArticleSection";
 import { MEDIA_SECTION_ANCHORS } from "@/lib/anchor-utils";
 import mediaEn from "@/locales/media-articles/en.json";
 import mediaFr from "@/locales/media-articles/fr.json";
+import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildWebPageSchema, localizedPath } from "@/lib/seo";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: HomePageProps): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale = localeParam as Locale;
+  const isEnglish = locale === "en";
+
+  const title = isEnglish
+    ? "Oneir Solutions Home"
+    : "Accueil Oneir Solutions";
+  const description = isEnglish
+    ? "Explore Oneir Solutions ERP, industry success stories, and practical business resources."
+    : "Decouvrez les solutions ERP Oneir, nos histoires de succes et nos ressources pratiques.";
+
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, ""),
+    openGraph: {
+      title: `${title} | Oneir Solutions`,
+      description,
+      url: localizedPath(locale, ""),
+    },
+  };
 }
 
 export default async function Home({ params }: HomePageProps) {
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
   const mediaT = locale === "fr" ? mediaFr : mediaEn;
+  const homeSchema = buildWebPageSchema({
+    locale,
+    route: "",
+    title:
+      locale === "en" ? "Oneir Solutions Home" : "Accueil Oneir Solutions",
+    description:
+      locale === "en"
+        ? "Explore Oneir Solutions ERP, industry success stories, and practical business resources."
+        : "Decouvrez les solutions ERP Oneir, nos histoires de succes et nos ressources pratiques.",
+    type: "WebPage",
+  });
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={homeSchema} />
       <Navbar currentLocale={locale} />
       <div>
         <Hero locale={locale} />

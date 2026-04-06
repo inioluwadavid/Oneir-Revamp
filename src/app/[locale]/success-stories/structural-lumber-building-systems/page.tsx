@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import BackButton from "@/components/BackButton";
 import type { Metadata } from "next";
 import { getTranslations } from "@/lib/translations";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildCaseStudySchema, localizedPath } from "@/lib/seo";
 
 interface CaseStudyPageProps {
   params: Promise<{ locale: string }>;
@@ -21,9 +23,10 @@ export async function generateMetadata({
     description: isEnglish
       ? "How an Alberta-based structural lumber distributor upgraded to a Linux-based platform for integrated design, manufacturing, and accounting."
       : "Comment un distributeur albertain de bois de charpente a migré vers une plateforme Linux pour une intégration conception, fabrication et comptabilité.",
+    alternates: buildAlternates(locale, "success-stories/structural-lumber-building-systems"),
     openGraph: {
       title: isEnglish ? "Structural Lumber & Engineered Building Systems | Oneir Solutions" : "Bois de charpente et systèmes de construction | Oneir Solutions",
-      url: `https://oneirsolutions.com/${locale}/success-stories/structural-lumber-building-systems`,
+      url: localizedPath(locale, "success-stories/structural-lumber-building-systems"),
     },
   };
 }
@@ -51,9 +54,19 @@ export default async function StructuralLumberCaseStudy({ params }: CaseStudyPag
     quote: "text-[18px] sm:text-[20px] font-[600] leading-relaxed text-[#434349] pb-3",
     sectionHeader: "text-[16px] sm:text-[17px] font-[600] text-[#070714] pb-3",
   };
+  const caseStudySchema = buildCaseStudySchema({
+    locale,
+    slug: "structural-lumber-building-systems",
+    title,
+    description:
+      locale === "en"
+        ? "How an Alberta-based structural lumber distributor upgraded to a Linux-based platform for integrated design, manufacturing, and accounting."
+        : "Comment un distributeur albertain de bois de charpente a migre vers une plateforme Linux integree.",
+  });
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={caseStudySchema} />
       <Navbar currentLocale={locale} />
       <div className="pt-[var(--navbar-height)] sm:pt-24 lg:pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">

@@ -6,6 +6,8 @@ import BackButton from "@/components/BackButton";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { getTranslations } from "@/lib/translations";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildCaseStudySchema, localizedPath } from "@/lib/seo";
 
 interface CaseStudyPageProps {
   params: Promise<{ locale: string }>;
@@ -23,9 +25,10 @@ export async function generateMetadata({
     description: isEnglish
       ? "How Decorators Choice paint-and-decorating retailer migrated from Vigilant to Oneir Solutions for multi-location expansion and remote management."
       : "Comment le détaillant de peinture et décoration Decorators Choice a migré de Vigilant vers Oneir Solutions pour l'expansion multi-emplacements et la gestion à distance.",
+    alternates: buildAlternates(locale, "success-stories/decorators-choice"),
     openGraph: {
       title: isEnglish ? "Decorators Choice | Oneir Solutions" : "Decorators Choice | Oneir Solutions",
-      url: `https://oneirsolutions.com/${locale}/success-stories/decorators-choice`,
+      url: localizedPath(locale, "success-stories/decorators-choice"),
     },
   };
 }
@@ -103,6 +106,15 @@ export default async function DecoratorsChoiceCaseStudy({ params }: CaseStudyPag
   }
 
   const title = "Decorators Choice";
+  const caseStudySchema = buildCaseStudySchema({
+    locale,
+    slug: "decorators-choice",
+    title,
+    description:
+      locale === "en"
+        ? "How Decorators Choice paint-and-decorating retailer migrated from Vigilant to Oneir Solutions for multi-location expansion and remote management."
+        : "Comment le detaillant Decorators Choice a migre vers Oneir Solutions pour l'expansion multi-emplacements et la gestion a distance.",
+  });
   const logo = caseStudy.logo ?? "/images/how_businesses/how3.svg";
 
   const bodyClass = "text-[16px] leading-6 text-[#434349]";
@@ -116,6 +128,7 @@ export default async function DecoratorsChoiceCaseStudy({ params }: CaseStudyPag
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={caseStudySchema} />
       <Navbar currentLocale={locale} />
       <div className="pt-[var(--navbar-height)] sm:pt-24 lg:pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">

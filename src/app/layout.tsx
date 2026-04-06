@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,13 +41,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://oneirsolutions.com'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en': '/en',
-      'fr': '/fr',
-    },
-  },
   icons: {
     icon: [
       { url: '/oneir.svg', sizes: 'any' },
@@ -64,7 +59,7 @@ export const metadata: Metadata = {
     description: 'Oneir Solutions provides comprehensive ERP and accounting software solutions. Partner with us for advanced business management, financial reporting, and industry-specific solutions.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'Oneir Solutions - ERP & Accounting Software',
@@ -75,7 +70,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Oneir Solutions - ERP & Accounting Software',
     description: 'Oneir Solutions provides comprehensive ERP and accounting software solutions. Partner with us for advanced business management, financial reporting, and industry-specific solutions.',
-    images: ['/twitter-image.jpg'],
+    images: ['/twitter-image'],
     creator: '@oneirsolutions',
   },
   robots: {
@@ -88,11 +83,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
   },
 };
 
@@ -148,12 +138,11 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-        <link rel="canonical" href="https://oneirsolutions.com" />
-        <link rel="alternate" hrefLang="en" href="https://oneirsolutions.com/en" />
-        <link rel="alternate" hrefLang="fr" href="https://oneirsolutions.com/fr" />
-        <link rel="alternate" hrefLang="x-default" href="https://oneirsolutions.com" />
       </head>
       <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         {children}
       </body>
     </html>

@@ -148,6 +148,10 @@
     "scheduleCall": "Planifier un appel de démonstration",
     "newsletterOptIn": "S'inscrire aux mises à jour et bulletins",
     "sendButton": "Envoyer",
+    "sendButtonSubmitting": "Envoi en cours…",
+    "submitError": "Une erreur s'est produite. Veuillez réessayer dans un instant.",
+    "robotCheck": "Je ne suis pas un robot",
+    "robotFieldLabel": "Laissez ce champ vide",
     "countryOptions": {
       "us": "États-Unis",
       "canada": "Canada",

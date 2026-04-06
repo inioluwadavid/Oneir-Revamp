@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import BackButton from "@/components/BackButton";
 import type { Metadata } from "next";
 import { getTranslations } from "@/lib/translations";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildCaseStudySchema, localizedPath } from "@/lib/seo";
 
 interface CaseStudyPageProps {
   params: Promise<{ locale: string }>;
@@ -21,9 +23,10 @@ export async function generateMetadata({
     description: isEnglish
       ? "How a pet supply wholesaler upgraded to an integrated card-authorization solution for payment processing across all sales channels."
       : "Comment un grossiste en fournitures pour animaux a migré vers une solution d'autorisation de cartes intégrée pour le traitement des paiements.",
+    alternates: buildAlternates(locale, "success-stories/pet-supply-wholesaler"),
     openGraph: {
       title: isEnglish ? "Pet Supply Wholesaler | Oneir Solutions" : "Grossiste en fournitures pour animaux | Oneir Solutions",
-      url: `https://oneirsolutions.com/${locale}/success-stories/pet-supply-wholesaler`,
+      url: localizedPath(locale, "success-stories/pet-supply-wholesaler"),
     },
   };
 }
@@ -51,9 +54,19 @@ export default async function PetSupplyWholesalerCaseStudy({ params }: CaseStudy
     quote: "text-[18px] sm:text-[20px] font-[600] leading-relaxed text-[#434349] pb-3",
     sectionHeader: "text-[16px] sm:text-[17px] font-[600] text-[#070714] pb-3",
   };
+  const caseStudySchema = buildCaseStudySchema({
+    locale,
+    slug: "pet-supply-wholesaler",
+    title: locale === "en" ? "Pet Supply Wholesaler" : "Grossiste en fournitures pour animaux",
+    description:
+      locale === "en"
+        ? "How a pet supply wholesaler upgraded to an integrated card-authorization solution for payment processing across all sales channels."
+        : "Comment un grossiste en fournitures pour animaux a migre vers une solution d'autorisation de cartes integree.",
+  });
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={caseStudySchema} />
       <Navbar currentLocale={locale} />
       <div className="pt-[var(--navbar-height)] sm:pt-24 lg:pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">

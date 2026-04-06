@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import BackButton from "@/components/BackButton";
 import type { Metadata } from "next";
 import { getTranslations } from "@/lib/translations";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildAlternates, buildCaseStudySchema, localizedPath } from "@/lib/seo";
 
 interface CaseStudyPageProps {
   params: Promise<{ locale: string }>;
@@ -21,9 +23,10 @@ export async function generateMetadata({
     description: isEnglish
       ? "How a family-owned women's apparel retailer adopted an integrated business software platform to streamline operations and support growth."
       : "Comment un détaillant de vêtements pour femmes en propriété familiale a adopté une plateforme logicielle intégrée pour rationaliser ses opérations et soutenir la croissance.",
+    alternates: buildAlternates(locale, "success-stories/apparel-retailer"),
     openGraph: {
       title: isEnglish ? "Apparel Retailer | Oneir Solutions" : "Détaillant de vêtements | Oneir Solutions",
-      url: `https://oneirsolutions.com/${locale}/success-stories/apparel-retailer`,
+      url: localizedPath(locale, "success-stories/apparel-retailer"),
     },
   };
 }
@@ -51,9 +54,19 @@ export default async function ApparelRetailerCaseStudy({ params }: CaseStudyPage
     quote: "text-[18px] sm:text-[20px] font-[600] leading-relaxed text-[#434349] pb-3",
     sectionHeader: "text-[16px] sm:text-[17px] font-[600] text-[#070714] pb-3",
   };
+  const caseStudySchema = buildCaseStudySchema({
+    locale,
+    slug: "apparel-retailer",
+    title: locale === "en" ? "Apparel Retailer" : "Detailant de vetements",
+    description:
+      locale === "en"
+        ? "How a family-owned women's apparel retailer adopted an integrated business software platform to streamline operations and support growth."
+        : "Comment un detailant de vetements pour femmes a adopte une plateforme integree pour rationaliser ses operations et soutenir sa croissance.",
+  });
 
   return (
     <div className="min-h-screen bg-[#EFEFF3]">
+      <JsonLd data={caseStudySchema} />
       <Navbar currentLocale={locale} />
       <div className="pt-[var(--navbar-height)] sm:pt-24 lg:pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">

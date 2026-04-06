@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "../globals.css";
-import { defaultLocale, type Locale } from "@/lib/translations";
+import { defaultLocale, locales, type Locale } from "@/lib/translations";
 import ScrollToTopBottom from "@/components/ui/ScrollToTopBottom";
 import DemoModalProviderWrapper from "@/components/providers/DemoModalProviderWrapper";
 
@@ -19,6 +19,13 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
+export const dynamicParams = false;
+export const revalidate = 86400;
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -67,13 +74,6 @@ export async function generateMetadata({
           "systèmes comptables",
           "logiciel d'entreprise"
         ],
-    alternates: {
-      canonical: `https://oneirsolutions.com/${locale}`,
-      languages: {
-        'en': '/en',
-        'fr': '/fr',
-      },
-    },
     openGraph: {
       type: 'website',
       locale: isEnglish ? 'en_US' : 'fr_CA',
@@ -87,7 +87,7 @@ export async function generateMetadata({
         : "Oneir Solutions fournit des solutions ERP et comptables complètes. Partenaires avec nous pour la gestion d'entreprise avancée, les rapports financiers et les solutions spécifiques à l'industrie.",
       images: [
         {
-          url: '/og-image.jpg',
+          url: '/opengraph-image',
           width: 1200,
           height: 630,
           alt: isEnglish 
@@ -104,7 +104,7 @@ export async function generateMetadata({
       description: isEnglish
         ? "Oneir Solutions provides comprehensive ERP and accounting software solutions. Partner with us for advanced business management, financial reporting, and industry-specific solutions."
         : "Oneir Solutions fournit des solutions ERP et comptables complètes. Partenaires avec nous pour la gestion d'entreprise avancée, les rapports financiers et les solutions spécifiques à l'industrie.",
-      images: ['/twitter-image.jpg'],
+      images: ['/twitter-image'],
       creator: '@oneirsolutions',
     },
   };

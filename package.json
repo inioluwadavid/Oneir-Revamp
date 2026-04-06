@@ -6,13 +6,15 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.23.22",
     "next": "^16.1.6",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "resend": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

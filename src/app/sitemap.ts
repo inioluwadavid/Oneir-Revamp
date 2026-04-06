@@ -1,62 +1,61 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+
+const BASE_URL = "https://oneirsolutions.com";
+const LOCALES = ["en", "fr"] as const;
+
+const LOCALIZED_PUBLIC_PATHS = [
+  "",
+  "about-us",
+  "support",
+  "product-manuals",
+  "media-and-articles",
+  "common-questions",
+  "success-stories",
+  "success-stories/amity-insulation",
+  "success-stories/apparel-retailer",
+  "success-stories/decorators-choice",
+  "success-stories/dwight-lumber",
+  "success-stories/fuel-distribution-cardlock",
+  "success-stories/multi-company",
+  "success-stories/pet-supply-wholesaler",
+  "success-stories/structural-lumber-building-systems",
+] as const;
+
+function buildUrl(locale: (typeof LOCALES)[number], path: string): string {
+  return path ? `${BASE_URL}/${locale}/${path}` : `${BASE_URL}/${locale}`;
+}
+
+function getPriority(path: string): number {
+  if (!path) return 0.9;
+  if (path.startsWith("success-stories/")) return 0.7;
+  return 0.8;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://oneirsolutions.com'
-  
+  const lastModified = new Date();
+
+  const localizedEntries = LOCALES.flatMap((locale) =>
+    LOCALIZED_PUBLIC_PATHS.map((path) => ({
+      url: buildUrl(locale, path),
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: getPriority(path),
+      alternates: {
+        languages: {
+          en: buildUrl("en", path),
+          fr: buildUrl("fr", path),
+        },
+      },
+    })),
+  );
+
   return [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: BASE_URL,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 1,
     },
-    {
-      url: `${baseUrl}/en`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/fr`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/en/about-us`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/fr/about-us`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/en/support`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/fr/support`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/en/success-stories`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/fr/success-stories`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ]
+    ...localizedEntries,
+  ];
 }
