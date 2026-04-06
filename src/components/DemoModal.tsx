@@ -14,6 +14,35 @@ interface DemoModalProps {
   isOpen: boolean;
   onClose: () => void;
   locale: Locale;
+  onSubmitDetails?: (details: {
+    locale: Locale;
+    step1Data: {
+      fullName: string;
+      companyName: string;
+      email: string;
+      phone: string;
+      jobTitle: string;
+    };
+    step2Data: {
+      industry: string;
+      employees: string;
+      currentSystem: string;
+      mainChallenge: string;
+      timeline: string;
+    };
+    step3Data: {
+      preferredContact: 'email' | 'phone';
+      bestTime: string;
+      hearAbout: string;
+    };
+    step4Data: {
+      message: string;
+      country: string;
+      requestType: 'productDemo' | 'scheduleCall' | 'newsletterOptIn';
+      fileName: string | null;
+      fileUrl: string | null;
+    };
+  }) => void;
 }
 
 const INDUSTRY_KEYS = ['manufacturing', 'retail', 'healthcare', 'financial', 'technology', 'logistics', 'construction', 'professional', 'other'] as const;
@@ -63,7 +92,7 @@ async function uploadFileWithCloudinaryPreset(file: File): Promise<string | null
   return typeof data.secure_url === 'string' ? data.secure_url : null;
 }
 
-export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
+export default function DemoModal({ isOpen, onClose, locale, onSubmitDetails }: DemoModalProps) {
   const { launchWatchDemoVideo } = useDemoModal();
   const t = getTranslations(locale);
   const [currentStep, setCurrentStep] = useState(1);
@@ -346,6 +375,19 @@ export default function DemoModal({ isOpen, onClose, locale }: DemoModalProps) {
         locale,
         method: 'demo_modal',
         request_type: step4Data.requestType,
+      });
+      onSubmitDetails?.({
+        locale,
+        step1Data,
+        step2Data,
+        step3Data,
+        step4Data: {
+          message: step4Data.message,
+          country: step4Data.country,
+          requestType: step4Data.requestType,
+          fileName: step4Data.file?.name ?? null,
+          fileUrl,
+        },
       });
       setShowSuccess(true);
     } catch {
